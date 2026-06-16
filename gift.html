@@ -100,14 +100,22 @@ footer { text-align: center; padding: 32px 20px; border-top: 1px solid var(--bor
 footer a { color: var(--accent); }
 .scroll-top { position: fixed; bottom: 24px; right: 24px; width: 40px; height: 40px; border-radius: 50%; background: var(--accent); color: #fff; border: none; cursor: pointer; font-size: 18px; display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s; z-index: 99; }
 .scroll-top.visible { opacity: 1; }
-@media (max-width: 768px) { .container { padding: 16px 12px; } table { display: block; overflow-x: auto; } .card-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 768px) { .container { padding: 16px 12px; } table { display: block; overflow-x: auto; } .card-grid { grid-template-columns: repeat(2, 1fr); } }.opp-section table { margin-top: 8px; }.opp-section .diff-mid { color: var(--accent3); font-weight: 600; }
+.opp-row { background: rgba(240,160,96,0.03); }
+.opp-row td { padding: 5px 12px 5px 28px !important; font-size: 12px; border-bottom: 1px dashed var(--border) !important; }
+.opp-row td:first-child { color: var(--accent6); font-size: 11px; white-space: nowrap; min-width: 0; }
+.opp-row td:first-child::before { content: "└ "; color: var(--text-tertiary); }
+.opp-row .opp-name { color: var(--text); font-weight: 600; }
+.opp-row .opp-reason { color: var(--text-secondary); font-size: 11px; }
+.opp-row .diff-easy { color: var(--accent2); font-weight: 600; font-size: 11px; }
+.opp-row .diff-mid { color: var(--accent3); font-weight: 600; font-size: 11px; }
+.opp-row .diff-hard { color: var(--accent4); font-weight: 600; font-size: 11px; }
+.opp-toggle { cursor: pointer; color: var(--accent); font-size: 11px; margin-left: 4px; user-select: none; }
+.opp-toggle:hover { color: var(--accent6); }
+.opp-group { display: none; }
+.opp-group.open { display: table-row-group; }
+tr:hover + .opp-group .opp-row, .opp-group:hover .opp-row { background: rgba(240,160,96,0.08); }
 
-.opp-section { margin-top: 32px; }
-.opp-section h3 { font-size: 18px; color: var(--accent); margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
-.opp-section table { margin-top: 8px; }
-.opp-section .diff-easy { color: var(--accent2); font-weight: 600; }
-.opp-section .diff-mid { color: var(--accent3); font-weight: 600; }
-.opp-section .diff-hard { color: var(--accent4); font-weight: 600; }
 </style>
 </head>
 <body>
@@ -136,39 +144,45 @@ footer a { color: var(--accent); }
   <table>
 <thead><tr><th style="width:16%">细分品类</th><th style="width:37%">说明</th><th style="width:12%">价格区间</th><th style="width:15%">电商适配度</th><th style="width:20%">代表品牌</th></tr></thead>
 <tbody>
-<tr><td><strong>新手养宠套装</strong></td><td>猫砂盆+猫砂+猫粮+碗+玩具+抓板，一站式解决新手焦虑</td><td class="price-range">¥200-600</td><td><span class="badge badge-green">⭐5/5 极佳</span></td><td>pidan、小佩、网易严选</td></tr>
-<tr><td><strong>节日主题礼盒</strong></td><td>春节/圣诞节/万圣节/生日，限定包装+主题玩具零食</td><td class="price-range">¥80-300</td><td><span class="badge badge-green">⭐5/5 极佳</span></td><td>BarkBox、pidan、Touchdog</td></tr>
-<tr><td><strong>订阅盲盒</strong></td><td>月付制，每月寄送2-5件宠物玩具零食，惊喜感+持续复购</td><td class="price-range">¥50-150/月</td><td><span class="badge badge-green">⭐5/5 极佳</span></td><td>BarkBox、KitNipBox、魔力猫盒</td></tr>
-<tr><td><strong>宠物生日派对套装</strong></td><td>蛋糕+帽子+气球+拍照道具，拟人化消费极致体现</td><td class="price-range">¥100-400</td><td><span class="badge badge-green">⭐4/5 好</span></td><td>各类手作店/宠物蛋糕店</td></tr>
-<tr><td><strong>送朋友/送礼专用</strong></td><td>高端包装+品牌感，送养宠朋友/乔迁/生日，社交礼品场景</td><td class="price-range">¥100-500</td><td><span class="badge badge-green">⭐4/5 好</span></td><td>pidan、猫的天空之城</td></tr>
-<tr><td><strong>领养礼盒/公益款</strong></td><td>领养机构合作/救助站联名，公益属性+社交货币</td><td class="price-range">¥50-200</td><td><span class="badge badge-green">⭐3/5 中等</span></td><td>BondVet、各类公益组织联名</td></tr>
-<tr><td><strong>品牌联名限定款</strong></td><td>IP × 宠物品牌联名礼盒（如泡泡玛特×pidan、线条小狗×零食）</td><td class="price-range">¥100-500</td><td><span class="badge badge-green">⭐5/5 极佳</span></td><td>pidan×POP MART、各种跨界联名</td></tr>
+<tr><td><strong>新手养宠套装</strong> <span class="opp-toggle" onclick="var g=this.closest('tr').nextElementSibling;g.classList.toggle('open');this.textContent=this.textContent=='+2'?'−2':'+2'">+2</span></td><td>猫砂盆+猫砂+猫粮+碗+玩具+抓板，一站式解决新手焦虑</td><td class="price-range">¥200-600</td><td><span class="badge badge-green">⭐5/5 极佳</span></td><td>pidan、小佩、网易严选</td></tr>
+<tbody class="opp-group opp-group-新手养宠套装">
+<tr class="opp-row"><td>🟡中</td><td><span class="opp-name">猫咪接猫大礼包</span></td><td class="opp-reason">猫砂盆+砂+粮+碗+玩具+抓板+梳子全套</td><td><span class="diff-mid">🟡中</span></td></tr>
+<tr class="opp-row"><td>🟡中</td><td><span class="opp-name">幼犬到家必备套装</span></td><td class="opp-reason">尿垫+粮+碗+玩具+牵引+梳子+磨牙棒</td><td><span class="diff-mid">🟡中</span></td></tr>
+</tbody>
+<tr><td><strong>节日主题礼盒</strong> <span class="opp-toggle" onclick="var g=this.closest('tr').nextElementSibling;g.classList.toggle('open');this.textContent=this.textContent=='+3'?'−3':'+3'">+3</span></td><td>春节/圣诞节/万圣节/生日，限定包装+主题玩具零食</td><td class="price-range">¥80-300</td><td><span class="badge badge-green">⭐5/5 极佳</span></td><td>BarkBox、pidan、Touchdog</td></tr>
+<tbody class="opp-group opp-group-节日主题礼盒">
+<tr class="opp-row"><td>🟡中</td><td><span class="opp-name">圣诞倒数日历礼盒</span></td><td class="opp-reason">24格每天拆一个零食/玩具，圣诞月期待</td><td><span class="diff-mid">🟡中</span></td></tr>
+<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">新年宠物红包礼盒</span></td><td class="opp-reason">国潮包装+零食+对联+小旗袍，春节送礼</td><td><span class="diff-easy">🟢低</span></td></tr>
+<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">万圣节宠物变装礼盒</span></td><td class="opp-reason">披风+头饰+南瓜主题零食，10月爆发</td><td><span class="diff-easy">🟢低</span></td></tr>
+</tbody>
+<tr><td><strong>订阅盲盒</strong> <span class="opp-toggle" onclick="var g=this.closest('tr').nextElementSibling;g.classList.toggle('open');this.textContent=this.textContent=='+2'?'−2':'+2'">+2</span></td><td>月付制，每月寄送2-5件宠物玩具零食，惊喜感+持续复购</td><td class="price-range">¥50-150/月</td><td><span class="badge badge-green">⭐5/5 极佳</span></td><td>BarkBox、KitNipBox、魔力猫盒</td></tr>
+<tbody class="opp-group opp-group-订阅盲盒">
+<tr class="opp-row"><td>🟡中</td><td><span class="opp-name">月度主题盲盒</span></td><td class="opp-reason">每月1个主题+5件玩具零食，锁定复购</td><td><span class="diff-mid">🟡中</span></td></tr>
+<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">猫咪月度零食订阅</span></td><td class="opp-reason">每月4包不同口味冻干/猫条</td><td><span class="diff-easy">🟢低</span></td></tr>
+</tbody>
+<tr><td><strong>宠物生日派对套装</strong> <span class="opp-toggle" onclick="var g=this.closest('tr').nextElementSibling;g.classList.toggle('open');this.textContent=this.textContent=='+2'?'−2':'+2'">+2</span></td><td>蛋糕+帽子+气球+拍照道具，拟人化消费极致体现</td><td class="price-range">¥100-400</td><td><span class="badge badge-green">⭐4/5 好</span></td><td>各类手作店/宠物蛋糕店</td></tr>
+<tbody class="opp-group opp-group-宠物生日派对套装">
+<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">宠物生日派对套餐</span></td><td class="opp-reason">宠物蛋糕+蜡烛+生日帽+拍照道具+气球</td><td><span class="diff-easy">🟢低</span></td></tr>
+<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">猫狗庆生零食礼篮</span></td><td class="opp-reason">多品牌零食拼装+生日贺卡=礼品差异化</td><td><span class="diff-easy">🟢低</span></td></tr>
+</tbody>
+<tr><td><strong>送朋友/送礼专用</strong> <span class="opp-toggle" onclick="var g=this.closest('tr').nextElementSibling;g.classList.toggle('open');this.textContent=this.textContent=='+2'?'−2':'+2'">+2</span></td><td>高端包装+品牌感，送养宠朋友/乔迁/生日，社交礼品场景</td><td class="price-range">¥100-500</td><td><span class="badge badge-green">⭐4/5 好</span></td><td>pidan、猫的天空之城</td></tr>
+<tbody class="opp-group opp-group-送朋友-送礼专用">
+<tr class="opp-row"><td>🟡中</td><td><span class="opp-name">宠物主题伴手礼盒</span></td><td class="opp-reason">送养猫朋友的乔迁礼/生日礼，品牌感</td><td><span class="diff-mid">🟡中</span></td></tr>
+<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">宠物零食品鉴装礼盒</span></td><td class="opp-reason">8-10种不同品牌试用装，品鉴概念</td><td><span class="diff-easy">🟢低</span></td></tr>
+</tbody>
+<tr><td><strong>领养礼盒/公益款</strong> <span class="opp-toggle" onclick="var g=this.closest('tr').nextElementSibling;g.classList.toggle('open');this.textContent=this.textContent=='+1'?'−1':'+1'">+1</span></td><td>领养机构合作/救助站联名，公益属性+社交货币</td><td class="price-range">¥50-200</td><td><span class="badge badge-green">⭐3/5 中等</span></td><td>BondVet、各类公益组织联名</td></tr>
+<tbody class="opp-group opp-group-领养礼盒-公益款">
+<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">领养家庭支援礼盒</span></td><td class="opp-reason">猫砂盆+粮+基础用品，定向送领养家庭</td><td><span class="diff-easy">🟢低</span></td></tr>
+</tbody>
+<tr><td><strong>品牌联名限定款</strong> <span class="opp-toggle" onclick="var g=this.closest('tr').nextElementSibling;g.classList.toggle('open');this.textContent=this.textContent=='+3'?'−3':'+3'">+3</span></td><td>IP × 宠物品牌联名礼盒（如泡泡玛特×pidan、线条小狗×零食）</td><td class="price-range">¥100-500</td><td><span class="badge badge-green">⭐5/5 极佳</span></td><td>pidan×POP MART、各种跨界联名</td></tr>
+<tbody class="opp-group opp-group-品牌联名限定款">
+<tr class="opp-row"><td>🔴高</td><td><span class="opp-name">IP联名宠物零食礼盒</span></td><td class="opp-reason">泡泡玛特×猫零食/线条小狗×狗零食</td><td><span class="diff-hard">🔴高</span></td></tr>
+<tr class="opp-row"><td>🔴高</td><td><span class="opp-name">国潮非遗联名礼盒</span></td><td class="opp-reason">故宫/敦煌联名宠物礼盒，文化溢价</td><td><span class="diff-hard">🔴高</span></td></tr>
+<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">宠物+主人同享礼盒</span></td><td class="opp-reason">零食同包装，人宠同享概念</td><td><span class="diff-easy">🟢低</span></td></tr>
+</tbody>
 </tbody></table>
 <div class="analysis-box"><h4>🎯 电商切入策略</h4><p>礼盒套装是<strong>情感溢价最高</strong>的品类，本质是「卖体验」而非「卖产品」。建议策略：</p><ul><li><strong>新手套装=最强拉新工具</strong>：养宠第一周最焦虑（不知道买什么），一站式套装降低决策成本，高客单价+高复购起点</li><li><strong>订阅盲盒=永续现金牛</strong>：BarkBox已证明模式成立（2021年IPO估值$16亿），中国版还有机会，关键是主题创意+性价比</li><li><strong>节日礼盒=强季节性爆发</strong>：双11/春节/圣诞节，宠物礼盒搜索量翻5-10倍，提前2个月备货</li><li><strong>IP联名=品效合一</strong>：宠物品牌+潮玩IP/艺术家/国潮=溢价100%+社交传播自发裂变</li></ul></div>
 </div>
-<div class="opp-section">
-  <h3>🎯 三级机会点产品线（共15个机会点）</h3>
-  <table>
-<thead><tr><th style="width:16%">二级品类</th><th style="width:26%">机会点产品</th><th style="width:38%">机会分析</th><th style="width:10%">门槛</th></tr></thead>
-<tbody>
-<tr><td>新手养宠套装</td><td><strong>猫咪接猫大礼包</strong></td><td>猫砂盆+猫砂+猫粮试用装+碗+玩具+抓板+梳子+指甲剪=全套</td><td><span class="diff-mid">🟡 中</span></td></tr>
-<tr><td>新手养宠套装</td><td><strong>幼犬到家必备套装</strong></td><td>尿垫+狗粮+碗+玩具+牵引绳+梳子+磨牙棒=新手不焦虑</td><td><span class="diff-mid">🟡 中</span></td></tr>
-<tr><td>节日主题礼盒</td><td><strong>圣诞倒数日历礼盒</strong></td><td>24个小格子每天拆一个宠物零食/玩具，圣诞月=每日期待</td><td><span class="diff-mid">🟡 中</span></td></tr>
-<tr><td>节日主题礼盒</td><td><strong>新年宠物红包礼盒</strong></td><td>红色国潮包装+宠物零食+对联+小旗袍服，春节送礼</td><td><span class="diff-easy">🟢 低</span></td></tr>
-<tr><td>节日主题礼盒</td><td><strong>万圣节宠物变装礼盒</strong></td><td>宠物披风+头饰+南瓜主题零食玩具，10月=爆发节点</td><td><span class="diff-easy">🟢 低</span></td></tr>
-<tr><td>订阅盲盒</td><td><strong>月度主题盲盒</strong></td><td>每月1个主题(海洋/丛林/太空)+5件宠物玩具零食</td><td><span class="diff-mid">🟡 中</span></td></tr>
-<tr><td>订阅盲盒</td><td><strong>猫咪月度零食订阅</strong></td><td>每月4包不同口味冻干/猫条，锁定复购=订阅制魅力</td><td><span class="diff-easy">🟢 低</span></td></tr>
-<tr><td>宠物生日派对套装</td><td><strong>宠物生日派对套餐</strong></td><td>宠物蛋糕(可食用)+蜡烛+生日帽+拍照道具+气球组合</td><td><span class="diff-easy">🟢 低</span></td></tr>
-<tr><td>宠物生日派对套装</td><td><strong>猫狗庆生零食礼篮</strong></td><td>多个品牌零食拼装 + 生日贺卡 = 礼品市场差异化</td><td><span class="diff-easy">🟢 低</span></td></tr>
-<tr><td>送朋友/送礼专用</td><td><strong>宠物主题伴手礼盒</strong></td><td>送养猫朋友的乔迁礼/生日礼，品牌感包装+高端选品</td><td><span class="diff-mid">🟡 中</span></td></tr>
-<tr><td>送朋友/送礼专用</td><td><strong>宠物零食品鉴装礼盒</strong></td><td>8-10种不同品牌/口味的试用装，品鉴概念=社交谈资</td><td><span class="diff-easy">🟢 低</span></td></tr>
-<tr><td>领养礼盒/公益款</td><td><strong>领养家庭支援礼盒</strong></td><td>猫砂盆+猫粮+基础用品，定向送领养家庭/救助站</td><td><span class="diff-easy">🟢 低</span></td></tr>
-<tr><td>品牌联名限定款</td><td><strong>IP联名宠物零食礼盒</strong></td><td>泡泡玛特×猫零食/线条小狗×狗零食，IP粉转化=天然流量</td><td><span class="diff-hard">🔴 高</span></td></tr>
-<tr><td>品牌联名限定款</td><td><strong>国潮非遗联名礼盒</strong></td><td>故宫/敦煌联名宠物用品礼盒，文化溢价=送礼高端市场</td><td><span class="diff-hard">🔴 高</span></td></tr>
-<tr><td>品牌联名限定款</td><td><strong>宠物+主人同享礼盒</strong></td><td>宠物零食+主人零食(曲奇/茶包)同包装，人宠同享概念</td><td><span class="diff-easy">🟢 低</span></td></tr>
-</tbody></table>
-</div>
-
 <footer>
   <p>🐾 宠物赛道产品线细分调研 v1.0</p>
   <p style="margin-top:6px;"><a href="https://github.com/zxb20262026/pet-market-research" target="_blank">GitHub</a> · Made with ⚡️ by 小马哥</p>
