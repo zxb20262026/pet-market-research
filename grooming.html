@@ -101,13 +101,21 @@ footer a { color: var(--accent); }
 .scroll-top { position: fixed; bottom: 24px; right: 24px; width: 40px; height: 40px; border-radius: 50%; background: var(--accent); color: #fff; border: none; cursor: pointer; font-size: 18px; display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s; z-index: 99; }
 .scroll-top.visible { opacity: 1; }
 @media (max-width: 768px) { .container { padding: 16px 12px; } table { display: block; overflow-x: auto; } .card-grid { grid-template-columns: repeat(2, 1fr); } }
+.opp-row td { padding: 5px 12px 5px 28px !important; font-size: 12px; border-bottom: 1px dashed var(--border) !important; }.opp-row td:first-child::before { content: "└ "; color: var(--text-tertiary); }.opp-row .opp-reason { color: var(--text-secondary); font-size: 11px; }.opp-row .diff-mid { color: var(--accent3); font-weight: 600; font-size: 11px; }.opp-toggle { cursor: pointer; color: var(--accent); font-size: 11px; margin-left: 4px; user-select: none; }.opp-group { display: none; }tr:hover + .opp-group .opp-row, .opp-group:hover .opp-row { background: rgba(240,160,96,0.08); }
+
 
 .opp-row { background: rgba(240,160,96,0.03); }
-.opp-row td { padding: 5px 12px 5px 28px !important; font-size: 12px; border-bottom: 1px dashed var(--border) !important; }
+.opp-row td { padding: 5px 8px 5px 24px !important; font-size: 12px; border-bottom: 1px dashed var(--border) !important; }
 .opp-row td:first-child { color: var(--accent6); font-size: 11px; white-space: nowrap; min-width: 0; }
 .opp-row td:first-child::before { content: "└ "; color: var(--text-tertiary); }
 .opp-row .opp-name { color: var(--text); font-weight: 600; }
 .opp-row .opp-reason { color: var(--text-secondary); font-size: 11px; }
+.opp-row .opp-price { font-family: 'SF Mono','Cascadia Code',monospace; font-size: 11px; color: var(--accent6); }
+.opp-row .opp-rebuy { font-size: 11px; }
+.opp-row .opp-margin { font-size: 11px; font-weight: 600; }
+.opp-row .opp-margin-high { color: var(--accent2); }
+.opp-row .opp-margin-mid { color: var(--accent3); }
+.opp-row .opp-margin-low { color: var(--accent4); }
 .opp-row .diff-easy { color: var(--accent2); font-weight: 600; font-size: 11px; }
 .opp-row .diff-mid { color: var(--accent3); font-weight: 600; font-size: 11px; }
 .opp-row .diff-hard { color: var(--accent4); font-weight: 600; font-size: 11px; }
@@ -147,40 +155,40 @@ tr:hover + .opp-group .opp-row, .opp-group:hover .opp-row { background: rgba(240
 <tbody>
 <tr><td><strong>猫狗沐浴露/香波</strong> <span class="opp-toggle" onclick="var g=this.closest('tr').nextElementSibling;g.classList.toggle('open');this.textContent=this.textContent=='+3'?'−3':'+3'">+3</span></td><td>温和/除臭/美毛/除螨/药浴，功效细分趋势明显</td><td class="price-range">¥30-120</td><td><span class="badge badge-green">⭐5/5 极佳</span></td><td>雪貂留香、逸诺、富美内特</td></tr>
 <tbody class="opp-group opp-group-猫狗沐浴露-香波">
-<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">白毛犬专用美白香波</span></td><td class="opp-reason">紫色素中和黄色调，比熊/萨摩耶精准</td><td><span class="diff-easy">🟢低</span></td></tr>
-<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">猫咪免洗慕斯</span></td><td class="opp-reason">挤出即泡沫，猫不抗拒洗澡=痛点</td><td><span class="diff-easy">🟢低</span></td></tr>
-<tr class="opp-row"><td>🟡中</td><td><span class="opp-name">除螨药浴香波</span></td><td class="opp-reason">硫磺/苦参提取物，皮肤问题专业护理</td><td><span class="diff-mid">🟡中</span></td></tr>
+<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">白毛犬专用美白香波</span></td><td class="opp-reason">紫色素中和黄色调，比熊/萨摩耶精准</td><td class="opp-price">¥40-100</td><td class="opp-rebuy">2-4月</td><td><span class="opp-margin opp-margin-high">45-60%</span></td><td><span class="diff-easy">🟢低</span></td></tr>
+<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">猫咪免洗慕斯</span></td><td class="opp-reason">挤出即泡沫，猫不抗拒洗澡=痛点</td><td class="opp-price">¥35-80</td><td class="opp-rebuy">2-4月</td><td><span class="opp-margin opp-margin-high">45-60%</span></td><td><span class="diff-easy">🟢低</span></td></tr>
+<tr class="opp-row"><td>🟡中</td><td><span class="opp-name">除螨药浴香波</span></td><td class="opp-reason">硫磺/苦参提取物，皮肤问题专业护理</td><td class="opp-price">¥50-120</td><td class="opp-rebuy">2-4月</td><td><span class="opp-margin opp-margin-mid">40-55%</span></td><td><span class="diff-mid">🟡中</span></td></tr>
 </tbody>
 <tr><td><strong>护毛素/精油</strong> <span class="opp-toggle" onclick="var g=this.closest('tr').nextElementSibling;g.classList.toggle('open');this.textContent=this.textContent=='+2'?'−2':'+2'">+2</span></td><td>免洗喷雾/护毛精油/顺滑喷雾，懒人经济驱动增长</td><td class="price-range">¥25-80</td><td><span class="badge badge-green">⭐4/5 好</span></td><td>PPark、Burt's Bees、逸诺</td></tr>
 <tbody class="opp-group opp-group-护毛素-精油">
-<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">免洗顺毛喷雾</span></td><td class="opp-reason">喷一喷梳一梳，懒人经济打结毛救星</td><td><span class="diff-easy">🟢低</span></td></tr>
-<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">猫咪护爪膏</span></td><td class="opp-reason">防止肉垫干裂，秋冬刚需+话题流量</td><td><span class="diff-easy">🟢低</span></td></tr>
+<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">免洗顺毛喷雾</span></td><td class="opp-reason">喷一喷梳一梳，懒人经济打结毛救星</td><td class="opp-price">¥30-70</td><td class="opp-rebuy">2-4月</td><td><span class="opp-margin opp-margin-high">45-60%</span></td><td><span class="diff-easy">🟢低</span></td></tr>
+<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">猫咪护爪膏</span></td><td class="opp-reason">防止肉垫干裂，秋冬刚需+话题流量</td><td class="opp-price">¥25-50</td><td class="opp-rebuy">3-6月</td><td><span class="opp-margin opp-margin-high">50-65%</span></td><td><span class="diff-easy">🟢低</span></td></tr>
 </tbody>
 <tr><td><strong>梳刷/脱毛工具</strong> <span class="opp-toggle" onclick="var g=this.closest('tr').nextElementSibling;g.classList.toggle('open');this.textContent=this.textContent=='+3'?'−3':'+3'">+3</span></td><td>针梳/排梳/撸猫手套/硅胶刷/富美内特梳，换毛季刚需</td><td class="price-range">¥15-150</td><td><span class="badge badge-green">⭐5/5 极佳</span></td><td>富美内特、赫本、Chris Christensen</td></tr>
 <tbody class="opp-group opp-group-梳刷-脱毛工具">
-<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">一键退毛针梳</span></td><td class="opp-reason">按压式自动退毛，不脏手=终极痛点</td><td><span class="diff-easy">🟢低</span></td></tr>
-<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">硅胶撸猫手套</span></td><td class="opp-reason">双手同时撸猫+梳毛，猫享受主人轻松</td><td><span class="diff-easy">🟢低</span></td></tr>
-<tr class="opp-row"><td>🟡中</td><td><span class="opp-name">富美内特底绒梳</span></td><td class="opp-reason">直达底层绒毛，换毛季减少80%掉毛</td><td><span class="diff-mid">🟡中</span></td></tr>
+<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">一键退毛针梳</span></td><td class="opp-reason">按压式自动退毛，不脏手=终极痛点</td><td class="opp-price">¥30-80</td><td class="opp-rebuy">6-18月</td><td><span class="opp-margin opp-margin-mid">40-55%</span></td><td><span class="diff-easy">🟢低</span></td></tr>
+<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">硅胶撸猫手套</span></td><td class="opp-reason">双手同时撸猫+梳毛，猫享受主人轻松</td><td class="opp-price">¥15-40</td><td class="opp-rebuy">6-18月</td><td><span class="opp-margin opp-margin-high">50-65%</span></td><td><span class="diff-easy">🟢低</span></td></tr>
+<tr class="opp-row"><td>🟡中</td><td><span class="opp-name">富美内特底绒梳</span></td><td class="opp-reason">直达底层绒毛，换毛季减少80%掉毛</td><td class="opp-price">¥80-180</td><td class="opp-rebuy">12-24月</td><td><span class="opp-margin opp-margin-mid">35-45%</span></td><td><span class="diff-mid">🟡中</span></td></tr>
 </tbody>
 <tr><td><strong>指甲剪/磨甲器</strong> <span class="opp-toggle" onclick="var g=this.closest('tr').nextElementSibling;g.classList.toggle('open');this.textContent=this.textContent=='+2'?'−2':'+2'">+2</span></td><td>犬猫专用指甲剪+电动磨甲器，操作安全是核心卖点</td><td class="price-range">¥15-80</td><td><span class="badge badge-green">⭐4/5 好</span></td><td>多格漫、派地奥、Resco</td></tr>
 <tbody class="opp-group opp-group-指甲剪-磨甲器">
-<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">LED血线灯指甲剪</span></td><td class="opp-reason">LED透光看清血线，防止剪出血=新手必备</td><td><span class="diff-easy">🟢低</span></td></tr>
-<tr class="opp-row"><td>🟡中</td><td><span class="opp-name">静音电动磨甲器</span></td><td class="opp-reason">低噪音多档位，怕剪指甲的猫狗首选</td><td><span class="diff-mid">🟡中</span></td></tr>
+<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">LED血线灯指甲剪</span></td><td class="opp-reason">LED透光看清血线，防止剪出血=新手必备</td><td class="opp-price">¥25-50</td><td class="opp-rebuy">12-24月</td><td><span class="opp-margin opp-margin-mid">40-55%</span></td><td><span class="diff-easy">🟢低</span></td></tr>
+<tr class="opp-row"><td>🟡中</td><td><span class="opp-name">静音电动磨甲器</span></td><td class="opp-reason">低噪音多档位，怕剪指甲的猫狗首选</td><td class="opp-price">¥40-120</td><td class="opp-rebuy">18-36月</td><td><span class="opp-margin opp-margin-mid">30-40%</span></td><td><span class="diff-mid">🟡中</span></td></tr>
 </tbody>
 <tr><td><strong>电推剪/美容套装</strong> <span class="opp-toggle" onclick="var g=this.closest('tr').nextElementSibling;g.classList.toggle('open');this.textContent=this.textContent=='+2'?'−2':'+2'">+2</span></td><td>宠物专用电推剪+美容剪刀组，家庭美容趋势明显</td><td class="price-range">¥80-400</td><td><span class="badge badge-green">⭐4/5 好</span></td><td>科德士、Andis、Wahl</td></tr>
 <tbody class="opp-group opp-group-电推剪-美容套装">
-<tr class="opp-row"><td>🟡中</td><td><span class="opp-name">宠物静音电推剪</span></td><td class="opp-reason">超静音马达，在家给泰迪比熊剪毛</td><td><span class="diff-mid">🟡中</span></td></tr>
-<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">宠物美容剪刀6件套</span></td><td class="opp-reason">牙剪+直剪+弯剪+梳子+指甲剪+收纳包</td><td><span class="diff-easy">🟢低</span></td></tr>
+<tr class="opp-row"><td>🟡中</td><td><span class="opp-name">宠物静音电推剪</span></td><td class="opp-reason">超静音马达，在家给泰迪比熊剪毛</td><td class="opp-price">¥80-250</td><td class="opp-rebuy">18-36月</td><td><span class="opp-margin opp-margin-low">25-35%</span></td><td><span class="diff-mid">🟡中</span></td></tr>
+<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">宠物美容剪刀6件套</span></td><td class="opp-reason">牙剪+直剪+弯剪+梳子+指甲剪+收纳包</td><td class="opp-price">¥60-150</td><td class="opp-rebuy">18-36月</td><td><span class="opp-margin opp-margin-mid">35-45%</span></td><td><span class="diff-easy">🟢低</span></td></tr>
 </tbody>
 <tr><td><strong>毛巾/浴巾/吹风机</strong> <span class="opp-toggle" onclick="var g=this.closest('tr').nextElementSibling;g.classList.toggle('open');this.textContent=this.textContent=='+2'?'−2':'+2'">+2</span></td><td>超吸水毛巾/宠物专用吹水机/烘干箱，洗护全套场景</td><td class="price-range">¥30-600</td><td><span class="badge badge-green">⭐4/5 好</span></td><td>HomeRun、华元、pikapet</td></tr>
 <tbody class="opp-group opp-group-毛巾-浴巾-吹风机">
-<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">超强吸水宠物浴袍</span></td><td class="opp-reason">穿上自动吸水+防甩水，浴后神器</td><td><span class="diff-easy">🟢低</span></td></tr>
-<tr class="opp-row"><td>🔴高</td><td><span class="opp-name">宠物家用烘干箱</span></td><td class="opp-reason">恒温60°C+负离子+静音，替代宠物店</td><td><span class="diff-hard">🔴高</span></td></tr>
+<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">超强吸水宠物浴袍</span></td><td class="opp-reason">穿上自动吸水+防甩水，浴后神器</td><td class="opp-price">¥35-80</td><td class="opp-rebuy">12-24月</td><td><span class="opp-margin opp-margin-mid">40-55%</span></td><td><span class="diff-easy">🟢低</span></td></tr>
+<tr class="opp-row"><td>🔴高</td><td><span class="opp-name">宠物家用烘干箱</span></td><td class="opp-reason">恒温60°C+负离子+静音，替代宠物店</td><td class="opp-price">¥400-1200</td><td class="opp-rebuy">3-6年</td><td><span class="opp-margin opp-margin-low">20-30%</span></td><td><span class="diff-hard">🔴高</span></td></tr>
 </tbody>
 <tr><td><strong>耳部/眼部/足部清洁</strong> <span class="opp-toggle" onclick="var g=this.closest('tr').nextElementSibling;g.classList.toggle('open');this.textContent=this.textContent=='+2'?'−2':'+2'">+2</span></td><td>洗耳液/泪痕去除/洁足泡沫/湿巾，细分护理高毛利</td><td class="price-range">¥15-60</td><td><span class="badge badge-green">⭐5/5 极佳</span></td><td>维克、多美洁、逸诺</td></tr>
 <tbody class="opp-group opp-group-耳部-眼部-足部清洁">
-<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">泪痕去除湿巾</span></td><td class="opp-reason">含硼酸+金缕梅，白毛宠物必备消耗品</td><td><span class="diff-easy">🟢低</span></td></tr>
-<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">宠物洁足泡沫</span></td><td class="opp-reason">按压出泡+硅胶刷头，遛狗回来一按一擦</td><td><span class="diff-easy">🟢低</span></td></tr>
+<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">泪痕去除湿巾</span></td><td class="opp-reason">含硼酸+金缕梅，白毛宠物必备消耗品</td><td class="opp-price">¥20-50/盒</td><td class="opp-rebuy">15-30天</td><td><span class="opp-margin opp-margin-high">45-60%</span></td><td><span class="diff-easy">🟢低</span></td></tr>
+<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">宠物洁足泡沫</span></td><td class="opp-reason">按压出泡+硅胶刷头，遛狗回来一按一擦</td><td class="opp-price">¥25-60</td><td class="opp-rebuy">1-3月</td><td><span class="opp-margin opp-margin-high">45-60%</span></td><td><span class="diff-easy">🟢低</span></td></tr>
 </tbody>
 </tbody></table>
 <div class="analysis-box"><h4>🎯 电商切入策略</h4><p>洗护美容是<strong>高毛利+高连带</strong>品类。建议策略：</p><ul><li><strong>香波/沐浴露是品牌入口</strong>：用户从基础款入坑→连带梳子/毛巾/吹风机，套装组合提高客单价</li><li><strong>换毛季=黄金窗口</strong>：春季3-5月、秋季9-11月搜索量翻倍，提前2个月布局内容蓄水</li><li><strong>细分场景差异化</strong>：白毛犬专用/短鼻猫专用/幼猫幼犬温和配方，精准人群=高转化+高溢价</li><li><strong>「宠物SPA」内容策略</strong>：洗护过程本身就是治愈内容，ASMR+前后对比=天然种草</li></ul></div>
