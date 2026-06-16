@@ -100,8 +100,9 @@ footer { text-align: center; padding: 32px 20px; border-top: 1px solid var(--bor
 footer a { color: var(--accent); }
 .scroll-top { position: fixed; bottom: 24px; right: 24px; width: 40px; height: 40px; border-radius: 50%; background: var(--accent); color: #fff; border: none; cursor: pointer; font-size: 18px; display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s; z-index: 99; }
 .scroll-top.visible { opacity: 1; }
-@media (max-width: 768px) { .container { padding: 16px 12px; } table { display: block; overflow-x: auto; } .card-grid { grid-template-columns: repeat(2, 1fr); } }
-.opp-row td { padding: 5px 12px 5px 28px !important; font-size: 12px; border-bottom: 1px dashed var(--border) !important; }.opp-row td:first-child::before { content: "└ "; color: var(--text-tertiary); }.opp-row .opp-reason { color: var(--text-secondary); font-size: 11px; }.opp-row .diff-mid { color: var(--accent3); font-weight: 600; font-size: 11px; }.opp-toggle { cursor: pointer; color: var(--accent); font-size: 11px; margin-left: 4px; user-select: none; }.opp-group { display: none; }tr:hover + .opp-group .opp-row, .opp-group:hover .opp-row { background: rgba(240,160,96,0.08); }
+@media (max-width: 768px) { .container { padding: 16px 12px; } table { display: block; overflow-x: auto; } .card-grid { grid-template-columns: repeat(2, 1fr); } }.opp-row td:first-child::before { content: "└ "; color: var(--text-tertiary); }.opp-row .opp-reason { color: var(--text-secondary); font-size: 11px; }.opp-row .diff-mid { color: var(--accent3); font-weight: 600; font-size: 11px; }.opp-toggle { cursor: pointer; color: var(--accent); font-size: 11px; margin-left: 4px; user-select: none; }.opp-group { display: none; }tr:hover + .opp-group .opp-row, .opp-group:hover .opp-row { background: rgba(240,160,96,0.08); }
+
+.opp-row td { padding: 5px 8px 5px 24px !important; font-size: 12px; border-bottom: 1px dashed var(--border) !important; }.opp-row td:first-child::before { content: "└ "; color: var(--text-tertiary); }.opp-row .opp-reason { color: var(--text-secondary); font-size: 11px; }.opp-row .opp-rebuy { font-size: 11px; }.opp-row .opp-margin-high { color: var(--accent2); }.opp-row .opp-margin-low { color: var(--accent4); }.opp-row .diff-mid { color: var(--accent3); font-weight: 600; font-size: 11px; }.opp-toggle { cursor: pointer; color: var(--accent); font-size: 11px; margin-left: 4px; user-select: none; }.opp-group { display: none; }tr:hover + .opp-group .opp-row, .opp-group:hover .opp-row { background: rgba(240,160,96,0.08); }
 
 
 .opp-row { background: rgba(240,160,96,0.03); }
@@ -121,8 +122,8 @@ footer a { color: var(--accent); }
 .opp-row .diff-hard { color: var(--accent4); font-weight: 600; font-size: 11px; }
 .opp-toggle { cursor: pointer; color: var(--accent); font-size: 11px; margin-left: 4px; user-select: none; }
 .opp-toggle:hover { color: var(--accent6); }
-.opp-group { display: none; }
-.opp-group.open { display: table-row-group; }
+.opp-group { display: table-row-group; }
+.opp-group.closed { display: none; }
 tr:hover + .opp-group .opp-row, .opp-group:hover .opp-row { background: rgba(240,160,96,0.08); }
 
 </style>
@@ -153,39 +154,39 @@ tr:hover + .opp-group .opp-row, .opp-group:hover .opp-row { background: rgba(240
   <table>
 <thead><tr><th style="width:16%">细分品类</th><th style="width:37%">说明</th><th style="width:12%">价格区间</th><th style="width:15%">电商适配度</th><th style="width:20%">代表品牌</th></tr></thead>
 <tbody>
-<tr><td><strong>逗猫棒/激光笔</strong> <span class="opp-toggle" onclick="var g=this.closest('tr').nextElementSibling;g.classList.toggle('open');this.textContent=this.textContent=='+3'?'−3':'+3'">+3</span></td><td>羽毛/铃铛/伸缩杆/激光，互动性最强=内容传播力最强</td><td class="price-range">¥10-50</td><td><span class="badge badge-green">⭐5/5 极佳</span></td><td>多格漫、GiGwi、Cat Dancer</td></tr>
+<tr><td><strong>逗猫棒/激光笔</strong> <span class="opp-toggle" onclick="var g=this.parentElement.parentElement.nextElementSibling;g.classList.toggle('closed');this.textContent=this.textContent=='−3'?'+3':'−3'">−3</span></td><td>羽毛/铃铛/伸缩杆/激光，互动性最强=内容传播力最强</td><td class="price-range">¥10-50</td><td><span class="badge badge-green">⭐5/5 极佳</span></td><td>多格漫、GiGwi、Cat Dancer</td></tr>
 <tbody class="opp-group opp-group-逗猫棒-激光笔">
 <tr class="opp-row"><td>🟢低</td><td><span class="opp-name">伸缩钢丝羽铃逗猫棒</span></td><td class="opp-reason">2m伸缩杆+多替换头，耗材模式高复购</td><td class="opp-price">¥15-40</td><td class="opp-rebuy">1-3月</td><td><span class="opp-margin opp-margin-high">45-65%</span></td><td><span class="diff-easy">🟢低</span></td></tr>
 <tr class="opp-row"><td>🟢低</td><td><span class="opp-name">自动激光逗猫器</span></td><td class="opp-reason">随机轨迹+定时关机，上班族解放双手</td><td class="opp-price">¥50-120</td><td class="opp-rebuy">3-6月</td><td><span class="opp-margin opp-margin-mid">35-45%</span></td><td><span class="diff-easy">🟢低</span></td></tr>
 <tr class="opp-row"><td>🟢低</td><td><span class="opp-name">壁挂式自嗨逗猫棒</span></td><td class="opp-reason">贴墙上猫咪自己玩，内容素材生产力</td><td class="opp-price">¥15-35</td><td class="opp-rebuy">1-3月</td><td><span class="opp-margin opp-margin-high">50-65%</span></td><td><span class="diff-easy">🟢低</span></td></tr>
 </tbody>
-<tr><td><strong>猫隧道/蹭痒器</strong> <span class="opp-toggle" onclick="var g=this.closest('tr').nextElementSibling;g.classList.toggle('open');this.textContent=this.textContent=='+2'?'−2':'+2'">+2</span></td><td>瓦楞纸/毛毡/弹簧隧道，满足猫咪躲藏+磨爪本能</td><td class="price-range">¥30-120</td><td><span class="badge badge-green">⭐4/5 好</span></td><td>蜜罐猫、FUKUMARU</td></tr>
+<tr><td><strong>猫隧道/蹭痒器</strong> <span class="opp-toggle" onclick="var g=this.parentElement.parentElement.nextElementSibling;g.classList.toggle('closed');this.textContent=this.textContent=='−2'?'+2':'−2'">−2</span></td><td>瓦楞纸/毛毡/弹簧隧道，满足猫咪躲藏+磨爪本能</td><td class="price-range">¥30-120</td><td><span class="badge badge-green">⭐4/5 好</span></td><td>蜜罐猫、FUKUMARU</td></tr>
 <tbody class="opp-group opp-group-猫隧道-蹭痒器">
 <tr class="opp-row"><td>🟢低</td><td><span class="opp-name">折叠三通猫隧道</span></td><td class="opp-reason">S形+三通，多猫家庭互动，折叠省空间</td><td class="opp-price">¥40-120</td><td class="opp-rebuy">3-6月</td><td><span class="opp-margin opp-margin-mid">35-50%</span></td><td><span class="diff-easy">🟢低</span></td></tr>
 <tr class="opp-row"><td>🟢低</td><td><span class="opp-name">墙角蹭痒器(粘贴款)</span></td><td class="opp-reason">3M胶贴墙角，猫咪自主蹭=零教育成本</td><td class="opp-price">¥10-30</td><td class="opp-rebuy">2-4月</td><td><span class="opp-margin opp-margin-high">50-65%</span></td><td><span class="diff-easy">🟢低</span></td></tr>
 </tbody>
-<tr><td><strong>益智玩具(嗅闻垫)</strong> <span class="opp-toggle" onclick="var g=this.closest('tr').nextElementSibling;g.classList.toggle('open');this.textContent=this.textContent=='+3'?'−3':'+3'">+3</span></td><td>藏食/嗅闻垫/漏食球/解谜玩具，犬类消耗精力+防拆家</td><td class="price-range">¥30-150</td><td><span class="badge badge-green">⭐5/5 极佳</span></td><td>KONG、Outward Hound、星记</td></tr>
+<tr><td><strong>益智玩具(嗅闻垫)</strong> <span class="opp-toggle" onclick="var g=this.parentElement.parentElement.nextElementSibling;g.classList.toggle('closed');this.textContent=this.textContent=='−3'?'+3':'−3'">−3</span></td><td>藏食/嗅闻垫/漏食球/解谜玩具，犬类消耗精力+防拆家</td><td class="price-range">¥30-150</td><td><span class="badge badge-green">⭐5/5 极佳</span></td><td>KONG、Outward Hound、星记</td></tr>
 <tbody class="opp-group opp-group-益智玩具-嗅闻垫-">
 <tr class="opp-row"><td>🟢低</td><td><span class="opp-name">多层嗅闻垫(进阶款)</span></td><td class="opp-reason">3-5层不同藏食机关，难度分级成长</td><td class="opp-price">¥40-120</td><td class="opp-rebuy">3-6月</td><td><span class="opp-margin opp-margin-mid">35-50%</span></td><td><span class="diff-easy">🟢低</span></td></tr>
 <tr class="opp-row"><td>🟢低</td><td><span class="opp-name">漏食不倒翁</span></td><td class="opp-reason">食品级TPR不倒翁，滚着吃=消耗精力</td><td class="opp-price">¥35-80</td><td class="opp-rebuy">3-6月</td><td><span class="opp-margin opp-margin-mid">40-55%</span></td><td><span class="diff-easy">🟢低</span></td></tr>
 <tr class="opp-row"><td>🟢低</td><td><span class="opp-name">KONG经典葫芦</span></td><td class="opp-reason">填充后冷冻可啃咬1h+，全球#1益智</td><td class="opp-price">¥50-150</td><td class="opp-rebuy">3-6月</td><td><span class="opp-margin opp-margin-mid">40-50%</span></td><td><span class="diff-easy">🟢低</span></td></tr>
 </tbody>
-<tr><td><strong>飞盘/球类</strong> <span class="opp-toggle" onclick="var g=this.closest('tr').nextElementSibling;g.classList.toggle('open');this.textContent=this.textContent=='+2'?'−2':'+2'">+2</span></td><td>橡胶/帆布飞盘，发声网球，户外互动经典品类</td><td class="price-range">¥15-80</td><td><span class="badge badge-green">⭐4/5 好</span></td><td>Chuckit!、KONG、Hurtta</td></tr>
+<tr><td><strong>飞盘/球类</strong> <span class="opp-toggle" onclick="var g=this.parentElement.parentElement.nextElementSibling;g.classList.toggle('closed');this.textContent=this.textContent=='−2'?'+2':'−2'">−2</span></td><td>橡胶/帆布飞盘，发声网球，户外互动经典品类</td><td class="price-range">¥15-80</td><td><span class="badge badge-green">⭐4/5 好</span></td><td>Chuckit!、KONG、Hurtta</td></tr>
 <tbody class="opp-group opp-group-飞盘-球类">
 <tr class="opp-row"><td>🟢低</td><td><span class="opp-name">软胶浮水飞盘</span></td><td class="opp-reason">水上+陆地双用，边牧/金毛精准人群</td><td class="opp-price">¥25-80</td><td class="opp-rebuy">3-6月</td><td><span class="opp-margin opp-margin-mid">40-55%</span></td><td><span class="diff-easy">🟢低</span></td></tr>
 <tr class="opp-row"><td>🟢低</td><td><span class="opp-name">发光弹力球</span></td><td class="opp-reason">LED闪烁+弹跳，夜间遛狗神器</td><td class="opp-price">¥15-40</td><td class="opp-rebuy">2-4月</td><td><span class="opp-margin opp-margin-high">45-60%</span></td><td><span class="diff-easy">🟢低</span></td></tr>
 </tbody>
-<tr><td><strong>耐咬/发声玩具</strong> <span class="opp-toggle" onclick="var g=this.closest('tr').nextElementSibling;g.classList.toggle('open');this.textContent=this.textContent=='+2'?'−2':'+2'">+2</span></td><td>TPR橡胶/帆布，狗狗磨牙+陪伴，发声=趣味性+内容传播</td><td class="price-range">¥20-60</td><td><span class="badge badge-green">⭐4/5 好</span></td><td>KONG、GiGwi、Nylabone</td></tr>
+<tr><td><strong>耐咬/发声玩具</strong> <span class="opp-toggle" onclick="var g=this.parentElement.parentElement.nextElementSibling;g.classList.toggle('closed');this.textContent=this.textContent=='−2'?'+2':'−2'">−2</span></td><td>TPR橡胶/帆布，狗狗磨牙+陪伴，发声=趣味性+内容传播</td><td class="price-range">¥20-60</td><td><span class="badge badge-green">⭐4/5 好</span></td><td>KONG、GiGwi、Nylabone</td></tr>
 <tbody class="opp-group opp-group-耐咬-发声玩具">
 <tr class="opp-row"><td>🟢低</td><td><span class="opp-name">多纹理磨牙环</span></td><td class="opp-reason">不同凸点纹理，缓解幼犬换牙不适</td><td class="opp-price">¥20-50</td><td class="opp-rebuy">1-3月</td><td><span class="opp-margin opp-margin-mid">40-55%</span></td><td><span class="diff-easy">🟢低</span></td></tr>
 <tr class="opp-row"><td>🟢低</td><td><span class="opp-name">发声刺猬/松鼠</span></td><td class="opp-reason">内置发声器+多种面料，满足猎捕本能</td><td class="opp-price">¥25-60</td><td class="opp-rebuy">1-3月</td><td><span class="opp-margin opp-margin-mid">38-50%</span></td><td><span class="diff-easy">🟢低</span></td></tr>
 </tbody>
-<tr><td><strong>电动/自动玩具</strong> <span class="opp-toggle" onclick="var g=this.closest('tr').nextElementSibling;g.classList.toggle('open');this.textContent=this.textContent=='+2'?'−2':'+2'">+2</span></td><td>自动逗猫球/翻滚老鼠/智能互动，解放主人=卖点清晰</td><td class="price-range">¥60-300</td><td><span class="badge badge-green">⭐5/5 极佳</span></td><td>SmartyKat、PetSafe、GiGwi</td></tr>
+<tr><td><strong>电动/自动玩具</strong> <span class="opp-toggle" onclick="var g=this.parentElement.parentElement.nextElementSibling;g.classList.toggle('closed');this.textContent=this.textContent=='−2'?'+2':'−2'">−2</span></td><td>自动逗猫球/翻滚老鼠/智能互动，解放主人=卖点清晰</td><td class="price-range">¥60-300</td><td><span class="badge badge-green">⭐5/5 极佳</span></td><td>SmartyKat、PetSafe、GiGwi</td></tr>
 <tbody class="opp-group opp-group-电动-自动玩具">
 <tr class="opp-row"><td>🟡中</td><td><span class="opp-name">自滚动智能逗猫球</span></td><td class="opp-reason">USB充电+避障+羽毛尾，模拟猎物</td><td class="opp-price">¥60-150</td><td class="opp-rebuy">3-6月</td><td><span class="opp-margin opp-margin-mid">30-40%</span></td><td><span class="diff-mid">🟡中</span></td></tr>
 <tr class="opp-row"><td>🟡中</td><td><span class="opp-name">翻滚电子老鼠</span></td><td class="opp-reason">360°翻滚+猫薄荷仓，仿真猎物行为</td><td class="opp-price">¥60-150</td><td class="opp-rebuy">3-6月</td><td><span class="opp-margin opp-margin-mid">30-40%</span></td><td><span class="diff-mid">🟡中</span></td></tr>
 </tbody>
-<tr><td><strong>猫薄荷/木天蓼玩具</strong> <span class="opp-toggle" onclick="var g=this.closest('tr').nextElementSibling;g.classList.toggle('open');this.textContent=this.textContent=='+2'?'−2':'+2'">+2</span></td><td>含猫薄荷填充，猫咪天然兴奋剂，复购率极高</td><td class="price-range">¥10-40</td><td><span class="badge badge-green">⭐5/5 极佳</span></td><td>Yeowww!、KONG、多格漫</td></tr>
+<tr><td><strong>猫薄荷/木天蓼玩具</strong> <span class="opp-toggle" onclick="var g=this.parentElement.parentElement.nextElementSibling;g.classList.toggle('closed');this.textContent=this.textContent=='−2'?'+2':'−2'">−2</span></td><td>含猫薄荷填充，猫咪天然兴奋剂，复购率极高</td><td class="price-range">¥10-40</td><td><span class="badge badge-green">⭐5/5 极佳</span></td><td>Yeowww!、KONG、多格漫</td></tr>
 <tbody class="opp-group opp-group-猫薄荷-木天蓼玩具">
 <tr class="opp-row"><td>🟢低</td><td><span class="opp-name">有机猫薄荷填充鱼</span></td><td class="opp-reason">有机种植+纯棉布料，成分党首选</td><td class="opp-price">¥15-40</td><td class="opp-rebuy">1-2月</td><td><span class="opp-margin opp-margin-high">50-65%</span></td><td><span class="diff-easy">🟢低</span></td></tr>
 <tr class="opp-row"><td>🟢低</td><td><span class="opp-name">木天蓼棒混合套装</span></td><td class="opp-reason">粗细不同+虫瘿果颗粒，消费升级</td><td class="opp-price">¥20-50</td><td class="opp-rebuy">1-2月</td><td><span class="opp-margin opp-margin-high">45-60%</span></td><td><span class="diff-easy">🟢低</span></td></tr>
