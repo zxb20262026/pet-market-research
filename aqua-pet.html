@@ -100,13 +100,21 @@ footer { text-align: center; padding: 32px 20px; border-top: 1px solid var(--bor
 footer a { color: var(--accent); }
 .scroll-top { position: fixed; bottom: 24px; right: 24px; width: 40px; height: 40px; border-radius: 50%; background: var(--accent); color: #fff; border: none; cursor: pointer; font-size: 18px; display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s; z-index: 99; }
 .scroll-top.visible { opacity: 1; }
-@media (max-width: 768px) { .container { padding: 16px 12px; } table { display: block; overflow-x: auto; } .card-grid { grid-template-columns: repeat(2, 1fr); } }.opp-section table { margin-top: 8px; }.opp-section .diff-mid { color: var(--accent3); font-weight: 600; }
+@media (max-width: 768px) { .container { padding: 16px 12px; } table { display: block; overflow-x: auto; } .card-grid { grid-template-columns: repeat(2, 1fr); } }.opp-section table { margin-top: 8px; }.opp-section .diff-mid { color: var(--accent3); font-weight: 600; }.opp-row td { padding: 5px 12px 5px 28px !important; font-size: 12px; border-bottom: 1px dashed var(--border) !important; }.opp-row td:first-child::before { content: "└ "; color: var(--text-tertiary); }.opp-row .opp-reason { color: var(--text-secondary); font-size: 11px; }.opp-row .diff-mid { color: var(--accent3); font-weight: 600; font-size: 11px; }.opp-toggle { cursor: pointer; color: var(--accent); font-size: 11px; margin-left: 4px; user-select: none; }.opp-group { display: none; }tr:hover + .opp-group .opp-row, .opp-group:hover .opp-row { background: rgba(240,160,96,0.08); }
+
+
 .opp-row { background: rgba(240,160,96,0.03); }
-.opp-row td { padding: 5px 12px 5px 28px !important; font-size: 12px; border-bottom: 1px dashed var(--border) !important; }
+.opp-row td { padding: 5px 8px 5px 24px !important; font-size: 12px; border-bottom: 1px dashed var(--border) !important; }
 .opp-row td:first-child { color: var(--accent6); font-size: 11px; white-space: nowrap; min-width: 0; }
 .opp-row td:first-child::before { content: "└ "; color: var(--text-tertiary); }
 .opp-row .opp-name { color: var(--text); font-weight: 600; }
 .opp-row .opp-reason { color: var(--text-secondary); font-size: 11px; }
+.opp-row .opp-price { font-family: 'SF Mono','Cascadia Code',monospace; font-size: 11px; color: var(--accent6); }
+.opp-row .opp-rebuy { font-size: 11px; }
+.opp-row .opp-margin { font-size: 11px; font-weight: 600; }
+.opp-row .opp-margin-high { color: var(--accent2); }
+.opp-row .opp-margin-mid { color: var(--accent3); }
+.opp-row .opp-margin-low { color: var(--accent4); }
 .opp-row .diff-easy { color: var(--accent2); font-weight: 600; font-size: 11px; }
 .opp-row .diff-mid { color: var(--accent3); font-weight: 600; font-size: 11px; }
 .opp-row .diff-hard { color: var(--accent4); font-weight: 600; font-size: 11px; }
@@ -146,37 +154,37 @@ tr:hover + .opp-group .opp-row, .opp-group:hover .opp-row { background: rgba(240
 <tbody>
 <tr><td><strong>水族箱/鱼缸</strong> <span class="opp-toggle" onclick="var g=this.closest('tr').nextElementSibling;g.classList.toggle('open');this.textContent=this.textContent=='+2'?'−2':'+2'">+2</span></td><td>玻璃/亚克力，小型桌面(10-40cm)/中型客厅(60-120cm)，集成化=趋势</td><td class="price-range">¥60-2000</td><td><span class="badge badge-green">⭐4/5 好</span></td><td>森森、创宁、ADA</td></tr>
 <tbody class="opp-group opp-group-水族箱-鱼缸">
-<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">一体式桌面超白小鱼缸</span></td><td class="opp-reason">背滤+LED+加热全集成，10-30cm零门槛</td><td><span class="diff-easy">🟢低</span></td></tr>
-<tr class="opp-row"><td>🟡中</td><td><span class="opp-name">悬浮造景缸</span></td><td class="opp-reason">浮石+苔藓+蕨类，悬浮山=小红书收割机</td><td><span class="diff-mid">🟡中</span></td></tr>
+<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">一体式桌面超白小鱼缸</span></td><td class="opp-reason">背滤+LED+加热全集成，10-30cm零门槛</td><td class="opp-price">¥60-200</td><td class="opp-rebuy">1-3年</td><td><span class="opp-margin opp-margin-low">25-35%</span></td><td><span class="diff-easy">🟢低</span></td></tr>
+<tr class="opp-row"><td>🟡中</td><td><span class="opp-name">悬浮造景缸</span></td><td class="opp-reason">浮石+苔藓+蕨类，悬浮山=小红书收割机</td><td class="opp-price">¥100-400</td><td class="opp-rebuy">1-3年</td><td><span class="opp-margin opp-margin-mid">30-45%</span></td><td><span class="diff-mid">🟡中</span></td></tr>
 </tbody>
 <tr><td><strong>过滤系统</strong> <span class="opp-toggle" onclick="var g=this.closest('tr').nextElementSibling;g.classList.toggle('open');this.textContent=this.textContent=='+2'?'−2':'+2'">+2</span></td><td>瀑布过滤/滤桶/底滤/内置过滤，水质管理=养鱼第一要务</td><td class="price-range">¥30-500</td><td><span class="badge badge-green">⭐5/5 极佳</span></td><td>EHEIM、创宁、森森</td></tr>
 <tbody class="opp-group opp-group-过滤系统">
-<tr class="opp-row"><td>🟡中</td><td><span class="opp-name">外置迷你滤桶</span></td><td class="opp-reason">比内置瀑布强5倍过滤，小型缸升级</td><td><span class="diff-mid">🟡中</span></td></tr>
-<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">瀑布式除油膜过滤器</span></td><td class="opp-reason">过滤+除油膜二合一，养鱼第一痛点</td><td><span class="diff-easy">🟢低</span></td></tr>
+<tr class="opp-row"><td>🟡中</td><td><span class="opp-name">外置迷你滤桶</span></td><td class="opp-reason">比内置瀑布强5倍过滤，小型缸升级</td><td class="opp-price">¥80-250</td><td class="opp-rebuy">18-36月</td><td><span class="opp-margin opp-margin-mid">30-40%</span></td><td><span class="diff-mid">🟡中</span></td></tr>
+<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">瀑布式除油膜过滤器</span></td><td class="opp-reason">过滤+除油膜二合一，养鱼第一痛点</td><td class="opp-price">¥30-80</td><td class="opp-rebuy">12-24月</td><td><span class="opp-margin opp-margin-mid">35-45%</span></td><td><span class="diff-easy">🟢低</span></td></tr>
 </tbody>
 <tr><td><strong>增氧/加热/照明</strong> <span class="opp-toggle" onclick="var g=this.closest('tr').nextElementSibling;g.classList.toggle('open');this.textContent=this.textContent=='+3'?'−3':'+3'">+3</span></td><td>气泵+氧气石/加热棒(恒温)/LED水族灯(显色+水草生长)</td><td class="price-range">¥25-300</td><td><span class="badge badge-green">⭐5/5 极佳</span></td><td>创宁、森森、Fluval</td></tr>
 <tbody class="opp-group opp-group-增氧-加热-照明">
-<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">超静音USB氧气泵</span></td><td class="opp-reason"><35dB+USB供电，桌面鱼缸友好</td><td><span class="diff-easy">🟢低</span></td></tr>
-<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">迷你恒温加热棒(石英)</span></td><td class="opp-reason">10-25W+防爆，小型缸精准控温</td><td><span class="diff-easy">🟢低</span></td></tr>
-<tr class="opp-row"><td>🟡中</td><td><span class="opp-name">全光谱水草LED灯</span></td><td class="opp-reason">水草光合+显色RGB，草缸入门标配</td><td><span class="diff-mid">🟡中</span></td></tr>
+<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">超静音USB氧气泵</span></td><td class="opp-reason"><35dB+USB供电，桌面鱼缸友好</td><td class="opp-price">¥25-60</td><td class="opp-rebuy">2-4年</td><td><span class="opp-margin opp-margin-mid">35-45%</span></td><td><span class="diff-easy">🟢低</span></td></tr>
+<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">迷你恒温加热棒(石英)</span></td><td class="opp-reason">10-25W+防爆，小型缸精准控温</td><td class="opp-price">¥30-80</td><td class="opp-rebuy">2-4年</td><td><span class="opp-margin opp-margin-mid">30-40%</span></td><td><span class="diff-easy">🟢低</span></td></tr>
+<tr class="opp-row"><td>🟡中</td><td><span class="opp-name">全光谱水草LED灯</span></td><td class="opp-reason">水草光合+显色RGB，草缸入门标配</td><td class="opp-price">¥50-150</td><td class="opp-rebuy">2-4年</td><td><span class="opp-margin opp-margin-mid">30-40%</span></td><td><span class="diff-mid">🟡中</span></td></tr>
 </tbody>
 <tr><td><strong>水草造景/装饰</strong> <span class="opp-toggle" onclick="var g=this.closest('tr').nextElementSibling;g.classList.toggle('open');this.textContent=this.textContent=='+3'?'−3':'+3'">+3</span></td><td>水草泥/沉木/青龙石/水榕/莫斯/鱼缸摆件，造景=内容+溢价</td><td class="price-range">¥10-200</td><td><span class="badge badge-green">⭐5/5 极佳</span></td><td>ADA、尼特利、疯狂水草</td></tr>
 <tbody class="opp-group opp-group-水草造景-装饰">
-<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">新手水草入门套装</span></td><td class="opp-reason">水榕+莫斯+沉木+泥+教程=不懂也能造</td><td><span class="diff-easy">🟢低</span></td></tr>
-<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">盲盒水草包</span></td><td class="opp-reason">随机5-8种水草+沉木/石头，开箱惊喜</td><td><span class="diff-easy">🟢低</span></td></tr>
-<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">虾缸专用莫斯树</span></td><td class="opp-reason">不锈钢网片+莫斯定植，虾玩家刚需</td><td><span class="diff-easy">🟢低</span></td></tr>
+<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">新手水草入门套装</span></td><td class="opp-reason">水榕+莫斯+沉木+泥+教程=不懂也能造</td><td class="opp-price">¥40-120</td><td class="opp-rebuy">2-4月(消耗品)</td><td><span class="opp-margin opp-margin-mid">35-50%</span></td><td><span class="diff-easy">🟢低</span></td></tr>
+<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">盲盒水草包</span></td><td class="opp-reason">随机5-8种水草+沉木/石头，开箱惊喜</td><td class="opp-price">¥30-80</td><td class="opp-rebuy">1-3月</td><td><span class="opp-margin opp-margin-mid">40-55%</span></td><td><span class="diff-easy">🟢低</span></td></tr>
+<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">虾缸专用莫斯树</span></td><td class="opp-reason">不锈钢网片+莫斯定植，虾玩家刚需</td><td class="opp-price">¥15-40</td><td class="opp-rebuy">2-6月</td><td><span class="opp-margin opp-margin-high">45-60%</span></td><td><span class="diff-easy">🟢低</span></td></tr>
 </tbody>
 <tr><td><strong>鱼食/水质调节剂</strong> <span class="opp-toggle" onclick="var g=this.closest('tr').nextElementSibling;g.classList.toggle('open');this.textContent=this.textContent=='+3'?'−3':'+3'">+3</span></td><td>颗粒/薄片/贴片鱼粮，硝化细菌/除氯剂/水质测试剂</td><td class="price-range">¥10-60</td><td><span class="badge badge-green">⭐4/5 好</span></td><td>Tetra、Hikari、森森</td></tr>
 <tbody class="opp-group opp-group-鱼食-水质调节剂">
-<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">小型鱼微粒缓沉粮</span></td><td class="opp-reason">50-100μm粒径，灯科鱼/孔雀鱼适配</td><td><span class="diff-easy">🟢低</span></td></tr>
-<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">虾粮/虾用矿物质棒</span></td><td class="opp-reason">含钙+螺旋藻，观赏虾脱壳刚需</td><td><span class="diff-easy">🟢低</span></td></tr>
-<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">液肥/根肥综合套装</span></td><td class="opp-reason">水草缸每周必加，消耗品=持续现金流</td><td><span class="diff-easy">🟢低</span></td></tr>
+<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">小型鱼微粒缓沉粮</span></td><td class="opp-reason">50-100μm粒径，灯科鱼/孔雀鱼适配</td><td class="opp-price">¥15-40/瓶</td><td class="opp-rebuy">15-30天</td><td><span class="opp-margin opp-margin-mid">40-55%</span></td><td><span class="diff-easy">🟢低</span></td></tr>
+<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">虾粮/虾用矿物质棒</span></td><td class="opp-reason">含钙+螺旋藻，观赏虾脱壳刚需</td><td class="opp-price">¥20-50/瓶</td><td class="opp-rebuy">15-30天</td><td><span class="opp-margin opp-margin-mid">40-55%</span></td><td><span class="diff-easy">🟢低</span></td></tr>
+<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">液肥/根肥综合套装</span></td><td class="opp-reason">水草缸每周必加，消耗品=持续现金流</td><td class="opp-price">¥30-80/套</td><td class="opp-rebuy">7-15天</td><td><span class="opp-margin opp-margin-high">45-60%</span></td><td><span class="diff-easy">🟢低</span></td></tr>
 </tbody>
 <tr><td><strong>仓鼠/兔子/龙猫笼具</strong> <span class="opp-toggle" onclick="var g=this.closest('tr').nextElementSibling;g.classList.toggle('open');this.textContent=this.textContent=='+3'?'−3':'+3'">+3</span></td><td>亚克力笼/铁笼/木笼，跑轮/饮水器/食盆/躲避屋/垫材</td><td class="price-range">¥50-500</td><td><span class="badge badge-green">⭐4/5 好</span></td><td>Alice、Ferplast、Marukan</td></tr>
 <tbody class="opp-group opp-group-仓鼠-兔子-龙猫笼具">
-<tr class="opp-row"><td>🟡中</td><td><span class="opp-name">亚克力全透明鼠笼</span></td><td class="opp-reason">全景观赏+透气网，宠物鼠消费升级</td><td><span class="diff-mid">🟡中</span></td></tr>
-<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">静音跑轮+隧道套装</span></td><td class="opp-reason">滚珠轴承+隧道+躲避屋，仓鼠升级</td><td><span class="diff-easy">🟢低</span></td></tr>
-<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">龙猫降温大理石板</span></td><td class="opp-reason">天然大理石冰凉，夏天中暑=致命痛点</td><td><span class="diff-easy">🟢低</span></td></tr>
+<tr class="opp-row"><td>🟡中</td><td><span class="opp-name">亚克力全透明鼠笼</span></td><td class="opp-reason">全景观赏+透气网，宠物鼠消费升级</td><td class="opp-price">¥60-200</td><td class="opp-rebuy">18-36月</td><td><span class="opp-margin opp-margin-mid">30-40%</span></td><td><span class="diff-mid">🟡中</span></td></tr>
+<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">静音跑轮+隧道套装</span></td><td class="opp-reason">滚珠轴承+隧道+躲避屋，仓鼠升级</td><td class="opp-price">¥30-100</td><td class="opp-rebuy">6-18月</td><td><span class="opp-margin opp-margin-mid">35-50%</span></td><td><span class="diff-easy">🟢低</span></td></tr>
+<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">龙猫降温大理石板</span></td><td class="opp-reason">天然大理石冰凉，夏天中暑=致命痛点</td><td class="opp-price">¥20-50</td><td class="opp-rebuy">2-4年</td><td><span class="opp-margin opp-margin-mid">40-55%</span></td><td><span class="diff-easy">🟢低</span></td></tr>
 </tbody>
 </tbody></table>
 <div class="analysis-box"><h4>🎯 电商切入策略</h4><p>水族小宠是<strong>独立消费生态</strong>，与猫狗消费人群重叠度低。建议策略：</p><ul><li><strong>水族器材=高复购消耗品</strong>：过滤棉/硝化细菌/鱼食/水质测试剂必须持续购买，用户粘性极高</li><li><strong>桌面小鱼缸=轻量入门</strong>：10-30cm一体化小鱼缸（过滤+灯+缸集成），价格¥60-200，适合办公室/送礼场景</li><li><strong>小宠用品=差异化赛道</strong>：仓鼠/兔子/龙猫/豚鼠/刺猬/蜜袋鼯等异宠用品，巨头覆盖少，垂直品牌有机会</li><li><strong>内容种草力强</strong>：水草造景/setup/shrimp tank 都是YouTube/TikTok热门内容，视觉冲击力=自然种草</li></ul></div>
