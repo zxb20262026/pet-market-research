@@ -100,13 +100,21 @@ footer { text-align: center; padding: 32px 20px; border-top: 1px solid var(--bor
 footer a { color: var(--accent); }
 .scroll-top { position: fixed; bottom: 24px; right: 24px; width: 40px; height: 40px; border-radius: 50%; background: var(--accent); color: #fff; border: none; cursor: pointer; font-size: 18px; display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s; z-index: 99; }
 .scroll-top.visible { opacity: 1; }
-@media (max-width: 768px) { .container { padding: 16px 12px; } table { display: block; overflow-x: auto; } .card-grid { grid-template-columns: repeat(2, 1fr); } }.opp-section table { margin-top: 8px; }.opp-section .diff-mid { color: var(--accent3); font-weight: 600; }
+@media (max-width: 768px) { .container { padding: 16px 12px; } table { display: block; overflow-x: auto; } .card-grid { grid-template-columns: repeat(2, 1fr); } }.opp-section table { margin-top: 8px; }.opp-section .diff-mid { color: var(--accent3); font-weight: 600; }.opp-row td { padding: 5px 12px 5px 28px !important; font-size: 12px; border-bottom: 1px dashed var(--border) !important; }.opp-row td:first-child::before { content: "└ "; color: var(--text-tertiary); }.opp-row .opp-reason { color: var(--text-secondary); font-size: 11px; }.opp-row .diff-mid { color: var(--accent3); font-weight: 600; font-size: 11px; }.opp-toggle { cursor: pointer; color: var(--accent); font-size: 11px; margin-left: 4px; user-select: none; }.opp-group { display: none; }tr:hover + .opp-group .opp-row, .opp-group:hover .opp-row { background: rgba(240,160,96,0.08); }
+
+
 .opp-row { background: rgba(240,160,96,0.03); }
-.opp-row td { padding: 5px 12px 5px 28px !important; font-size: 12px; border-bottom: 1px dashed var(--border) !important; }
+.opp-row td { padding: 5px 8px 5px 24px !important; font-size: 12px; border-bottom: 1px dashed var(--border) !important; }
 .opp-row td:first-child { color: var(--accent6); font-size: 11px; white-space: nowrap; min-width: 0; }
 .opp-row td:first-child::before { content: "└ "; color: var(--text-tertiary); }
 .opp-row .opp-name { color: var(--text); font-weight: 600; }
 .opp-row .opp-reason { color: var(--text-secondary); font-size: 11px; }
+.opp-row .opp-price { font-family: 'SF Mono','Cascadia Code',monospace; font-size: 11px; color: var(--accent6); }
+.opp-row .opp-rebuy { font-size: 11px; }
+.opp-row .opp-margin { font-size: 11px; font-weight: 600; }
+.opp-row .opp-margin-high { color: var(--accent2); }
+.opp-row .opp-margin-mid { color: var(--accent3); }
+.opp-row .opp-margin-low { color: var(--accent4); }
 .opp-row .diff-easy { color: var(--accent2); font-weight: 600; font-size: 11px; }
 .opp-row .diff-mid { color: var(--accent3); font-weight: 600; font-size: 11px; }
 .opp-row .diff-hard { color: var(--accent4); font-weight: 600; font-size: 11px; }
@@ -146,35 +154,35 @@ tr:hover + .opp-group .opp-row, .opp-group:hover .opp-row { background: rgba(240
 <tbody>
 <tr><td><strong>牵引绳</strong> <span class="opp-toggle" onclick="var g=this.closest('tr').nextElementSibling;g.classList.toggle('open');this.textContent=this.textContent=='+2'?'−2':'+2'">+2</span></td><td>常规牵引/伸缩牵引/双头牵引，材质(尼龙/皮质/金属链)升级趋势</td><td class="price-range">¥25-200</td><td><span class="badge badge-green">⭐5/5 极佳</span></td><td>Flexi、Julius-K9、拉夫威尔</td></tr>
 <tbody class="opp-group opp-group-牵引绳">
-<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">360°防缠绕牵引绳</span></td><td class="opp-reason">万向旋转扣+反光编织，解决缠腿痛点</td><td><span class="diff-easy">🟢低</span></td></tr>
-<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">免手牵腰牵绳</span></td><td class="opp-reason">扣在腰间释放双手，跑步/骑行遛狗</td><td><span class="diff-easy">🟢低</span></td></tr>
+<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">360°防缠绕牵引绳</span></td><td class="opp-reason">万向旋转扣+反光编织，解决缠腿痛点</td><td class="opp-price">¥40-120</td><td class="opp-rebuy">12-24月</td><td><span class="opp-margin opp-margin-mid">35-50%</span></td><td><span class="diff-easy">🟢低</span></td></tr>
+<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">免手牵腰牵绳</span></td><td class="opp-reason">扣在腰间释放双手，跑步/骑行遛狗</td><td class="opp-price">¥50-150</td><td class="opp-rebuy">12-24月</td><td><span class="opp-margin opp-margin-mid">35-50%</span></td><td><span class="diff-easy">🟢低</span></td></tr>
 </tbody>
 <tr><td><strong>胸背带/项圈</strong> <span class="opp-toggle" onclick="var g=this.closest('tr').nextElementSibling;g.classList.toggle('open');this.textContent=this.textContent=='+3'?'−3':'+3'">+3</span></td><td>H型/Y型/战术胸背，防爆冲/缓冲设计是升级卖点</td><td class="price-range">¥30-300</td><td><span class="badge badge-green">⭐5/5 极佳</span></td><td>Ruffwear、Julius-K9、Hunter</td></tr>
 <tbody class="opp-group opp-group-胸背带-项圈">
-<tr class="opp-row"><td>🟡中</td><td><span class="opp-name">防爆冲缓冲胸背</span></td><td class="opp-reason">胸前扣转向+弹力缓冲带，大型犬爆冲</td><td><span class="diff-mid">🟡中</span></td></tr>
-<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">LED发光项圈</span></td><td class="opp-reason">USB充电+多模式闪烁，夜间安全</td><td><span class="diff-easy">🟢低</span></td></tr>
-<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">战术马甲胸背</span></td><td class="opp-reason">MOLLE织带+魔术贴士气章，军犬风</td><td><span class="diff-easy">🟢低</span></td></tr>
+<tr class="opp-row"><td>🟡中</td><td><span class="opp-name">防爆冲缓冲胸背</span></td><td class="opp-reason">胸前扣转向+弹力缓冲带，大型犬爆冲</td><td class="opp-price">¥60-180</td><td class="opp-rebuy">12-24月</td><td><span class="opp-margin opp-margin-mid">35-45%</span></td><td><span class="diff-mid">🟡中</span></td></tr>
+<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">LED发光项圈</span></td><td class="opp-reason">USB充电+多模式闪烁，夜间安全</td><td class="opp-price">¥30-80</td><td class="opp-rebuy">12-18月</td><td><span class="opp-margin opp-margin-mid">40-55%</span></td><td><span class="diff-easy">🟢低</span></td></tr>
+<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">战术马甲胸背</span></td><td class="opp-reason">MOLLE织带+魔术贴士气章，军犬风</td><td class="opp-price">¥80-250</td><td class="opp-rebuy">12-24月</td><td><span class="opp-margin opp-margin-mid">35-50%</span></td><td><span class="diff-easy">🟢低</span></td></tr>
 </tbody>
 <tr><td><strong>宠物外出包</strong> <span class="opp-toggle" onclick="var g=this.closest('tr').nextElementSibling;g.classList.toggle('open');this.textContent=this.textContent=='+2'?'−2':'+2'">+2</span></td><td>猫包(太空舱/双肩)/狗外出包/手提/斜挎，颜值+透气=核心卖点</td><td class="price-range">¥60-400</td><td><span class="badge badge-green">⭐5/5 极佳</span></td><td>petsfit、PetAmi、小佩</td></tr>
 <tbody class="opp-group opp-group-宠物外出包">
-<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">太空舱双肩猫包</span></td><td class="opp-reason">大视窗+透气网+防盗拉链，小红书爆款</td><td><span class="diff-easy">🟢低</span></td></tr>
-<tr class="opp-row"><td>🟡中</td><td><span class="opp-name">可扩展宠物航空包</span></td><td class="opp-reason">侧面拉开扩展，飞机入舱+汽车两用</td><td><span class="diff-mid">🟡中</span></td></tr>
+<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">太空舱双肩猫包</span></td><td class="opp-reason">大视窗+透气网+防盗拉链，小红书爆款</td><td class="opp-price">¥80-250</td><td class="opp-rebuy">2-4年</td><td><span class="opp-margin opp-margin-mid">30-45%</span></td><td><span class="diff-easy">🟢低</span></td></tr>
+<tr class="opp-row"><td>🟡中</td><td><span class="opp-name">可扩展宠物航空包</span></td><td class="opp-reason">侧面拉开扩展，飞机入舱+汽车两用</td><td class="opp-price">¥150-400</td><td class="opp-rebuy">2-4年</td><td><span class="opp-margin opp-margin-mid">30-40%</span></td><td><span class="diff-mid">🟡中</span></td></tr>
 </tbody>
 <tr><td><strong>宠物推车</strong> <span class="opp-toggle" onclick="var g=this.closest('tr').nextElementSibling;g.classList.toggle('open');this.textContent=this.textContent=='+2'?'−2':'+2'">+2</span></td><td>猫狗推车/分离式推车，老龄犬/多宠家庭刚需，客单价高</td><td class="price-range">¥200-800</td><td><span class="badge badge-green">⭐4/5 好</span></td><td>ibiyaya、Pet Gear、Gen7Pets</td></tr>
 <tbody class="opp-group opp-group-宠物推车">
-<tr class="opp-row"><td>🟡中</td><td><span class="opp-name">可分离式宠物推车</span></td><td class="opp-reason">提篮可取下当猫窝狗窝，一车三用</td><td><span class="diff-mid">🟡中</span></td></tr>
-<tr class="opp-row"><td>🟡中</td><td><span class="opp-name">轻量折叠宠物推车</span></td><td class="opp-reason"><5kg一键折叠，公交地铁友好</td><td><span class="diff-mid">🟡中</span></td></tr>
+<tr class="opp-row"><td>🟡中</td><td><span class="opp-name">可分离式宠物推车</span></td><td class="opp-reason">提篮可取下当猫窝狗窝，一车三用</td><td class="opp-price">¥300-800</td><td class="opp-rebuy">3-6年</td><td><span class="opp-margin opp-margin-low">25-35%</span></td><td><span class="diff-mid">🟡中</span></td></tr>
+<tr class="opp-row"><td>🟡中</td><td><span class="opp-name">轻量折叠宠物推车</span></td><td class="opp-reason"><5kg一键折叠，公交地铁友好</td><td class="opp-price">¥200-600</td><td class="opp-rebuy">3-6年</td><td><span class="opp-margin opp-margin-low">25-35%</span></td><td><span class="diff-mid">🟡中</span></td></tr>
 </tbody>
 <tr><td><strong>车载用品</strong> <span class="opp-toggle" onclick="var g=this.closest('tr').nextElementSibling;g.classList.toggle('open');this.textContent=this.textContent=='+2'?'−2':'+2'">+2</span></td><td>宠物车载垫/安全带/车载笼/防抓座椅套，行车安全需求增长</td><td class="price-range">¥50-300</td><td><span class="badge badge-green">⭐4/5 好</span></td><td>Kurgo、Solvit、华元</td></tr>
 <tbody class="opp-group opp-group-车载用品">
-<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">防水防抓后座垫</span></td><td class="opp-reason">600D牛津布+防滑底，保护真皮座椅</td><td><span class="diff-easy">🟢低</span></td></tr>
-<tr class="opp-row"><td>🟡中</td><td><span class="opp-name">宠物车载安全带</span></td><td class="opp-reason">碰撞测试认证+弹力缓冲，行车安全</td><td><span class="diff-mid">🟡中</span></td></tr>
+<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">防水防抓后座垫</span></td><td class="opp-reason">600D牛津布+防滑底，保护真皮座椅</td><td class="opp-price">¥80-250</td><td class="opp-rebuy">2-4年</td><td><span class="opp-margin opp-margin-mid">30-45%</span></td><td><span class="diff-easy">🟢低</span></td></tr>
+<tr class="opp-row"><td>🟡中</td><td><span class="opp-name">宠物车载安全带</span></td><td class="opp-reason">碰撞测试认证+弹力缓冲，行车安全</td><td class="opp-price">¥30-80</td><td class="opp-rebuy">2-4年</td><td><span class="opp-margin opp-margin-mid">35-50%</span></td><td><span class="diff-mid">🟡中</span></td></tr>
 </tbody>
 <tr><td><strong>户外装备</strong> <span class="opp-toggle" onclick="var g=this.closest('tr').nextElementSibling;g.classList.toggle('open');this.textContent=this.textContent=='+3'?'−3':'+3'">+3</span></td><td>宠物帐篷/露营垫/救生衣/登山背包/防晒衣，宠物户外=新增长极</td><td class="price-range">¥50-500</td><td><span class="badge badge-green">⭐4/5 好</span></td><td>Ruffwear、Kurgo、Outward Hound</td></tr>
 <tbody class="opp-group opp-group-户外装备">
-<tr class="opp-row"><td>🟡中</td><td><span class="opp-name">宠物露营帐篷</span></td><td class="opp-reason">防紫外线+速开设计，宠物露营=新生活</td><td><span class="diff-mid">🟡中</span></td></tr>
-<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">狗狗救生衣</span></td><td class="opp-reason">高浮力+提手+反光条，水上活动安全</td><td><span class="diff-easy">🟢低</span></td></tr>
-<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">宠物防水登山背包</span></td><td class="opp-reason">狗狗自己背水/零食，户外博主必备</td><td><span class="diff-easy">🟢低</span></td></tr>
+<tr class="opp-row"><td>🟡中</td><td><span class="opp-name">宠物露营帐篷</span></td><td class="opp-reason">防紫外线+速开设计，宠物露营=新生活</td><td class="opp-price">¥80-300</td><td class="opp-rebuy">1-3年(季节性)</td><td><span class="opp-margin opp-margin-mid">30-45%</span></td><td><span class="diff-mid">🟡中</span></td></tr>
+<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">狗狗救生衣</span></td><td class="opp-reason">高浮力+提手+反光条，水上活动安全</td><td class="opp-price">¥50-150</td><td class="opp-rebuy">1-3年(季节性)</td><td><span class="opp-margin opp-margin-mid">35-50%</span></td><td><span class="diff-easy">🟢低</span></td></tr>
+<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">宠物防水登山背包</span></td><td class="opp-reason">狗狗自己背水/零食，户外博主必备</td><td class="opp-price">¥60-180</td><td class="opp-rebuy">12-24月</td><td><span class="opp-margin opp-margin-mid">35-50%</span></td><td><span class="diff-easy">🟢低</span></td></tr>
 </tbody>
 </tbody></table>
 <div class="analysis-box"><h4>🎯 电商切入策略</h4><p>出行装备乘着<strong>宠物户外化+宠物社交化</strong>两股浪潮。建议策略：</p><ul><li><strong>牵引+胸背带=标准入门品</strong>：每只狗都需要，品牌忠诚度中等，设计差异化空间大</li><li><strong>猫包颜值即正义</strong>：太空舱猫包已成小红书爆款，但品质参差不齐，品质升级+IP联名有机会</li><li><strong>宠物露营=新场景红利</strong>：携宠露营/徒步/溯溪等户外活动增长迅猛，宠物户外装备几乎空白市场</li><li><strong>注意安全标准</strong>：车载用品需要碰撞测试认证，牵引绳需要拉力测试，品质差可能导致严重事故</li></ul></div>
