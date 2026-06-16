@@ -100,13 +100,21 @@ footer { text-align: center; padding: 32px 20px; border-top: 1px solid var(--bor
 footer a { color: var(--accent); }
 .scroll-top { position: fixed; bottom: 24px; right: 24px; width: 40px; height: 40px; border-radius: 50%; background: var(--accent); color: #fff; border: none; cursor: pointer; font-size: 18px; display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s; z-index: 99; }
 .scroll-top.visible { opacity: 1; }
-@media (max-width: 768px) { .container { padding: 16px 12px; } table { display: block; overflow-x: auto; } .card-grid { grid-template-columns: repeat(2, 1fr); } }.opp-section table { margin-top: 8px; }.opp-section .diff-mid { color: var(--accent3); font-weight: 600; }
+@media (max-width: 768px) { .container { padding: 16px 12px; } table { display: block; overflow-x: auto; } .card-grid { grid-template-columns: repeat(2, 1fr); } }.opp-section table { margin-top: 8px; }.opp-section .diff-mid { color: var(--accent3); font-weight: 600; }.opp-row td { padding: 5px 12px 5px 28px !important; font-size: 12px; border-bottom: 1px dashed var(--border) !important; }.opp-row td:first-child::before { content: "└ "; color: var(--text-tertiary); }.opp-row .opp-reason { color: var(--text-secondary); font-size: 11px; }.opp-row .diff-mid { color: var(--accent3); font-weight: 600; font-size: 11px; }.opp-toggle { cursor: pointer; color: var(--accent); font-size: 11px; margin-left: 4px; user-select: none; }.opp-group { display: none; }tr:hover + .opp-group .opp-row, .opp-group:hover .opp-row { background: rgba(240,160,96,0.08); }
+
+
 .opp-row { background: rgba(240,160,96,0.03); }
-.opp-row td { padding: 5px 12px 5px 28px !important; font-size: 12px; border-bottom: 1px dashed var(--border) !important; }
+.opp-row td { padding: 5px 8px 5px 24px !important; font-size: 12px; border-bottom: 1px dashed var(--border) !important; }
 .opp-row td:first-child { color: var(--accent6); font-size: 11px; white-space: nowrap; min-width: 0; }
 .opp-row td:first-child::before { content: "└ "; color: var(--text-tertiary); }
 .opp-row .opp-name { color: var(--text); font-weight: 600; }
 .opp-row .opp-reason { color: var(--text-secondary); font-size: 11px; }
+.opp-row .opp-price { font-family: 'SF Mono','Cascadia Code',monospace; font-size: 11px; color: var(--accent6); }
+.opp-row .opp-rebuy { font-size: 11px; }
+.opp-row .opp-margin { font-size: 11px; font-weight: 600; }
+.opp-row .opp-margin-high { color: var(--accent2); }
+.opp-row .opp-margin-mid { color: var(--accent3); }
+.opp-row .opp-margin-low { color: var(--accent4); }
 .opp-row .diff-easy { color: var(--accent2); font-weight: 600; font-size: 11px; }
 .opp-row .diff-mid { color: var(--accent3); font-weight: 600; font-size: 11px; }
 .opp-row .diff-hard { color: var(--accent4); font-weight: 600; font-size: 11px; }
@@ -146,34 +154,34 @@ tr:hover + .opp-group .opp-row, .opp-group:hover .opp-row { background: rgba(240
 <tbody>
 <tr><td><strong>驱虫药(体外)</strong> <span class="opp-toggle" onclick="var g=this.closest('tr').nextElementSibling;g.classList.toggle('open');this.textContent=this.textContent=='+2'?'−2':'+2'">+2</span></td><td>滴剂/喷剂/项圈，跳蚤/蜱虫/螨虫，春夏爆发品类</td><td class="price-range">¥30-200</td><td><span class="badge badge-green">⭐5/5 极佳</span></td><td>福来恩、大宠爱、拜耳</td></tr>
 <tbody class="opp-group opp-group-驱虫药-体外-">
-<tr class="opp-row"><td>🔴高</td><td><span class="opp-name">猫咪体内外同驱滴剂</span></td><td class="opp-reason">一支搞定跳蚤+耳螨+线虫，懒人终极</td><td><span class="diff-hard">🔴高</span></td></tr>
-<tr class="opp-row"><td>🟡中</td><td><span class="opp-name">天然植物驱虫喷雾</span></td><td class="opp-reason">柠檬桉/薄荷配方，天然成分党首选</td><td><span class="diff-mid">🟡中</span></td></tr>
+<tr class="opp-row"><td>🔴高</td><td><span class="opp-name">猫咪体内外同驱滴剂</span></td><td class="opp-reason">一支搞定跳蚤+耳螨+线虫，懒人终极</td><td class="opp-price">¥60-200/支</td><td class="opp-rebuy">30-90天</td><td><span class="opp-margin opp-margin-low">25-35%</span></td><td><span class="diff-hard">🔴高</span></td></tr>
+<tr class="opp-row"><td>🟡中</td><td><span class="opp-name">天然植物驱虫喷雾</span></td><td class="opp-reason">柠檬桉/薄荷配方，天然成分党首选</td><td class="opp-price">¥40-100</td><td class="opp-rebuy">15-30天</td><td><span class="opp-margin opp-margin-mid">30-40%</span></td><td><span class="diff-mid">🟡中</span></td></tr>
 </tbody>
 <tr><td><strong>驱虫药(体内)</strong> <span class="opp-toggle" onclick="var g=this.closest('tr').nextElementSibling;g.classList.toggle('open');this.textContent=this.textContent=='+1'?'−1':'+1'">+1</span></td><td>片剂/颗粒，蛔虫/钩虫/绦虫/心丝虫预防</td><td class="price-range">¥30-150</td><td><span class="badge badge-green">⭐4/5 好</span></td><td>拜耳/犬心保/海乐妙</td></tr>
 <tbody class="opp-group opp-group-驱虫药-体内-">
-<tr class="opp-row"><td>🔴高</td><td><span class="opp-name">犬猫通用驱虫片</span></td><td class="opp-reason">牛肉味咀嚼片适口性好，不用硬塞</td><td><span class="diff-hard">🔴高</span></td></tr>
+<tr class="opp-row"><td>🔴高</td><td><span class="opp-name">犬猫通用驱虫片</span></td><td class="opp-reason">牛肉味咀嚼片适口性好，不用硬塞</td><td class="opp-price">¥40-120/盒</td><td class="opp-rebuy">30-90天</td><td><span class="opp-margin opp-margin-low">25-35%</span></td><td><span class="diff-hard">🔴高</span></td></tr>
 </tbody>
 <tr><td><strong>口腔护理</strong> <span class="opp-toggle" onclick="var g=this.closest('tr').nextElementSibling;g.classList.toggle('open');this.textContent=this.textContent=='+3'?'−3':'+3'">+3</span></td><td>宠物牙膏/牙刷/洁齿骨/漱口水/指套刷，牙结石=普遍痛点</td><td class="price-range">¥20-100</td><td><span class="badge badge-green">⭐5/5 极佳</span></td><td>维克、多美洁、博乐丹</td></tr>
 <tbody class="opp-group opp-group-口腔护理">
-<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">宠物酵素牙膏套装</span></td><td class="opp-reason">酵素分解牙垢+指套刷+牙刷三件套</td><td><span class="diff-easy">🟢低</span></td></tr>
-<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">洁齿骨套装(多口味)</span></td><td class="opp-reason">不同硬度适配犬种，消耗品=持续复购</td><td><span class="diff-easy">🟢低</span></td></tr>
-<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">宠物口腔喷雾</span></td><td class="opp-reason">喷一喷清新口气，低客单拉新引流</td><td><span class="diff-easy">🟢低</span></td></tr>
+<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">宠物酵素牙膏套装</span></td><td class="opp-reason">酵素分解牙垢+指套刷+牙刷三件套</td><td class="opp-price">¥30-80</td><td class="opp-rebuy">2-4月</td><td><span class="opp-margin opp-margin-high">45-60%</span></td><td><span class="diff-easy">🟢低</span></td></tr>
+<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">洁齿骨套装(多口味)</span></td><td class="opp-reason">不同硬度适配犬种，消耗品=持续复购</td><td class="opp-price">¥25-60/包</td><td class="opp-rebuy">7-20天</td><td><span class="opp-margin opp-margin-mid">40-55%</span></td><td><span class="diff-easy">🟢低</span></td></tr>
+<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">宠物口腔喷雾</span></td><td class="opp-reason">喷一喷清新口气，低客单拉新引流</td><td class="opp-price">¥25-50</td><td class="opp-rebuy">1-3月</td><td><span class="opp-margin opp-margin-high">50-65%</span></td><td><span class="diff-easy">🟢低</span></td></tr>
 </tbody>
 <tr><td><strong>耳部护理</strong> <span class="opp-toggle" onclick="var g=this.closest('tr').nextElementSibling;g.classList.toggle('open');this.textContent=this.textContent=='+2'?'−2':'+2'">+2</span></td><td>洗耳液/滴耳油/棉签，犬猫耳螨/耳炎高发=刚需场景</td><td class="price-range">¥20-80</td><td><span class="badge badge-green">⭐5/5 极佳</span></td><td>维克耳漂、小宠、多美洁</td></tr>
 <tbody class="opp-group opp-group-耳部护理">
-<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">宠物洗耳液+棉签套装</span></td><td class="opp-reason">滴入→按摩→棉签，教程内容=引流</td><td><span class="diff-easy">🟢低</span></td></tr>
-<tr class="opp-row"><td>🟡中</td><td><span class="opp-name">耳螨治疗滴耳油</span></td><td class="opp-reason">含伊维菌素，黑→干净对比图=效果可视</td><td><span class="diff-mid">🟡中</span></td></tr>
+<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">宠物洗耳液+棉签套装</span></td><td class="opp-reason">滴入→按摩→棉签，教程内容=引流</td><td class="opp-price">¥25-60</td><td class="opp-rebuy">1-3月</td><td><span class="opp-margin opp-margin-high">45-60%</span></td><td><span class="diff-easy">🟢低</span></td></tr>
+<tr class="opp-row"><td>🟡中</td><td><span class="opp-name">耳螨治疗滴耳油</span></td><td class="opp-reason">含伊维菌素，黑→干净对比图=效果可视</td><td class="opp-price">¥30-80</td><td class="opp-rebuy">1-2月</td><td><span class="opp-margin opp-margin-mid">40-55%</span></td><td><span class="diff-mid">🟡中</span></td></tr>
 </tbody>
 <tr><td><strong>眼部护理</strong> <span class="opp-toggle" onclick="var g=this.closest('tr').nextElementSibling;g.classList.toggle('open');this.textContent=this.textContent=='+2'?'−2':'+2'">+2</span></td><td>泪痕去除/滴眼液/眼膏，白毛犬猫泪痕问题=小红书搜索量大</td><td class="price-range">¥20-80</td><td><span class="badge badge-green">⭐4/5 好</span></td><td>维克、Angels' Eyes、多美洁</td></tr>
 <tbody class="opp-group opp-group-眼部护理">
-<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">犬猫泪痕去除粉</span></td><td class="opp-reason">内服粉末从根源减少泪痕，白毛宠物精准</td><td><span class="diff-easy">🟢低</span></td></tr>
-<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">宠物滴眼液(日常型)</span></td><td class="opp-reason">人工泪液配方温和，日常眼分泌物清理</td><td><span class="diff-easy">🟢低</span></td></tr>
+<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">犬猫泪痕去除粉</span></td><td class="opp-reason">内服粉末从根源减少泪痕，白毛宠物精准</td><td class="opp-price">¥40-100</td><td class="opp-rebuy">30-60天</td><td><span class="opp-margin opp-margin-high">45-60%</span></td><td><span class="diff-easy">🟢低</span></td></tr>
+<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">宠物滴眼液(日常型)</span></td><td class="opp-reason">人工泪液配方温和，日常眼分泌物清理</td><td class="opp-price">¥20-50</td><td class="opp-rebuy">1-3月</td><td><span class="opp-margin opp-margin-high">45-60%</span></td><td><span class="diff-easy">🟢低</span></td></tr>
 </tbody>
 <tr><td><strong>宠物尿垫/纸尿裤</strong> <span class="opp-toggle" onclick="var g=this.closest('tr').nextElementSibling;g.classList.toggle('open');this.textContent=this.textContent=='+3'?'−3':'+3'">+3</span></td><td>训练尿垫/老年犬纸尿裤/经期裤，消耗品=高复购</td><td class="price-range">¥30-100</td><td><span class="badge badge-green">⭐5/5 极佳</span></td><td>怡亲、爱丽丝、Simple Solution</td></tr>
 <tbody class="opp-group opp-group-宠物尿垫-纸尿裤">
-<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">活性炭除臭尿垫</span></td><td class="opp-reason">添加活性炭锁味，多宠/公寓刚需升级</td><td><span class="diff-easy">🟢低</span></td></tr>
-<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">诱导定点排便尿垫</span></td><td class="opp-reason">含信息素引导气味，幼犬训练精准场景</td><td><span class="diff-easy">🟢低</span></td></tr>
-<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">公狗经期裤/标记裤</span></td><td class="opp-reason">解决乱尿标记/发情滴血，被忽视的痛点</td><td><span class="diff-easy">🟢低</span></td></tr>
+<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">活性炭除臭尿垫</span></td><td class="opp-reason">添加活性炭锁味，多宠/公寓刚需升级</td><td class="opp-price">¥30-80/包</td><td class="opp-rebuy">5-15天</td><td><span class="opp-margin opp-margin-low">20-30%</span></td><td><span class="diff-easy">🟢低</span></td></tr>
+<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">诱导定点排便尿垫</span></td><td class="opp-reason">含信息素引导气味，幼犬训练精准场景</td><td class="opp-price">¥35-90/包</td><td class="opp-rebuy">5-15天</td><td><span class="opp-margin opp-margin-low">25-35%</span></td><td><span class="diff-easy">🟢低</span></td></tr>
+<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">公狗经期裤/标记裤</span></td><td class="opp-reason">解决乱尿标记/发情滴血，被忽视的痛点</td><td class="opp-price">¥20-50/包</td><td class="opp-rebuy">5-15天</td><td><span class="opp-margin opp-margin-mid">30-40%</span></td><td><span class="diff-easy">🟢低</span></td></tr>
 </tbody>
 </tbody></table>
 <div class="analysis-box"><h4>🎯 电商切入策略</h4><p>健康护理是<strong>有专业壁垒+高利润</strong>的蓝海品类。建议策略：</p><ul><li><strong>驱虫药有兽药监管门槛</strong>：体内外驱虫药属于兽药/农药管理，需要经营许可证，但利润极高（毛利率60%+），是强护城河品类</li><li><strong>口腔/眼耳护理更适合中小卖家</strong>：不需要兽药资质，但需要专业知识做内容（怎么刷牙/怎么洗耳=教程视频=种草内容）</li><li><strong>尿垫是「消耗品之王」</strong>：每天消耗1-2片×3500万只狗=天文数字复购，但品牌集中度低，白牌为主，品牌化空间大</li><li><strong>痛点营销=高转化</strong>：牙结石/耳螨/泪痕是100%宠物主都会遇到的问题，解决方案型内容转化率极高</li></ul></div>
