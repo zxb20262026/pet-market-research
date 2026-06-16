@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🐾 爬宠用品 | 宠物赛道调研</title>
+<style>
+:root {
+  --bg: #1a1410; --bg-card: #241e18; --bg-card-hover: #2e2720;
+  --border: #3d352d; --text: #e8d5c4; --text-secondary: #8b7d6e;
+  --text-tertiary: #6b5f52; --accent: #f0a060; --accent2: #5cb878;
+  --accent3: #e0b040; --accent4: #e05555; --accent5: #b892e0;
+  --accent6: #f0c080; --danger: #e05555;
+  --radius: 12px; --radius-sm: 8px;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; min-height: 100vh; }
+.nav { position: sticky; top: 0; z-index: 100; background: rgba(26,20,16,0.94); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 10px 20px; display: flex; align-items: center; gap: 6px; overflow-x: auto; }
+.nav-brand { font-weight: 700; font-size: 14px; white-space: nowrap; background: linear-gradient(135deg, var(--accent), var(--accent3)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.nav a { color: var(--text-secondary); text-decoration: none; font-size: 11px; white-space: nowrap; padding: 4px 7px; border-radius: 6px; transition: all 0.2s; }
+.nav a:hover { color: var(--text); background: var(--bg-card); }
+.nav a.active { color: var(--accent); background: rgba(240,160,96,0.1); }
+.nav .sep { color: var(--border); margin: 0 1px; font-size: 10px; }
+.container { max-width: 1100px; margin: 0 auto; padding: 24px 20px; }
+.page-title { font-size: 22px; font-weight: 700; margin-bottom: 24px; display: flex; align-items: center; gap: 10px; }
+.page-title .emoji { font-size: 28px; }
+.page-tag { font-size: 12px; padding: 2px 10px; border-radius: 12px; font-weight: 600; }
+.tag-hot { background: rgba(224,85,85,0.15); color: var(--danger); }
+.tag-rec { background: rgba(184,146,224,0.15); color: var(--accent5); }
+.tag-new { background: rgba(240,160,96,0.15); color: var(--accent); }
+.badge { display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 11px; font-weight: 600; white-space: nowrap; }
+.badge-green { background: rgba(92,184,120,0.15); color: var(--accent2); }
+.badge-yellow { background: rgba(224,176,64,0.15); color: var(--accent3); }
+.badge-red { background: rgba(224,85,85,0.15); color: var(--danger); }
+.price-range { font-family: 'SF Mono', 'Cascadia Code', monospace; font-size: 12px; color: var(--accent6); }
+.analysis-box { background: rgba(240,160,96,0.04); border: 1px solid rgba(240,160,96,0.15); border-radius: var(--radius-sm); padding: 16px 20px; margin-top: 20px; }
+.analysis-box h4 { color: var(--accent); font-size: 14px; margin-bottom: 8px; }
+.analysis-box p, .analysis-box ul { font-size: 13px; color: var(--text-secondary); margin: 4px 0; }
+.analysis-box ul { padding-left: 18px; }
+.analysis-box li { margin: 3px 0; }
+table { width: 100%; border-collapse: collapse; margin: 12px 0 20px; font-size: 13px; }
+th { text-align: left; padding: 10px 12px; background: rgba(255,255,255,0.04); border-bottom: 2px solid var(--border); color: var(--text-secondary); font-weight: 600; font-size: 12px; text-transform: uppercase; }
+td { padding: 10px 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
+tr:hover td { background: rgba(255,255,255,0.02); }
+footer { text-align: center; padding: 32px 20px; border-top: 1px solid var(--border); margin-top: 48px; color: var(--text-tertiary); font-size: 12px; }
+footer a { color: var(--accent); }
+.scroll-top { position: fixed; bottom: 24px; right: 24px; width: 40px; height: 40px; border-radius: 50%; background: var(--accent); color: #fff; border: none; cursor: pointer; font-size: 18px; display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s; z-index: 99; }
+.scroll-top.visible { opacity: 1; }
+@media (max-width: 768px) { .container { padding: 16px 12px; } table { display: block; overflow-x: auto; } }
+</style>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-brand">🐾 宠物赛道调研</a>
+  <span class="sep">|</span>
+  <a href="index.html">🏠</a>
+  <a href="food.html">🍖食品</a>
+  <a href="supplies.html">🏠用品</a>
+  <a href="toys.html">🎾玩具</a>
+  <a href="grooming.html">✂️洗护</a>
+  <a href="cleaning.html">🧴消杀</a>
+  <a href="travel.html">🚗出行</a>
+  <a href="apparel.html">👔服饰</a>
+  <a href="health.html">💊健康</a>
+  <a href="pet-med.html">🩺药品</a>
+  <a href="training.html">🎓训练</a>
+  <a href="smart.html">📱智能</a>
+  <a href="aqua-pet.html">🐠水族</a>
+  <a href="birds.html">🐦鸟类</a>
+  <a href="reptile.html">🦎爬宠</a>
+  <a href="gift.html">🎁礼盒</a>
+</nav>
+<div class="container">
+  <div class="page-title">
+    <span class="emoji">🦎</span>
+    爬宠/异宠用品
+    <span class="page-tag tag-new">垂直蓝海</span>
+  </div>
+  <p style="color:var(--text-secondary);font-size:15px;margin-bottom:24px;">龟·蜥蜴·蛇·蜘蛛·角蛙 — 异宠圈层精准人群，竞争少利润高</p>
+  <table>
+<thead><tr><th style="width:16%">细分品类</th><th style="width:37%">说明</th><th style="width:12%">价格区间</th><th style="width:15%">电商适配度</th><th style="width:20%">代表品牌</th></tr></thead>
+<tbody>
+<tr><td><strong>爬宠饲养箱/缸</strong></td><td>玻璃/亚克力/网笼，守宫/鬃狮蜥/蛇/角蛙各尺寸适配</td><td class="price-range">¥60-500</td><td><span class="badge badge-green">⭐4/5 好</span></td><td>Repti Zoo、Exo Terra、Zilla</td></tr>
+<tr><td><strong>UVA/UVB/加热灯</strong></td><td>爬宠必需阳光模拟设备，日灯/夜灯/陶瓷加热器</td><td class="price-range">¥20-150</td><td><span class="badge badge-green">⭐5/5 极佳</span></td><td>Exo Terra、Repti Zoo、Zoo Med</td></tr>
+<tr><td><strong>温控器/温湿度计</strong></td><td>爬宠生存第一要素=温度+湿度，精准控制=必买</td><td class="price-range">¥30-150</td><td><span class="badge badge-green">⭐5/5 极佳</span></td><td>Inkbird、Zoo Med、Repti Zoo</td></tr>
+<tr><td><strong>爬宠垫材</strong></td><td>树皮/椰土/爬沙/纸粒/玉米芯，各种爬宠适配不同垫材</td><td class="price-range">¥15-60/包</td><td><span class="badge badge-green">⭐5/5 极佳</span></td><td>Zoo Med、Repti Zoo、Exo Terra</td></tr>
+<tr><td><strong>龟粮/龟缸/晒背台</strong></td><td>水龟粮+龟缸+浮台晒背，巴西龟/草龟/蛋龟每一只都需要</td><td class="price-range">¥20-200</td><td><span class="badge badge-green">⭐5/5 极佳</span></td><td>命脉、ZOOMED、育归</td></tr>
+<tr><td><strong>爬宠钙粉/维生素</strong></td><td>含D3钙粉+综合维生素，爬宠缺钙=致命，每周必加</td><td class="price-range">¥25-80</td><td><span class="badge badge-green">⭐5/5 极佳</span></td><td>Rep-Cal、Zoo Med、Exo Terra</td></tr>
+<tr><td><strong>活体饲料</strong></td><td>面包虫/大麦虫/蟋蟀/杜比亚蟑螂/樱桃蟑螂，活体=技术壁垒</td><td class="price-range">¥10-50/份</td><td><span class="badge badge-green">⭐3/5 中等</span></td><td>各类专业爬宠店/养殖户</td></tr>
+</tbody></table>
+<div class="analysis-box"><h4>🎯 电商切入策略</h4><p>爬宠是<strong>垂直蓝海中的蓝海</strong>。京东/淘宝独立分类，拼多多和抖音尚未充分覆盖。精准圈层+高客单+高复购。建议策略：</p><ul><li><strong>加热灯+温控设备=消耗品之王</strong>：UVA/UVB灯管每6-12个月必须更换（光衰后失效），温控器每缸必配，精准刚需=高复购</li><li><strong>龟类用品=最大子市场</strong>：中国养龟人群基数大(巴西龟/草龟/蛋龟)，龟粮/龟缸/晒背台=入门三件套</li><li><strong>钙粉/维生素=持续消耗</strong>：每只爬宠每周必加，100%复购率=稳定的长尾现金流</li><li><strong>活体饲料=天然壁垒</strong>：养虫+快递活体=技术活，做好差异化可形成独家优势</li><li><strong>内容策略</strong>：守宫/Vlog/开缸造景/喂食视频=B站/小红书天然内容流，科普=信任=转化</li></ul></div>
+</div>
+<footer>
+  <p>🐾 宠物赛道产品线细分调研 v2.0</p>
+  <p style="margin-top:6px;"><a href="https://github.com/zxb20262026/pet-market-research" target="_blank">GitHub</a> · Made with ⚡️ by 小马哥</p>
+</footer>
+<button class="scroll-top" id="scrollTopBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+<script>
+window.addEventListener('scroll',()=>{document.getElementById('scrollTopBtn').classList.toggle('visible',window.scrollY>400)});
+(function(){
+  var page = location.pathname.split('/').pop() || 'index.html';
+  document.querySelectorAll('.nav a').forEach(function(a){
+    if(a.getAttribute('href')===page) a.classList.add('active');
+  });
+})();
+</script>
+</body>
+</html>
