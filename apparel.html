@@ -102,6 +102,8 @@ footer a { color: var(--accent); }
 .scroll-top.visible { opacity: 1; }
 @media (max-width: 768px) { .container { padding: 16px 12px; } table { display: block; overflow-x: auto; } .card-grid { grid-template-columns: repeat(2, 1fr); } }.opp-section table { margin-top: 8px; }.opp-section .diff-mid { color: var(--accent3); font-weight: 600; }.opp-row td { padding: 5px 12px 5px 28px !important; font-size: 12px; border-bottom: 1px dashed var(--border) !important; }.opp-row td:first-child::before { content: "└ "; color: var(--text-tertiary); }.opp-row .opp-reason { color: var(--text-secondary); font-size: 11px; }.opp-row .diff-mid { color: var(--accent3); font-weight: 600; font-size: 11px; }.opp-toggle { cursor: pointer; color: var(--accent); font-size: 11px; margin-left: 4px; user-select: none; }.opp-group { display: none; }tr:hover + .opp-group .opp-row, .opp-group:hover .opp-row { background: rgba(240,160,96,0.08); }
 
+.opp-row td { padding: 5px 8px 5px 24px !important; font-size: 12px; border-bottom: 1px dashed var(--border) !important; }.opp-row td:first-child::before { content: "└ "; color: var(--text-tertiary); }.opp-row .opp-reason { color: var(--text-secondary); font-size: 11px; }.opp-row .opp-rebuy { font-size: 11px; }.opp-row .opp-margin-high { color: var(--accent2); }.opp-row .opp-margin-low { color: var(--accent4); }.opp-row .diff-mid { color: var(--accent3); font-weight: 600; font-size: 11px; }.opp-toggle { cursor: pointer; color: var(--accent); font-size: 11px; margin-left: 4px; user-select: none; }.opp-group { display: none; }tr:hover + .opp-group .opp-row, .opp-group:hover .opp-row { background: rgba(240,160,96,0.08); }
+
 
 .opp-row { background: rgba(240,160,96,0.03); }
 .opp-row td { padding: 5px 8px 5px 24px !important; font-size: 12px; border-bottom: 1px dashed var(--border) !important; }
@@ -120,8 +122,8 @@ footer a { color: var(--accent); }
 .opp-row .diff-hard { color: var(--accent4); font-weight: 600; font-size: 11px; }
 .opp-toggle { cursor: pointer; color: var(--accent); font-size: 11px; margin-left: 4px; user-select: none; }
 .opp-toggle:hover { color: var(--accent6); }
-.opp-group { display: none; }
-.opp-group.open { display: table-row-group; }
+.opp-group { display: table-row-group; }
+.opp-group.closed { display: none; }
 tr:hover + .opp-group .opp-row, .opp-group:hover .opp-row { background: rgba(240,160,96,0.08); }
 
 </style>
@@ -152,34 +154,34 @@ tr:hover + .opp-group .opp-row, .opp-group:hover .opp-row { background: rgba(240
   <table>
 <thead><tr><th style="width:16%">细分品类</th><th style="width:37%">说明</th><th style="width:12%">价格区间</th><th style="width:15%">电商适配度</th><th style="width:20%">代表品牌</th></tr></thead>
 <tbody>
-<tr><td><strong>狗狗衣服</strong> <span class="opp-toggle" onclick="var g=this.closest('tr').nextElementSibling;g.classList.toggle('open');this.textContent=this.textContent=='+3'?'−3':'+3'">+3</span></td><td>T恤/卫衣/羽绒服/小裙子/汉服/cosplay，秋冬季爆发品类</td><td class="price-range">¥25-150</td><td><span class="badge badge-green">⭐5/5 极佳</span></td><td>Hurtta、RC Pets、Touchdog</td></tr>
+<tr><td><strong>狗狗衣服</strong> <span class="opp-toggle" onclick="var g=this.parentElement.parentElement.nextElementSibling;g.classList.toggle('closed');this.textContent=this.textContent=='−3'?'+3':'−3'">−3</span></td><td>T恤/卫衣/羽绒服/小裙子/汉服/cosplay，秋冬季爆发品类</td><td class="price-range">¥25-150</td><td><span class="badge badge-green">⭐5/5 极佳</span></td><td>Hurtta、RC Pets、Touchdog</td></tr>
 <tbody class="opp-group opp-group-狗狗衣服">
 <tr class="opp-row"><td>🟢低</td><td><span class="opp-name">四脚防水冲锋衣</span></td><td class="opp-reason">防风防水+摇粒绒内里，冬天一衣搞定</td><td class="opp-price">¥50-180</td><td class="opp-rebuy">6-12月(季节性)</td><td><span class="opp-margin opp-margin-mid">40-55%</span></td><td><span class="diff-easy">🟢低</span></td></tr>
 <tr class="opp-row"><td>🟢低</td><td><span class="opp-name">汉服/旗袍宠物装</span></td><td class="opp-reason">国潮风=小红书种草，春节/拍照冲动消费</td><td class="opp-price">¥40-120</td><td class="opp-rebuy">3-6月(节日)</td><td><span class="opp-margin opp-margin-high">50-65%</span></td><td><span class="diff-easy">🟢低</span></td></tr>
 <tr class="opp-row"><td>🟢低</td><td><span class="opp-name">法斗/柯基专用尺寸</span></td><td class="opp-reason">短体长/大胸围特殊版型，精准人群</td><td class="opp-price">¥40-120</td><td class="opp-rebuy">6-12月</td><td><span class="opp-margin opp-margin-mid">40-55%</span></td><td><span class="diff-easy">🟢低</span></td></tr>
 </tbody>
-<tr><td><strong>雨衣/防风衣</strong> <span class="opp-toggle" onclick="var g=this.closest('tr').nextElementSibling;g.classList.toggle('open');this.textContent=this.textContent=='+2'?'−2':'+2'">+2</span></td><td>狗狗冲锋衣式雨衣/连帽/四脚/反光条，实用性+颜值兼具</td><td class="price-range">¥30-180</td><td><span class="badge badge-green">⭐4/5 好</span></td><td>Ruffwear、Hurtta、Canada Pooch</td></tr>
+<tr><td><strong>雨衣/防风衣</strong> <span class="opp-toggle" onclick="var g=this.parentElement.parentElement.nextElementSibling;g.classList.toggle('closed');this.textContent=this.textContent=='−2'?'+2':'−2'">−2</span></td><td>狗狗冲锋衣式雨衣/连帽/四脚/反光条，实用性+颜值兼具</td><td class="price-range">¥30-180</td><td><span class="badge badge-green">⭐4/5 好</span></td><td>Ruffwear、Hurtta、Canada Pooch</td></tr>
 <tbody class="opp-group opp-group-雨衣-防风衣">
 <tr class="opp-row"><td>🟢低</td><td><span class="opp-name">全包四脚连帽雨衣</span></td><td class="opp-reason">帽子+四脚+腹部全覆盖，雨天不湿身</td><td class="opp-price">¥40-120</td><td class="opp-rebuy">12-24月</td><td><span class="opp-margin opp-margin-mid">40-55%</span></td><td><span class="diff-easy">🟢低</span></td></tr>
 <tr class="opp-row"><td>🟢低</td><td><span class="opp-name">透明雨衣(主人同款)</span></td><td class="opp-reason">主人+宠物同款套装，情侣/亲子出街</td><td class="opp-price">¥60-200</td><td class="opp-rebuy">12-24月</td><td><span class="opp-margin opp-margin-mid">40-55%</span></td><td><span class="diff-easy">🟢低</span></td></tr>
 </tbody>
-<tr><td><strong>鞋子/袜子/护爪</strong> <span class="opp-toggle" onclick="var g=this.closest('tr').nextElementSibling;g.classList.toggle('open');this.textContent=this.textContent=='+3'?'−3':'+3'">+3</span></td><td>防滑鞋/防烫鞋/雪地靴/袜子/护爪膏，城市养狗防护刚需</td><td class="price-range">¥25-120</td><td><span class="badge badge-green">⭐4/5 好</span></td><td>Muttluks、Pawz、QUMY</td></tr>
+<tr><td><strong>鞋子/袜子/护爪</strong> <span class="opp-toggle" onclick="var g=this.parentElement.parentElement.nextElementSibling;g.classList.toggle('closed');this.textContent=this.textContent=='−3'?'+3':'−3'">−3</span></td><td>防滑鞋/防烫鞋/雪地靴/袜子/护爪膏，城市养狗防护刚需</td><td class="price-range">¥25-120</td><td><span class="badge badge-green">⭐4/5 好</span></td><td>Muttluks、Pawz、QUMY</td></tr>
 <tbody class="opp-group opp-group-鞋子-袜子-护爪">
 <tr class="opp-row"><td>🟢低</td><td><span class="opp-name">硅胶防滑室内袜</span></td><td class="opp-reason">猫咪/小型犬室内防滑，木地板家庭刚需</td><td class="opp-price">¥15-40</td><td class="opp-rebuy">3-6月</td><td><span class="opp-margin opp-margin-high">50-65%</span></td><td><span class="diff-easy">🟢低</span></td></tr>
 <tr class="opp-row"><td>🟢低</td><td><span class="opp-name">夏季防烫宠物鞋</span></td><td class="opp-reason">柏油路60°C+烫伤肉垫=强场景唤醒</td><td class="opp-price">¥25-60</td><td class="opp-rebuy">3-6月(季节性)</td><td><span class="opp-margin opp-margin-high">45-60%</span></td><td><span class="diff-easy">🟢低</span></td></tr>
 <tr class="opp-row"><td>🟢低</td><td><span class="opp-name">户外防割爪套</span></td><td class="opp-reason">登山/碎石路防割伤，户外狗精准</td><td class="opp-price">¥30-80</td><td class="opp-rebuy">3-6月</td><td><span class="opp-margin opp-margin-mid">40-55%</span></td><td><span class="diff-easy">🟢低</span></td></tr>
 </tbody>
-<tr><td><strong>项圈/围巾/领结</strong> <span class="opp-toggle" onclick="var g=this.closest('tr').nextElementSibling;g.classList.toggle('open');this.textContent=this.textContent=='+2'?'−2':'+2'">+2</span></td><td>节日款/定制名字/材质升级(真皮/手工)，低客单但高连带</td><td class="price-range">¥10-60</td><td><span class="badge badge-green">⭐5/5 极佳</span></td><td>CozyVest、Blueberry Pet、Touchdog</td></tr>
+<tr><td><strong>项圈/围巾/领结</strong> <span class="opp-toggle" onclick="var g=this.parentElement.parentElement.nextElementSibling;g.classList.toggle('closed');this.textContent=this.textContent=='−2'?'+2':'−2'">−2</span></td><td>节日款/定制名字/材质升级(真皮/手工)，低客单但高连带</td><td class="price-range">¥10-60</td><td><span class="badge badge-green">⭐5/5 极佳</span></td><td>CozyVest、Blueberry Pet、Touchdog</td></tr>
 <tbody class="opp-group opp-group-项圈-围巾-领结">
 <tr class="opp-row"><td>🟢低</td><td><span class="opp-name">手工真皮定制项圈</span></td><td class="opp-reason">刻名字+电话+真皮，高端定位=礼品</td><td class="opp-price">¥60-200</td><td class="opp-rebuy">12-24月</td><td><span class="opp-margin opp-margin-high">45-60%</span></td><td><span class="diff-easy">🟢低</span></td></tr>
 <tr class="opp-row"><td>🟢低</td><td><span class="opp-name">节日主题领结套装</span></td><td class="opp-reason">春节/圣诞/万圣节限定，低客单高连带</td><td class="opp-price">¥15-40/个</td><td class="opp-rebuy">1-3月(节日)</td><td><span class="opp-margin opp-margin-high">55-70%</span></td><td><span class="diff-easy">🟢低</span></td></tr>
 </tbody>
-<tr><td><strong>头饰/发夹</strong> <span class="opp-toggle" onclick="var g=this.closest('tr').nextElementSibling;g.classList.toggle('open');this.textContent=this.textContent=='+2'?'−2':'+2'">+2</span></td><td>蝴蝶结/花环/帽子/墨镜，拍照场景=强冲动消费</td><td class="price-range">¥5-30</td><td><span class="badge badge-green">⭐5/5 极佳</span></td><td>各类白牌/手作店</td></tr>
+<tr><td><strong>头饰/发夹</strong> <span class="opp-toggle" onclick="var g=this.parentElement.parentElement.nextElementSibling;g.classList.toggle('closed');this.textContent=this.textContent=='−2'?'+2':'−2'">−2</span></td><td>蝴蝶结/花环/帽子/墨镜，拍照场景=强冲动消费</td><td class="price-range">¥5-30</td><td><span class="badge badge-green">⭐5/5 极佳</span></td><td>各类白牌/手作店</td></tr>
 <tbody class="opp-group opp-group-头饰-发夹">
 <tr class="opp-row"><td>🟢低</td><td><span class="opp-name">宠物生日派对帽</span></td><td class="opp-reason">绶带+小皇冠，宠物生日=爆发场景</td><td class="opp-price">¥10-30</td><td class="opp-rebuy">单次(节日)</td><td><span class="opp-margin opp-margin-high">60-75%</span></td><td><span class="diff-easy">🟢低</span></td></tr>
 <tr class="opp-row"><td>🟢低</td><td><span class="opp-name">宠物发夹/蝴蝶结套装</span></td><td class="opp-reason">多色混装，每次出门换造型=高频复购</td><td class="opp-price">¥10-25</td><td class="opp-rebuy">1-2月</td><td><span class="opp-margin opp-margin-high">60-75%</span></td><td><span class="diff-easy">🟢低</span></td></tr>
 </tbody>
-<tr><td><strong>宠物亲子装</strong> <span class="opp-toggle" onclick="var g=this.closest('tr').nextElementSibling;g.classList.toggle('open');this.textContent=this.textContent=='+2'?'−2':'+2'">+2</span></td><td>主人+宠物同款，节日/拍照场景，情感消费溢价高</td><td class="price-range">¥60-300</td><td><span class="badge badge-green">⭐4/5 好</span></td><td>HappinessIs、Spark Paws、Touchdog</td></tr>
+<tr><td><strong>宠物亲子装</strong> <span class="opp-toggle" onclick="var g=this.parentElement.parentElement.nextElementSibling;g.classList.toggle('closed');this.textContent=this.textContent=='−2'?'+2':'−2'">−2</span></td><td>主人+宠物同款，节日/拍照场景，情感消费溢价高</td><td class="price-range">¥60-300</td><td><span class="badge badge-green">⭐4/5 好</span></td><td>HappinessIs、Spark Paws、Touchdog</td></tr>
 <tbody class="opp-group opp-group-宠物亲子装">
 <tr class="opp-row"><td>🟢低</td><td><span class="opp-name">主人开衫+宠物同款</span></td><td class="opp-reason">同色系/同花纹，周末出街=社交货币</td><td class="opp-price">¥80-300</td><td class="opp-rebuy">6-12月(季节性)</td><td><span class="opp-margin opp-margin-mid">40-55%</span></td><td><span class="diff-easy">🟢低</span></td></tr>
 <tr class="opp-row"><td>🟢低</td><td><span class="opp-name">节日亲子主题装</span></td><td class="opp-reason">圣诞/春节全家福套装，可预测爆发</td><td class="opp-price">¥100-400</td><td class="opp-rebuy">单次(节日)</td><td><span class="opp-margin opp-margin-mid">40-55%</span></td><td><span class="diff-easy">🟢低</span></td></tr>
