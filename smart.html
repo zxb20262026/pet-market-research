@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🐾 智能设备 | 宠物赛道调研</title>
+<style>
+:root {
+  --bg: #1a1410; --bg-card: #241e18; --bg-card-hover: #2e2720;
+  --border: #3d352d; --text: #e8d5c4; --text-secondary: #8b7d6e;
+  --text-tertiary: #6b5f52; --accent: #f0a060; --accent2: #5cb878;
+  --accent3: #e0b040; --accent4: #e05555; --accent5: #b892e0;
+  --accent6: #f0c080; --danger: #e05555;
+  --radius: 12px; --radius-sm: 8px;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  background: var(--bg); color: var(--text); line-height: 1.6; min-height: 100vh;
+}
+.nav {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(26,20,16,0.94); backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border); padding: 10px 20px;
+  display: flex; align-items: center; gap: 8px; overflow-x: auto;
+}
+.nav-brand { font-weight: 700; font-size: 15px; white-space: nowrap;
+  background: linear-gradient(135deg, var(--accent), var(--accent3));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.nav a { color: var(--text-secondary); text-decoration: none; font-size: 12px;
+  white-space: nowrap; padding: 4px 8px; border-radius: 6px; transition: all 0.2s; }
+.nav a:hover { color: var(--text); background: var(--bg-card); }
+.nav a.active { color: var(--accent); background: rgba(240,160,96,0.1); }
+.nav .sep { color: var(--border); margin: 0 2px; font-size: 10px; }
+.container { max-width: 1100px; margin: 0 auto; padding: 24px 20px; }
+.hero {
+  text-align: center; padding: 40px 20px 30px;
+  background: linear-gradient(180deg, rgba(240,160,96,0.06) 0%, transparent 100%);
+  border-bottom: 1px solid var(--border); margin-bottom: 32px;
+}
+.hero h1 { font-size: 28px; font-weight: 800; margin-bottom: 8px;
+  background: linear-gradient(135deg, #f0a060, #f0c080);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.hero .subtitle { color: var(--text-secondary); font-size: 15px; }
+.page-title { font-size: 22px; font-weight: 700; margin-bottom: 24px; display: flex; align-items: center; gap: 10px; }
+.page-title .emoji { font-size: 28px; }
+.page-tag { font-size: 12px; padding: 2px 10px; border-radius: 12px; font-weight: 600; }
+.tag-own { background: rgba(92,184,120,0.15); color: var(--accent2); }
+.tag-hot { background: rgba(224,85,85,0.15); color: var(--danger); }
+.tag-rec { background: rgba(184,146,224,0.15); color: var(--accent5); }
+.badge { display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 11px; font-weight: 600; white-space: nowrap; }
+.badge-green { background: rgba(92,184,120,0.15); color: var(--accent2); }
+.badge-yellow { background: rgba(224,176,64,0.15); color: var(--accent3); }
+.badge-red { background: rgba(224,85,85,0.15); color: var(--danger); }
+.badge-blue { background: rgba(240,160,96,0.15); color: var(--accent); }
+.price-range { font-family: 'SF Mono', 'Cascadia Code', monospace; font-size: 12px; color: var(--accent6); }
+.analysis-box { background: rgba(240,160,96,0.04); border: 1px solid rgba(240,160,96,0.15); border-radius: var(--radius-sm); padding: 16px 20px; margin-top: 20px; }
+.analysis-box h4 { color: var(--accent); font-size: 14px; margin-bottom: 8px; }
+.analysis-box p, .analysis-box ul { font-size: 13px; color: var(--text-secondary); margin: 4px 0; }
+.analysis-box ul { padding-left: 18px; }
+.analysis-box li { margin: 3px 0; }
+table { width: 100%; border-collapse: collapse; margin: 12px 0 20px; font-size: 13px; }
+th { text-align: left; padding: 10px 12px; background: rgba(255,255,255,0.04); border-bottom: 2px solid var(--border); color: var(--text-secondary); font-weight: 600; font-size: 12px; text-transform: uppercase; }
+td { padding: 10px 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
+tr:hover td { background: rgba(255,255,255,0.02); }
+.card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 12px; margin: 24px 0; }
+.card-link { display: block; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px 16px; text-decoration: none; transition: all 0.2s; }
+.card-link:hover { border-color: var(--accent); background: var(--bg-card-hover); transform: translateY(-2px); }
+.card-link .card-emoji { font-size: 32px; margin-bottom: 8px; }
+.card-link .card-title { color: var(--text); font-size: 15px; font-weight: 700; margin-bottom: 4px; }
+.card-link .card-desc { color: var(--text-secondary); font-size: 12px; }
+.card-link .card-tag { margin-top: 8px; }
+.exec-summary { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px 28px; margin-bottom: 32px; }
+.exec-summary h2 { font-size: 18px; margin-bottom: 12px; color: var(--accent2); }
+.exec-summary p { font-size: 14px; color: var(--text-secondary); }
+.metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin-bottom: 16px; }
+.metric-card { background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 14px; text-align: center; }
+.metric-card .value { font-size: 22px; font-weight: 700; color: var(--accent); }
+.metric-card .label { font-size: 11px; color: var(--text-secondary); margin-top: 4px; }
+.priority-section { margin-top: 32px; }
+.priority-section h2 { font-size: 20px; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+.priority-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 14px; }
+.priority-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px; border-left: 4px solid var(--accent2); }
+.priority-card.p2 { border-left-color: var(--accent3); }
+.priority-card.p3 { border-left-color: var(--accent5); }
+.priority-card h4 { font-size: 14px; margin-bottom: 6px; }
+.priority-card p { font-size: 13px; color: var(--text-secondary); }
+.fit-meter { display: flex; align-items: center; gap: 8px; margin: 6px 0; }
+.fit-meter .bar { height: 5px; border-radius: 3px; background: var(--border); flex: 1; overflow: hidden; }
+.fit-meter .fill { height: 100%; border-radius: 3px; }
+.fit-meter .score { font-size: 13px; font-weight: 700; min-width: 28px; text-align: right; }
+.roadmap { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 16px; }
+.roadmap-card { flex: 1; min-width: 200px; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px; }
+.roadmap-card h4 { font-size: 14px; margin-bottom: 8px; }
+.roadmap-card p { font-size: 12px; color: var(--text-secondary); }
+.roadmap-card.p1 { border-color: var(--accent2); }
+.roadmap-card.p2 { border-color: var(--accent3); }
+.roadmap-card.p3 { border-color: var(--accent5); }
+footer { text-align: center; padding: 32px 20px; border-top: 1px solid var(--border); margin-top: 48px; color: var(--text-tertiary); font-size: 12px; }
+footer a { color: var(--accent); }
+.scroll-top { position: fixed; bottom: 24px; right: 24px; width: 40px; height: 40px; border-radius: 50%; background: var(--accent); color: #fff; border: none; cursor: pointer; font-size: 18px; display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s; z-index: 99; }
+.scroll-top.visible { opacity: 1; }
+@media (max-width: 768px) { .container { padding: 16px 12px; } table { display: block; overflow-x: auto; } .card-grid { grid-template-columns: repeat(2, 1fr); } }
+</style>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-brand">🐾 宠物赛道调研</a>
+  <span class="sep">|</span>
+  <a href="index.html">🏠 首页</a>
+  <a href="food.html">🍖食品</a>
+  <a href="supplies.html">🏠用品</a>
+  <a href="toys.html">🎾玩具</a>
+  <a href="grooming.html">✂️洗护</a>
+  <a href="travel.html">🚗出行</a>
+  <a href="apparel.html">👔服饰</a>
+  <a href="health.html">💊健康</a>
+  <a href="smart.html">📱智能</a>
+  <a href="aqua-pet.html">🐠水族</a>
+  <a href="gift.html">🎁礼盒</a>
+</nav>
+<div class="container">
+  <div class="page-title">
+    <span class="emoji">📱</span>
+    智能设备
+    <span class="page-tag tag-hot">高客单</span>
+  </div>
+  <p style="color:var(--text-secondary);font-size:15px;margin-bottom:24px;">喂食器·饮水机·猫砂盆·GPS — 宠物消费升级最大红利</p>
+  <table>
+<thead><tr><th style="width:16%">细分品类</th><th style="width:37%">说明</th><th style="width:12%">价格区间</th><th style="width:15%">电商适配度</th><th style="width:20%">代表品牌</th></tr></thead>
+<tbody>
+<tr><td><strong>智能喂食器</strong></td><td>APP远程控粮/定时定量/称重/防卡粮/双仓（干湿分离）</td><td class="price-range">¥200-800</td><td><span class="badge badge-green">⭐5/5 极佳</span></td><td>小佩、霍曼、PETKIT</td></tr>
+<tr><td><strong>智能饮水机</strong></td><td>循环过滤/静音水泵/UV杀菌/水位提醒，猫咪偏好流动水</td><td class="price-range">¥100-400</td><td><span class="badge badge-green">⭐5/5 极佳</span></td><td>小佩、霍曼、Catit</td></tr>
+<tr><td><strong>智能猫砂盆</strong></td><td>自动铲屎/APP监控/除臭/多猫识别，宠物智能第一爆品</td><td class="price-range">¥800-3000</td><td><span class="badge badge-green">⭐5/5 极佳</span></td><td>小佩、CATLINK、Litter-Robot</td></tr>
+<tr><td><strong>GPS定位器</strong></td><td>实时定位/电子围栏/轨迹记录，防走失刚需=情感溢价高</td><td class="price-range">¥100-500</td><td><span class="badge badge-green">⭐4/5 好</span></td><td>Tractive、Whistle、陪彼</td></tr>
+<tr><td><strong>智能摄像头/互动</strong></td><td>云台/双向语音/激光逗猫/零食弹射/夜视，办公族刚需</td><td class="price-range">¥150-500</td><td><span class="badge badge-green">⭐5/5 极佳</span></td><td>Furbo、小佩、Enabot</td></tr>
+<tr><td><strong>智能烘干箱</strong></td><td>宠物专用烘干箱，恒温/静音/负离子，替代吹风机+美容院</td><td class="price-range">¥500-2000</td><td><span class="badge badge-green">⭐4/5 好</span></td><td>鸟语花香、霍曼、pikapet</td></tr>
+<tr><td><strong>智能项圈/健康监测</strong></td><td>活动量/睡眠/心率/体温监测，数据驱动健康管理</td><td class="price-range">¥200-600</td><td><span class="badge badge-green">⭐3/5 中等</span></td><td>Whistle、FitBark、PetPace</td></tr>
+</tbody></table>
+<div class="analysis-box"><h4>🎯 电商切入策略</h4><p>智能设备是<strong>客单价最高+技术壁垒最强</strong>的宠物品类。建议策略：</p><ul><li><strong>智能饮水机+喂食器=最佳入门</strong>：门槛适中（¥100-400），市场教育已成熟，但外观设计/APP体验还有差异化空间</li><li><strong>智能猫砂盆=高壁垒高回报</strong>：解决「每天铲屎」强痛点，客单价¥1000+利润空间大，但安全标准要求极高（卡猫事故=品牌毁灭）</li><li><strong>跨境电商机会</strong>：小佩/CATLINK已在海外验证中国品牌可行，Amazon宠物智能赛道年增50%+</li><li><strong>⚠️ 安全第一</strong>：智能设备涉及水电+动物生命安全，必须通过CE/FCC/UL等认证，品控不能有任何妥协</li></ul></div>
+</div>
+<footer>
+  <p>🐾 宠物赛道产品线细分调研 v1.0</p>
+  <p style="margin-top:6px;"><a href="https://github.com/zxb20262026/pet-market-research" target="_blank">GitHub</a> · Made with ⚡️ by 小马哥</p>
+</footer>
+<button class="scroll-top" id="scrollTopBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+<script>
+window.addEventListener('scroll',()=>{document.getElementById('scrollTopBtn').classList.toggle('visible',window.scrollY>400)});
+(function(){
+  var page = location.pathname.split('/').pop() || 'index.html';
+  document.querySelectorAll('.nav a').forEach(function(a){
+    if(a.getAttribute('href')===page) a.classList.add('active');
+  });
+})();
+</script>
+</body>
+</html>
