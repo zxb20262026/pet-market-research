@@ -126,6 +126,11 @@ footer a { color: var(--accent); }
 .opp-group.closed { display: none; }
 tr:hover + .opp-group .opp-row, .opp-group:hover .opp-row { background: rgba(240,160,96,0.08); }
 
+
+.opp-header td { padding: 4px 8px 4px 24px !important; font-size: 10px; color: var(--text-tertiary); border-bottom: 1px solid var(--border) !important; background: rgba(240,160,96,0.05); text-transform: uppercase; letter-spacing: 0.5px; }
+.opp-header td:first-child { color: var(--text-tertiary); }
+.opp-header td:first-child::before { content: ""; }
+
 </style>
 </head>
 <body>
@@ -161,36 +166,43 @@ tr:hover + .opp-group .opp-row, .opp-group:hover .opp-row { background: rgba(240
 <tbody>
 <tr><td><strong>新手养宠套装</strong> <span class="opp-toggle" onclick="var g=this.parentElement.parentElement.nextElementSibling;g.classList.toggle('closed');this.textContent=this.textContent=='−2'?'+2':'−2'">−2</span></td><td>猫砂盆+猫砂+猫粮+碗+玩具+抓板，一站式解决新手焦虑</td><td class="price-range">¥200-600</td><td><span class="badge badge-green">⭐5/5 极佳</span></td><td>pidan、小佩、网易严选</td></tr>
 <tbody class="opp-group opp-group-新手养宠套装">
+<tr class="opp-header"><td>门槛</td><td>机会点产品</td><td>机会分析</td><td>客单价</td><td>复购率</td><td>利润率</td><td>门槛</td></tr>
 <tr class="opp-row"><td>🟡中</td><td><span class="opp-name">猫咪接猫大礼包</span></td><td class="opp-reason">猫砂盆+砂+粮+碗+玩具+抓板+梳子全套</td><td class="opp-price">¥200-600</td><td class="opp-rebuy">单次(偶尔复购)</td><td><span class="opp-margin opp-margin-low">25-35%</span></td><td><span class="diff-mid">🟡中</span></td></tr>
 <tr class="opp-row"><td>🟡中</td><td><span class="opp-name">幼犬到家必备套装</span></td><td class="opp-reason">尿垫+粮+碗+玩具+牵引+梳子+磨牙棒</td><td class="opp-price">¥200-600</td><td class="opp-rebuy">单次(偶尔复购)</td><td><span class="opp-margin opp-margin-low">25-35%</span></td><td><span class="diff-mid">🟡中</span></td></tr>
 </tbody>
 <tr><td><strong>节日主题礼盒</strong> <span class="opp-toggle" onclick="var g=this.parentElement.parentElement.nextElementSibling;g.classList.toggle('closed');this.textContent=this.textContent=='−3'?'+3':'−3'">−3</span></td><td>春节/圣诞节/万圣节/生日，限定包装+主题玩具零食</td><td class="price-range">¥80-300</td><td><span class="badge badge-green">⭐5/5 极佳</span></td><td>BarkBox、pidan、Touchdog</td></tr>
 <tbody class="opp-group opp-group-节日主题礼盒">
+<tr class="opp-header"><td>门槛</td><td>机会点产品</td><td>机会分析</td><td>客单价</td><td>复购率</td><td>利润率</td><td>门槛</td></tr>
 <tr class="opp-row"><td>🟡中</td><td><span class="opp-name">圣诞倒数日历礼盒</span></td><td class="opp-reason">24格每天拆一个零食/玩具，圣诞月期待</td><td class="opp-price">¥150-400</td><td class="opp-rebuy">年1次(节日)</td><td><span class="opp-margin opp-margin-mid">35-45%</span></td><td><span class="diff-mid">🟡中</span></td></tr>
 <tr class="opp-row"><td>🟢低</td><td><span class="opp-name">新年宠物红包礼盒</span></td><td class="opp-reason">国潮包装+零食+对联+小旗袍，春节送礼</td><td class="opp-price">¥80-250</td><td class="opp-rebuy">年1次(节日)</td><td><span class="opp-margin opp-margin-mid">35-50%</span></td><td><span class="diff-easy">🟢低</span></td></tr>
 <tr class="opp-row"><td>🟢低</td><td><span class="opp-name">万圣节宠物变装礼盒</span></td><td class="opp-reason">披风+头饰+南瓜主题零食，10月爆发</td><td class="opp-price">¥60-180</td><td class="opp-rebuy">年1次(节日)</td><td><span class="opp-margin opp-margin-mid">40-55%</span></td><td><span class="diff-easy">🟢低</span></td></tr>
 </tbody>
 <tr><td><strong>订阅盲盒</strong> <span class="opp-toggle" onclick="var g=this.parentElement.parentElement.nextElementSibling;g.classList.toggle('closed');this.textContent=this.textContent=='−2'?'+2':'−2'">−2</span></td><td>月付制，每月寄送2-5件宠物玩具零食，惊喜感+持续复购</td><td class="price-range">¥50-150/月</td><td><span class="badge badge-green">⭐5/5 极佳</span></td><td>BarkBox、KitNipBox、魔力猫盒</td></tr>
 <tbody class="opp-group opp-group-订阅盲盒">
+<tr class="opp-header"><td>门槛</td><td>机会点产品</td><td>机会分析</td><td>客单价</td><td>复购率</td><td>利润率</td><td>门槛</td></tr>
 <tr class="opp-row"><td>🟡中</td><td><span class="opp-name">月度主题盲盒</span></td><td class="opp-reason">每月1个主题+5件玩具零食，锁定复购</td><td class="opp-price">¥50-150/月</td><td class="opp-rebuy">每月(年12次)</td><td><span class="opp-margin opp-margin-mid">30-40%</span></td><td><span class="diff-mid">🟡中</span></td></tr>
 <tr class="opp-row"><td>🟢低</td><td><span class="opp-name">猫咪月度零食订阅</span></td><td class="opp-reason">每月4包不同口味冻干/猫条</td><td class="opp-price">¥40-100/月</td><td class="opp-rebuy">每月(年12次)</td><td><span class="opp-margin opp-margin-mid">35-45%</span></td><td><span class="diff-easy">🟢低</span></td></tr>
 </tbody>
 <tr><td><strong>宠物生日派对套装</strong> <span class="opp-toggle" onclick="var g=this.parentElement.parentElement.nextElementSibling;g.classList.toggle('closed');this.textContent=this.textContent=='−2'?'+2':'−2'">−2</span></td><td>蛋糕+帽子+气球+拍照道具，拟人化消费极致体现</td><td class="price-range">¥100-400</td><td><span class="badge badge-green">⭐4/5 好</span></td><td>各类手作店/宠物蛋糕店</td></tr>
 <tbody class="opp-group opp-group-宠物生日派对套装">
+<tr class="opp-header"><td>门槛</td><td>机会点产品</td><td>机会分析</td><td>客单价</td><td>复购率</td><td>利润率</td><td>门槛</td></tr>
 <tr class="opp-row"><td>🟢低</td><td><span class="opp-name">宠物生日派对套餐</span></td><td class="opp-reason">宠物蛋糕+蜡烛+生日帽+拍照道具+气球</td><td class="opp-price">¥100-300</td><td class="opp-rebuy">年1次</td><td><span class="opp-margin opp-margin-mid">40-55%</span></td><td><span class="diff-easy">🟢低</span></td></tr>
 <tr class="opp-row"><td>🟢低</td><td><span class="opp-name">猫狗庆生零食礼篮</span></td><td class="opp-reason">多品牌零食拼装+生日贺卡=礼品差异化</td><td class="opp-price">¥80-200</td><td class="opp-rebuy">年1次</td><td><span class="opp-margin opp-margin-mid">35-50%</span></td><td><span class="diff-easy">🟢低</span></td></tr>
 </tbody>
 <tr><td><strong>送朋友/送礼专用</strong> <span class="opp-toggle" onclick="var g=this.parentElement.parentElement.nextElementSibling;g.classList.toggle('closed');this.textContent=this.textContent=='−2'?'+2':'−2'">−2</span></td><td>高端包装+品牌感，送养宠朋友/乔迁/生日，社交礼品场景</td><td class="price-range">¥100-500</td><td><span class="badge badge-green">⭐4/5 好</span></td><td>pidan、猫的天空之城</td></tr>
 <tbody class="opp-group opp-group-送朋友-送礼专用">
+<tr class="opp-header"><td>门槛</td><td>机会点产品</td><td>机会分析</td><td>客单价</td><td>复购率</td><td>利润率</td><td>门槛</td></tr>
 <tr class="opp-row"><td>🟡中</td><td><span class="opp-name">宠物主题伴手礼盒</span></td><td class="opp-reason">送养猫朋友的乔迁礼/生日礼，品牌感</td><td class="opp-price">¥100-300</td><td class="opp-rebuy">偶尔送礼</td><td><span class="opp-margin opp-margin-mid">35-45%</span></td><td><span class="diff-mid">🟡中</span></td></tr>
 <tr class="opp-row"><td>🟢低</td><td><span class="opp-name">宠物零食品鉴装礼盒</span></td><td class="opp-reason">8-10种不同品牌试用装，品鉴概念</td><td class="opp-price">¥60-150</td><td class="opp-rebuy">偶尔送礼</td><td><span class="opp-margin opp-margin-mid">35-45%</span></td><td><span class="diff-easy">🟢低</span></td></tr>
 </tbody>
 <tr><td><strong>领养礼盒/公益款</strong> <span class="opp-toggle" onclick="var g=this.parentElement.parentElement.nextElementSibling;g.classList.toggle('closed');this.textContent=this.textContent=='−1'?'+1':'−1'">−1</span></td><td>领养机构合作/救助站联名，公益属性+社交货币</td><td class="price-range">¥50-200</td><td><span class="badge badge-green">⭐3/5 中等</span></td><td>BondVet、各类公益组织联名</td></tr>
 <tbody class="opp-group opp-group-领养礼盒-公益款">
+<tr class="opp-header"><td>门槛</td><td>机会点产品</td><td>机会分析</td><td>客单价</td><td>复购率</td><td>利润率</td><td>门槛</td></tr>
 <tr class="opp-row"><td>🟢低</td><td><span class="opp-name">领养家庭支援礼盒</span></td><td class="opp-reason">猫砂盆+粮+基础用品，定向送领养家庭</td><td class="opp-price">¥150-400</td><td class="opp-rebuy">单次(公益场景)</td><td><span class="opp-margin opp-margin-low">15-25%</span></td><td><span class="diff-easy">🟢低</span></td></tr>
 </tbody>
 <tr><td><strong>品牌联名限定款</strong> <span class="opp-toggle" onclick="var g=this.parentElement.parentElement.nextElementSibling;g.classList.toggle('closed');this.textContent=this.textContent=='−3'?'+3':'−3'">−3</span></td><td>IP × 宠物品牌联名礼盒（如泡泡玛特×pidan、线条小狗×零食）</td><td class="price-range">¥100-500</td><td><span class="badge badge-green">⭐5/5 极佳</span></td><td>pidan×POP MART、各种跨界联名</td></tr>
 <tbody class="opp-group opp-group-品牌联名限定款">
+<tr class="opp-header"><td>门槛</td><td>机会点产品</td><td>机会分析</td><td>客单价</td><td>复购率</td><td>利润率</td><td>门槛</td></tr>
 <tr class="opp-row"><td>🔴高</td><td><span class="opp-name">IP联名宠物零食礼盒</span></td><td class="opp-reason">泡泡玛特×猫零食/线条小狗×狗零食</td><td class="opp-price">¥150-500</td><td class="opp-rebuy">偶尔(限时)</td><td><span class="opp-margin opp-margin-mid">30-40%</span></td><td><span class="diff-hard">🔴高</span></td></tr>
 <tr class="opp-row"><td>🔴高</td><td><span class="opp-name">国潮非遗联名礼盒</span></td><td class="opp-reason">故宫/敦煌联名宠物礼盒，文化溢价</td><td class="opp-price">¥200-600</td><td class="opp-rebuy">偶尔(限时)</td><td><span class="opp-margin opp-margin-mid">35-45%</span></td><td><span class="diff-hard">🔴高</span></td></tr>
 <tr class="opp-row"><td>🟢低</td><td><span class="opp-name">宠物+主人同享礼盒</span></td><td class="opp-reason">零食同包装，人宠同享概念</td><td class="opp-price">¥100-300</td><td class="opp-rebuy">偶尔送礼</td><td><span class="opp-margin opp-margin-mid">35-45%</span></td><td><span class="diff-easy">🟢低</span></td></tr>
