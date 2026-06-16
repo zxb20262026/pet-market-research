@@ -14,69 +14,36 @@
   --radius: 12px; --radius-sm: 8px;
 }
 * { margin:0; padding:0; box-sizing:border-box; }
-body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
-  background: var(--bg); color: var(--text); line-height: 1.6; min-height: 100vh;
-}
-.nav {
-  position: sticky; top: 0; z-index: 100;
-  background: rgba(26,20,16,0.94); backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--border); padding: 10px 20px;
-  display: flex; align-items: center; gap: 8px; overflow-x: auto;
-}
-.nav-brand { font-weight: 700; font-size: 15px; white-space: nowrap;
-  background: linear-gradient(135deg, var(--accent), var(--accent3));
-  -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-.nav a { color: var(--text-secondary); text-decoration: none; font-size: 12px;
-  white-space: nowrap; padding: 4px 8px; border-radius: 6px; transition: all 0.2s; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; min-height: 100vh; }
+.nav { position: sticky; top: 0; z-index: 100; background: rgba(26,20,16,0.94); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 10px 20px; display: flex; align-items: center; gap: 6px; overflow-x: auto; }
+.nav-brand { font-weight: 700; font-size: 14px; white-space: nowrap; background: linear-gradient(135deg, var(--accent), var(--accent3)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.nav a { color: var(--text-secondary); text-decoration: none; font-size: 11px; white-space: nowrap; padding: 4px 7px; border-radius: 6px; transition: all 0.2s; }
 .nav a:hover { color: var(--text); background: var(--bg-card); }
 .nav a.active { color: var(--accent); background: rgba(240,160,96,0.1); }
-.nav .sep { color: var(--border); margin: 0 2px; font-size: 10px; }
-.container { max-width: 1100px; margin: 0 auto; padding: 24px 20px; }
-.hero {
-  text-align: center; padding: 40px 20px 30px;
-  background: linear-gradient(180deg, rgba(240,160,96,0.06) 0%, transparent 100%);
-  border-bottom: 1px solid var(--border); margin-bottom: 32px;
-}
-.hero h1 { font-size: 28px; font-weight: 800; margin-bottom: 8px;
-  background: linear-gradient(135deg, #f0a060, #f0c080);
-  -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.nav .sep { color: var(--border); margin: 0 1px; font-size: 10px; }
+.container { max-width: 1200px; margin: 0 auto; padding: 24px 20px; }
+.hero { text-align: center; padding: 40px 20px 30px; background: linear-gradient(180deg, rgba(240,160,96,0.06) 0%, transparent 100%); border-bottom: 1px solid var(--border); margin-bottom: 32px; }
+.hero h1 { font-size: 28px; font-weight: 800; margin-bottom: 8px; background: linear-gradient(135deg, #f0a060, #f0c080); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 .hero .subtitle { color: var(--text-secondary); font-size: 15px; }
-.page-title { font-size: 22px; font-weight: 700; margin-bottom: 24px; display: flex; align-items: center; gap: 10px; }
-.page-title .emoji { font-size: 28px; }
 .page-tag { font-size: 12px; padding: 2px 10px; border-radius: 12px; font-weight: 600; }
 .tag-own { background: rgba(92,184,120,0.15); color: var(--accent2); }
 .tag-hot { background: rgba(224,85,85,0.15); color: var(--danger); }
 .tag-rec { background: rgba(184,146,224,0.15); color: var(--accent5); }
-.badge { display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 11px; font-weight: 600; white-space: nowrap; }
-.badge-green { background: rgba(92,184,120,0.15); color: var(--accent2); }
-.badge-yellow { background: rgba(224,176,64,0.15); color: var(--accent3); }
-.badge-red { background: rgba(224,85,85,0.15); color: var(--danger); }
-.badge-blue { background: rgba(240,160,96,0.15); color: var(--accent); }
-.price-range { font-family: 'SF Mono', 'Cascadia Code', monospace; font-size: 12px; color: var(--accent6); }
-.analysis-box { background: rgba(240,160,96,0.04); border: 1px solid rgba(240,160,96,0.15); border-radius: var(--radius-sm); padding: 16px 20px; margin-top: 20px; }
-.analysis-box h4 { color: var(--accent); font-size: 14px; margin-bottom: 8px; }
-.analysis-box p, .analysis-box ul { font-size: 13px; color: var(--text-secondary); margin: 4px 0; }
-.analysis-box ul { padding-left: 18px; }
-.analysis-box li { margin: 3px 0; }
-table { width: 100%; border-collapse: collapse; margin: 12px 0 20px; font-size: 13px; }
-th { text-align: left; padding: 10px 12px; background: rgba(255,255,255,0.04); border-bottom: 2px solid var(--border); color: var(--text-secondary); font-weight: 600; font-size: 12px; text-transform: uppercase; }
-td { padding: 10px 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
-tr:hover td { background: rgba(255,255,255,0.02); }
-.card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 12px; margin: 24px 0; }
-.card-link { display: block; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px 16px; text-decoration: none; transition: all 0.2s; }
-.card-link:hover { border-color: var(--accent); background: var(--bg-card-hover); transform: translateY(-2px); }
-.card-link .card-emoji { font-size: 32px; margin-bottom: 8px; }
-.card-link .card-title { color: var(--text); font-size: 15px; font-weight: 700; margin-bottom: 4px; }
-.card-link .card-desc { color: var(--text-secondary); font-size: 12px; }
-.card-link .card-tag { margin-top: 8px; }
+.tag-new { background: rgba(240,160,96,0.15); color: var(--accent); }
 .exec-summary { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px 28px; margin-bottom: 32px; }
 .exec-summary h2 { font-size: 18px; margin-bottom: 12px; color: var(--accent2); }
 .exec-summary p { font-size: 14px; color: var(--text-secondary); }
-.metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin-bottom: 16px; }
+.metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 12px; margin-bottom: 16px; }
 .metric-card { background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 14px; text-align: center; }
 .metric-card .value { font-size: 22px; font-weight: 700; color: var(--accent); }
 .metric-card .label { font-size: 11px; color: var(--text-secondary); margin-top: 4px; }
+.card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(165px, 1fr)); gap: 10px; margin: 24px 0; }
+.card-link { display: block; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px 14px; text-decoration: none; transition: all 0.2s; }
+.card-link:hover { border-color: var(--accent); background: var(--bg-card-hover); transform: translateY(-2px); }
+.card-link .card-emoji { font-size: 28px; margin-bottom: 6px; }
+.card-link .card-title { color: var(--text); font-size: 14px; font-weight: 700; margin-bottom: 3px; }
+.card-link .card-desc { color: var(--text-secondary); font-size: 11px; }
+.card-link .card-tag { margin-top: 6px; }
 .priority-section { margin-top: 32px; }
 .priority-section h2 { font-size: 20px; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
 .priority-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 14px; }
@@ -98,223 +65,103 @@ tr:hover td { background: rgba(255,255,255,0.02); }
 .roadmap-card.p3 { border-color: var(--accent5); }
 footer { text-align: center; padding: 32px 20px; border-top: 1px solid var(--border); margin-top: 48px; color: var(--text-tertiary); font-size: 12px; }
 footer a { color: var(--accent); }
-.scroll-top { position: fixed; bottom: 24px; right: 24px; width: 40px; height: 40px; border-radius: 50%; background: var(--accent); color: #fff; border: none; cursor: pointer; font-size: 18px; display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s; z-index: 99; }
-.scroll-top.visible { opacity: 1; }
-@media (max-width: 768px) { .container { padding: 16px 12px; } table { display: block; overflow-x: auto; } .card-grid { grid-template-columns: repeat(2, 1fr); } }
-
-.opp-row { background: rgba(240,160,96,0.03); }
-.opp-row td { padding: 5px 8px 5px 24px !important; font-size: 12px; border-bottom: 1px dashed var(--border) !important; }
-.opp-row td:first-child { color: var(--accent6); font-size: 11px; white-space: nowrap; min-width: 0; }
-.opp-row td:first-child::before { content: "└ "; color: var(--text-tertiary); }
-.opp-row .opp-name { color: var(--text); font-weight: 600; }
-.opp-row .opp-reason { color: var(--text-secondary); font-size: 11px; }
-.opp-row .opp-price { font-family: 'SF Mono','Cascadia Code',monospace; font-size: 11px; color: var(--accent6); }
-.opp-row .opp-rebuy { font-size: 11px; }
-.opp-row .opp-margin { font-size: 11px; font-weight: 600; }
-.opp-row .opp-margin-high { color: var(--accent2); }
-.opp-row .opp-margin-mid { color: var(--accent3); }
-.opp-row .opp-margin-low { color: var(--accent4); }
-.opp-row .diff-easy { color: var(--accent2); font-weight: 600; font-size: 11px; }
-.opp-row .diff-mid { color: var(--accent3); font-weight: 600; font-size: 11px; }
-.opp-row .diff-hard { color: var(--accent4); font-weight: 600; font-size: 11px; }
-.opp-toggle { cursor: pointer; color: var(--accent); font-size: 11px; margin-left: 4px; user-select: none; }
-.opp-toggle:hover { color: var(--accent6); }
-.opp-group { display: table-row-group; }
-.opp-group.closed { display: none; }
-tr:hover + .opp-group .opp-row, .opp-group:hover .opp-row { background: rgba(240,160,96,0.08); }
-
+@media (max-width: 768px) { .container { padding: 16px 12px; } .card-grid { grid-template-columns: repeat(2, 1fr); } }
 </style>
 </head>
 <body>
 <nav class="nav">
   <a href="index.html" class="nav-brand">🐾 宠物赛道调研</a>
   <span class="sep">|</span>
-  <a href="index.html">🏠 首页</a>
+  <a href="index.html">🏠</a>
   <a href="food.html">🍖食品</a>
   <a href="supplies.html">🏠用品</a>
   <a href="toys.html">🎾玩具</a>
   <a href="grooming.html">✂️洗护</a>
+  <a href="cleaning.html">🧴消杀</a>
   <a href="travel.html">🚗出行</a>
   <a href="apparel.html">👔服饰</a>
   <a href="health.html">💊健康</a>
+  <a href="pet-med.html">🩺药品</a>
+  <a href="training.html">🎓训练</a>
   <a href="smart.html">📱智能</a>
   <a href="aqua-pet.html">🐠水族</a>
+  <a href="birds.html">🐦鸟类</a>
+  <a href="reptile.html">🦎爬宠</a>
   <a href="gift.html">🎁礼盒</a>
 </nav>
 <div class="hero">
   <h1>🐾 宠物赛道 · 产品线细分调研</h1>
-  <p class="subtitle">10大赛道 × 60+细分品类 · 全维度电商适销分析</p>
+  <p class="subtitle">15大赛道 × 80+细分品类 × 200+三级机会点 · 基于四大平台对比校准</p>
 </div>
 <div class="container">
 
 <section class="exec-summary">
   <h2>📊 执行摘要</h2>
   <div class="metrics">
-    <div class="metric-card"><div class="value">10</div><div class="label">宠物一级赛道</div></div>
-    <div class="metric-card"><div class="value">60+</div><div class="label">细分品类</div></div>
-    <div class="metric-card"><div class="value">¥20-500</div><div class="label">电商黄金价格带</div></div>
-    <div class="metric-card"><div class="value">~¥3,000亿</div><div class="label">中国宠物消费市场</div></div>
+    <div class="metric-card"><div class="value">15</div><div class="label">宠物一级赛道</div></div>
+    <div class="metric-card"><div class="value">80+</div><div class="label">细分品类</div></div>
+    <div class="metric-card"><div class="value">200+</div><div class="label">三级机会点</div></div>
+    <div class="metric-card"><div class="value">4平台</div><div class="label">对标校准</div></div>
   </div>
-  <p>中国宠物经济进入<strong>精细化养宠</strong>时代。2025年市场规模超3,000亿元，年增长15%+。猫经济增速领跑，犬经济稳中有升。核心逻辑：<strong>"宠物=家人"消费升级 → 从吃饱到吃好 → 从基础用品到智能设备 → 从功能消费到情感消费</strong>。</p>
-  <p style="margin-top:8px;">本报告以电商卖家视角，将宠物消费划分为<strong>10个一级赛道</strong>，每个赛道下拆解<strong>5-7个细分品类</strong>，标注价格区间、电商适配度、代表品牌及战略建议。</p>
+  <p>中国宠物经济进入<strong>精细化养宠+多物种并进</strong>时代。v2.0基于<strong>京东/淘宝天猫/拼多多/抖音</strong>四大平台分类体系校准，新增5个赛道（清洁消杀/药品/训练/鸟类/爬宠），<strong>15赛道×80+细分品类×200+三级机会点</strong>，全维度覆盖宠物电商选品空间。</p>
 </section>
 
 <section>
-  <h2 style="font-size:20px;margin-bottom:16px;">🗂️ 10大赛道快速导航</h2>
+  <h2 style="font-size:20px;margin-bottom:16px;">🗂️ 15大赛道快速导航</h2>
   <div class="card-grid">
-    <a href="food.html" class="card-link">
-      <div class="card-emoji">🍖</div>
-      <div class="card-title">宠物食品</div>
-      <div class="card-desc">主粮·零食·营养品·处方粮 — 最大基础品类</div>
-      <div class="card-tag"><span class="page-tag tag-hot" style="font-size:11px;">最大赛道</span></div>
-    </a>
-    <a href="supplies.html" class="card-link">
-      <div class="card-emoji">🏠</div>
-      <div class="card-title">日常用品</div>
-      <div class="card-desc">猫砂·窝垫·笼具·食具饮水 — 刚需复购</div>
-      <div class="card-tag"><span class="page-tag tag-rec" style="font-size:11px;">刚需</span></div>
-    </a>
-    <a href="toys.html" class="card-link">
-      <div class="card-emoji">🎾</div>
-      <div class="card-title">宠物玩具</div>
-      <div class="card-desc">互动·益智·耐咬发声 — 内容传播王者</div>
-      <div class="card-tag"><span class="page-tag tag-hot" style="font-size:11px;">高流量</span></div>
-    </a>
-    <a href="grooming.html" class="card-link">
-      <div class="card-emoji">✂️</div>
-      <div class="card-title">洗护美容</div>
-      <div class="card-desc">沐浴·梳刷·电推剪 — 高毛利长尾</div>
-      <div class="card-tag"><span class="page-tag tag-rec" style="font-size:11px;">高毛利</span></div>
-    </a>
-    <a href="travel.html" class="card-link">
-      <div class="card-emoji">🚗</div>
-      <div class="card-title">出行装备</div>
-      <div class="card-desc">牵引·胸背带·外出包·车载 — 户外红利</div>
-      <div class="card-tag"><span class="page-tag tag-hot" style="font-size:11px;">增长快</span></div>
-    </a>
-    <a href="apparel.html" class="card-link">
-      <div class="card-emoji">👔</div>
-      <div class="card-title">服饰配饰</div>
-      <div class="card-desc">衣服·雨衣·项圈·鞋袜 — 高毛利长尾</div>
-      <div class="card-tag"><span class="page-tag tag-rec" style="font-size:11px;">长尾利润</span></div>
-    </a>
-    <a href="health.html" class="card-link">
-      <div class="card-emoji">💊</div>
-      <div class="card-title">健康护理</div>
-      <div class="card-desc">驱虫·口腔·眼耳护理 — 医疗周边蓝海</div>
-      <div class="card-tag"><span class="page-tag tag-rec" style="font-size:11px;">蓝海</span></div>
-    </a>
-    <a href="smart.html" class="card-link">
-      <div class="card-emoji">📱</div>
-      <div class="card-title">智能设备</div>
-      <div class="card-desc">喂食器·饮水机·猫砂盆·GPS — 高客单</div>
-      <div class="card-tag"><span class="page-tag tag-hot" style="font-size:11px;">高客单</span></div>
-    </a>
-    <a href="aqua-pet.html" class="card-link">
-      <div class="card-emoji">🐠</div>
-      <div class="card-title">水族小宠</div>
-      <div class="card-desc">鱼缸·水族器材·仓鼠兔笼具 — 独立生态</div>
-      <div class="card-tag"><span class="page-tag tag-rec" style="font-size:11px;">独立市场</span></div>
-    </a>
-    <a href="gift.html" class="card-link">
-      <div class="card-emoji">🎁</div>
-      <div class="card-title">礼盒套装</div>
-      <div class="card-desc">新手套装·节日礼盒·订阅盲盒 — 场景打包</div>
-      <div class="card-tag"><span class="page-tag tag-hot" style="font-size:11px;">高溢价</span></div>
-    </a>
+    <a href="food.html" class="card-link"><div class="card-emoji">🍖</div><div class="card-title">宠物食品</div><div class="card-desc">主粮·零食·营养品</div><div class="card-tag"><span class="page-tag tag-hot" style="font-size:10px;">最大赛道</span></div></a>
+    <a href="supplies.html" class="card-link"><div class="card-emoji">🏠</div><div class="card-title">日常用品</div><div class="card-desc">猫砂·窝垫·食具</div><div class="card-tag"><span class="page-tag tag-rec" style="font-size:10px;">刚需</span></div></a>
+    <a href="toys.html" class="card-link"><div class="card-emoji">🎾</div><div class="card-title">宠物玩具</div><div class="card-desc">互动·益智·发声</div><div class="card-tag"><span class="page-tag tag-hot" style="font-size:10px;">高流量</span></div></a>
+    <a href="grooming.html" class="card-link"><div class="card-emoji">✂️</div><div class="card-title">洗护美容</div><div class="card-desc">沐浴·梳刷·电推</div><div class="card-tag"><span class="page-tag tag-rec" style="font-size:10px;">高毛利</span></div></a>
+    <a href="cleaning.html" class="card-link"><div class="card-emoji">🧴</div><div class="card-title">清洁消杀</div><div class="card-desc">除臭·消毒·便袋</div><div class="card-tag"><span class="page-tag tag-new" style="font-size:10px;">🆕各平台独立</span></div></a>
+    <a href="travel.html" class="card-link"><div class="card-emoji">🚗</div><div class="card-title">出行装备</div><div class="card-desc">牵引·背包·车载</div><div class="card-tag"><span class="page-tag tag-hot" style="font-size:10px;">增长快</span></div></a>
+    <a href="apparel.html" class="card-link"><div class="card-emoji">👔</div><div class="card-title">服饰配饰</div><div class="card-desc">衣服·雨衣·项圈</div><div class="card-tag"><span class="page-tag tag-rec" style="font-size:10px;">长尾利润</span></div></a>
+    <a href="health.html" class="card-link"><div class="card-emoji">💊</div><div class="card-title">健康护理</div><div class="card-desc">口腔·眼耳·尿垫</div><div class="card-tag"><span class="page-tag tag-rec" style="font-size:10px;">日常保健</span></div></a>
+    <a href="pet-med.html" class="card-link"><div class="card-emoji">🩺</div><div class="card-title">宠物药品</div><div class="card-desc">驱虫·皮肤病·眼耳药</div><div class="card-tag"><span class="page-tag tag-new" style="font-size:10px;">🆕高壁垒</span></div></a>
+    <a href="training.html" class="card-link"><div class="card-emoji">🎓</div><div class="card-title">训练行为</div><div class="card-desc">响片·止吠·防爆冲</div><div class="card-tag"><span class="page-tag tag-new" style="font-size:10px;">🆕痛点刚需</span></div></a>
+    <a href="smart.html" class="card-link"><div class="card-emoji">📱</div><div class="card-title">智能设备</div><div class="card-desc">喂食器·饮水机·GPS</div><div class="card-tag"><span class="page-tag tag-hot" style="font-size:10px;">高客单</span></div></a>
+    <a href="aqua-pet.html" class="card-link"><div class="card-emoji">🐠</div><div class="card-title">水族世界</div><div class="card-desc">鱼缸·过滤·造景</div><div class="card-tag"><span class="page-tag tag-rec" style="font-size:10px;">独立市场</span></div></a>
+    <a href="birds.html" class="card-link"><div class="card-emoji">🐦</div><div class="card-title">鸟类用品</div><div class="card-desc">鸟笼·鸟粮·鹦鹉</div><div class="card-tag"><span class="page-tag tag-new" style="font-size:10px;">🆕抖音爆款</span></div></a>
+    <a href="reptile.html" class="card-link"><div class="card-emoji">🦎</div><div class="card-title">爬宠异宠</div><div class="card-desc">龟·蜥蜴·蛇·蜘蛛</div><div class="card-tag"><span class="page-tag tag-new" style="font-size:10px;">🆕垂直蓝海</span></div></a>
+    <a href="gift.html" class="card-link"><div class="card-emoji">🎁</div><div class="card-title">礼盒套装</div><div class="card-desc">新手·节日·订阅</div><div class="card-tag"><span class="page-tag tag-hot" style="font-size:10px;">高溢价</span></div></a>
   </div>
 </section>
 
 <section class="priority-section">
-  <h2>⭐ 优先级推荐 & 拓展路线图</h2>
+  <h2>⭐ v2.0 拓展优先级</h2>
   <div class="priority-grid">
     <div class="priority-card">
-      <h4>🥇 P0：宠物食品（立即启动）</h4>
-      <div class="fit-meter">
-        <span style="font-size:12px;color:var(--text-secondary)">市场容量</span>
-        <div class="bar"><div class="fill" style="width:98%;background:var(--accent2)"></div></div>
-        <span class="score" style="color:var(--accent2)">9.8</span>
-      </div>
-      <p>宠物消费第一大品类，占整体市场45%+。冻干/烘焙粮增长最快，零食类门槛低适合电商切入。猫条/冻干零食已是抖音爆款品类。</p>
+      <h4>🥇 P0：清洁消杀（立即启动）</h4>
+      <div class="fit-meter"><span style="font-size:12px;color:var(--text-secondary)">全平台独立</span><div class="bar"><div class="fill" style="width:96%;background:var(--accent2)"></div></div><span class="score" style="color:var(--accent2)">9.6</span></div>
+      <p>京东/淘宝/拼多多/抖音四大平台全部独立成类目。除臭喷雾+猫砂伴侣+消毒液=高复购消耗品组合。</p>
     </div>
     <div class="priority-card">
-      <h4>🥇 P0：猫砂/日用品</h4>
-      <div class="fit-meter">
-        <span style="font-size:12px;color:var(--text-secondary)">复购率</span>
-        <div class="bar"><div class="fill" style="width:95%;background:var(--accent2)"></div></div>
-        <span class="score" style="color:var(--accent2)">9.5</span>
-      </div>
-      <p>猫砂月均消费×养猫家庭=巨大复购市场。豆腐砂/混合砂增长迅猛，品牌忠诚度高。食具饮水器升级趋势明显（陶瓷/不锈钢替代塑料）。</p>
+      <h4>🥇 P0：宠物药品（需资质）</h4>
+      <div class="fit-meter"><span style="font-size:12px;color:var(--text-secondary)">壁垒=护城河</span><div class="bar"><div class="fill" style="width:94%;background:var(--accent2)"></div></div><span class="score" style="color:var(--accent2)">9.4</span></div>
+      <p>驱虫药+皮肤病药+眼耳药=绝对刚需。但需兽药经营许可证(GSP)，高壁垒=竞争少+利润厚。</p>
     </div>
     <div class="priority-card p2">
-      <h4>🥈 P1：宠物玩具（3个月后）</h4>
-      <div class="fit-meter">
-        <span style="font-size:12px;color:var(--text-secondary)">内容适配</span>
-        <div class="bar"><div class="fill" style="width:90%;background:var(--accent3)"></div></div>
-        <span class="score" style="color:var(--accent3)">9.0</span>
-      </div>
-      <p>天然内容属性（猫咪玩逗猫棒=爆款视频）。SKU轻（物流成本低），毛利高，IP联名空间大，非常适合短视频电商。</p>
+      <h4>🥈 P1：鸟类用品（3个月后）</h4>
+      <div class="fit-meter"><span style="font-size:12px;color:var(--text-secondary)">抖音红利</span><div class="bar"><div class="fill" style="width:88%;background:var(--accent3)"></div></div><span class="score" style="color:var(--accent3)">8.8</span></div>
+      <p>2024-2025抖音鹦鹉内容爆发驱动品类增长200%+。鸟粮+玩具+飞行服=新流量密码。</p>
     </div>
     <div class="priority-card p2">
-      <h4>🥈 P1：洗护美容（3个月后）</h4>
-      <div class="fit-meter">
-        <span style="font-size:12px;color:var(--text-secondary)">利润率</span>
-        <div class="bar"><div class="fill" style="width:88%;background:var(--accent3)"></div></div>
-        <span class="score" style="color:var(--accent3)">8.8</span>
-      </div>
-      <p>猫狗洗护用品毛利率40-60%，品牌溢价空间大。香波/护毛素+梳刷+电推剪=完整产品矩阵，与食品/用品天然连带。</p>
+      <h4>🥈 P1：训练行为用品</h4>
+      <div class="fit-meter"><span style="font-size:12px;color:var(--text-secondary)">痛苦=购买力</span><div class="bar"><div class="fill" style="width:85%;background:var(--accent3)"></div></div><span class="score" style="color:var(--accent3)">8.5</span></div>
+      <p>止吠器/防爆冲胸背/训练尿垫=解决真实痛苦。用户搜索'狗叫被投诉怎么办'=强付费意愿。</p>
     </div>
     <div class="priority-card p3">
-      <h4>🥉 P2：智能设备（6个月后）</h4>
-      <div class="fit-meter">
-        <span style="font-size:12px;color:var(--text-secondary)">客单价</span>
-        <div class="bar"><div class="fill" style="width:82%;background:var(--accent5)"></div></div>
-        <span class="score" style="color:var(--accent5)">8.2</span>
-      </div>
-      <p>自动喂食器/饮水机/智能猫砂盆是宠物消费升级最大红利。客单价¥300-3000，但供应链门槛较高，适合中后期切入。</p>
-    </div>
-    <div class="priority-card p3">
-      <h4>🥉 P2：出行装备（6个月后）</h4>
-      <div class="fit-meter">
-        <span style="font-size:12px;color:var(--text-secondary)">场景生态</span>
-        <div class="bar"><div class="fill" style="width:78%;background:var(--accent5)"></div></div>
-        <span class="score" style="color:var(--accent5)">7.8</span>
-      </div>
-      <p>牵引绳+胸背+外出包+车载组成出行矩阵。社交属性强（狗狗公园=品牌曝光），搭配服饰可做场景化组合销售。</p>
-    </div>
-  </div>
-
-  <h3 style="margin-top:32px;color:var(--accent2);">🗺️ 拓展路线图</h3>
-  <div class="roadmap">
-    <div class="roadmap-card p1">
-      <h4 style="color:var(--accent2);">第一阶段（0-3月）</h4>
-      <p>🐱 猫零食/冻干/猫条上架<br>🐱 豆腐砂/混合砂品牌化<br>🐶 狗零食/磨牙棒<br>🍽️ 食具饮水器升级线<br><strong>目标SKU：20-30个</strong></p>
-    </div>
-    <div class="roadmap-card p2">
-      <h4 style="color:var(--accent3);">第二阶段（3-6月）</h4>
-      <p>🎾 猫狗玩具矩阵<br>✂️ 洗护产品线<br>👔 牵引出行装备<br>🐶 狗主粮试水<br><strong>目标SKU：50-70个</strong></p>
-    </div>
-    <div class="roadmap-card p3">
-      <h4 style="color:var(--accent5);">第三阶段（6-12月）</h4>
-      <p>📱 智能设备选品<br>💊 健康护理周边<br>👔 宠物服饰/配饰<br>🎁 礼盒/订阅模式<br>🌍 跨境电商（Amazon/速卖通）<br><strong>目标SKU：80-120个</strong></p>
+      <h4>🥉 P2：爬宠异宠（6个月后）</h4>
+      <div class="fit-meter"><span style="font-size:12px;color:var(--text-secondary)">垂直精准</span><div class="bar"><div class="fill" style="width:78%;background:var(--accent5)"></div></div><span class="score" style="color:var(--accent5)">7.8</span></div>
+      <p>守宫/鬃狮蜥/角蛙/龟=精准圈层。加热灯+钙粉+垫材=100%复购消耗品。拼多多/抖音尚未充分覆盖。</p>
     </div>
   </div>
 </section>
 
 </div>
 <footer>
-  <p>🐾 宠物赛道产品线细分调研 v1.0</p>
+  <p>🐾 宠物赛道产品线细分调研 v2.0 · 基于京东/淘宝/拼多多/抖音四大平台校准</p>
   <p style="margin-top:6px;"><a href="https://github.com/zxb20262026/pet-market-research" target="_blank">GitHub</a> · Made with ⚡️ by 小马哥</p>
 </footer>
-<button class="scroll-top" id="scrollTopBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
-<script>
-window.addEventListener('scroll',()=>{document.getElementById('scrollTopBtn').classList.toggle('visible',window.scrollY>400)});
-(function(){
-  var page = location.pathname.split('/').pop() || 'index.html';
-  document.querySelectorAll('.nav a').forEach(function(a){
-    if(a.getAttribute('href')===page) a.classList.add('active');
-  });
-})();
-</script>
 </body>
 </html>
