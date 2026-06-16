@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🐾 训练行为 | 宠物赛道调研</title>
+<style>
+:root {
+  --bg: #1a1410; --bg-card: #241e18; --bg-card-hover: #2e2720;
+  --border: #3d352d; --text: #e8d5c4; --text-secondary: #8b7d6e;
+  --text-tertiary: #6b5f52; --accent: #f0a060; --accent2: #5cb878;
+  --accent3: #e0b040; --accent4: #e05555; --accent5: #b892e0;
+  --accent6: #f0c080; --danger: #e05555;
+  --radius: 12px; --radius-sm: 8px;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; min-height: 100vh; }
+.nav { position: sticky; top: 0; z-index: 100; background: rgba(26,20,16,0.94); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 10px 20px; display: flex; align-items: center; gap: 6px; overflow-x: auto; }
+.nav-brand { font-weight: 700; font-size: 14px; white-space: nowrap; background: linear-gradient(135deg, var(--accent), var(--accent3)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.nav a { color: var(--text-secondary); text-decoration: none; font-size: 11px; white-space: nowrap; padding: 4px 7px; border-radius: 6px; transition: all 0.2s; }
+.nav a:hover { color: var(--text); background: var(--bg-card); }
+.nav a.active { color: var(--accent); background: rgba(240,160,96,0.1); }
+.nav .sep { color: var(--border); margin: 0 1px; font-size: 10px; }
+.container { max-width: 1100px; margin: 0 auto; padding: 24px 20px; }
+.page-title { font-size: 22px; font-weight: 700; margin-bottom: 24px; display: flex; align-items: center; gap: 10px; }
+.page-title .emoji { font-size: 28px; }
+.page-tag { font-size: 12px; padding: 2px 10px; border-radius: 12px; font-weight: 600; }
+.tag-hot { background: rgba(224,85,85,0.15); color: var(--danger); }
+.tag-rec { background: rgba(184,146,224,0.15); color: var(--accent5); }
+.tag-new { background: rgba(240,160,96,0.15); color: var(--accent); }
+.badge { display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 11px; font-weight: 600; white-space: nowrap; }
+.badge-green { background: rgba(92,184,120,0.15); color: var(--accent2); }
+.badge-yellow { background: rgba(224,176,64,0.15); color: var(--accent3); }
+.badge-red { background: rgba(224,85,85,0.15); color: var(--danger); }
+.price-range { font-family: 'SF Mono', 'Cascadia Code', monospace; font-size: 12px; color: var(--accent6); }
+.analysis-box { background: rgba(240,160,96,0.04); border: 1px solid rgba(240,160,96,0.15); border-radius: var(--radius-sm); padding: 16px 20px; margin-top: 20px; }
+.analysis-box h4 { color: var(--accent); font-size: 14px; margin-bottom: 8px; }
+.analysis-box p, .analysis-box ul { font-size: 13px; color: var(--text-secondary); margin: 4px 0; }
+.analysis-box ul { padding-left: 18px; }
+.analysis-box li { margin: 3px 0; }
+table { width: 100%; border-collapse: collapse; margin: 12px 0 20px; font-size: 13px; }
+th { text-align: left; padding: 10px 12px; background: rgba(255,255,255,0.04); border-bottom: 2px solid var(--border); color: var(--text-secondary); font-weight: 600; font-size: 12px; text-transform: uppercase; }
+td { padding: 10px 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
+tr:hover td { background: rgba(255,255,255,0.02); }
+footer { text-align: center; padding: 32px 20px; border-top: 1px solid var(--border); margin-top: 48px; color: var(--text-tertiary); font-size: 12px; }
+footer a { color: var(--accent); }
+.scroll-top { position: fixed; bottom: 24px; right: 24px; width: 40px; height: 40px; border-radius: 50%; background: var(--accent); color: #fff; border: none; cursor: pointer; font-size: 18px; display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s; z-index: 99; }
+.scroll-top.visible { opacity: 1; }
+@media (max-width: 768px) { .container { padding: 16px 12px; } table { display: block; overflow-x: auto; } }
+</style>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-brand">🐾 宠物赛道调研</a>
+  <span class="sep">|</span>
+  <a href="index.html">🏠</a>
+  <a href="food.html">🍖食品</a>
+  <a href="supplies.html">🏠用品</a>
+  <a href="toys.html">🎾玩具</a>
+  <a href="grooming.html">✂️洗护</a>
+  <a href="cleaning.html">🧴消杀</a>
+  <a href="travel.html">🚗出行</a>
+  <a href="apparel.html">👔服饰</a>
+  <a href="health.html">💊健康</a>
+  <a href="pet-med.html">🩺药品</a>
+  <a href="training.html">🎓训练</a>
+  <a href="smart.html">📱智能</a>
+  <a href="aqua-pet.html">🐠水族</a>
+  <a href="birds.html">🐦鸟类</a>
+  <a href="reptile.html">🦎爬宠</a>
+  <a href="gift.html">🎁礼盒</a>
+</nav>
+<div class="container">
+  <div class="page-title">
+    <span class="emoji">🎓</span>
+    训练行为矫正
+    <span class="page-tag tag-rec">痛点刚需</span>
+  </div>
+  <p style="color:var(--text-secondary);font-size:15px;margin-bottom:24px;">响片·止吠器·训练垫·防爆冲 — 解决养宠行为问题=强转化刚需品类</p>
+  <table>
+<thead><tr><th style="width:16%">细分品类</th><th style="width:37%">说明</th><th style="width:12%">价格区间</th><th style="width:15%">电商适配度</th><th style="width:20%">代表品牌</th></tr></thead>
+<tbody>
+<tr><td><strong>响片/训练哨</strong></td><td>正向训练核心工具，精准标记正确行为，专业训犬师推荐</td><td class="price-range">¥15-50</td><td><span class="badge badge-green">⭐5/5 极佳</span></td><td>PetSafe、Company of Animals、星记</td></tr>
+<tr><td><strong>止吠器/电击项圈</strong></td><td>超声波/震动/静电止吠，扰民投诉=强购买动机</td><td class="price-range">¥50-300</td><td><span class="badge badge-green">⭐4/5 好</span></td><td>PetSafe、Dogtra、SportDOG</td></tr>
+<tr><td><strong>室内训练尿垫/诱导剂</strong></td><td>含信息素诱导定点排便+防渗漏底层，幼犬到家必备</td><td class="price-range">¥30-100/包</td><td><span class="badge badge-green">⭐5/5 极佳</span></td><td>Simple Solution、怡亲、Four Paws</td></tr>
+<tr><td><strong>防爆冲牵引/训练绳</strong></td><td>前扣式胸背+缓冲弹力绳，利用转向原理抑制爆冲</td><td class="price-range">¥60-200</td><td><span class="badge badge-green">⭐5/5 极佳</span></td><td>PetSafe Easy Walk、Halti、Rabbitgoo</td></tr>
+<tr><td><strong>宠物围栏/安全门</strong></td><td>室内划分禁入区+训练定点便溺，压力门/自由站立多种</td><td class="price-range">¥80-400</td><td><span class="badge badge-green">⭐4/5 好</span></td><td>Regalo、Carlson、Evenflo</td></tr>
+<tr><td><strong>漏食/嗅闻训练垫</strong></td><td>藏食+嗅闻=释放精力+防止拆家，多场景=多SKU</td><td class="price-range">¥40-120</td><td><span class="badge badge-green">⭐5/5 极佳</span></td><td>Outward Hound、星记、KONG</td></tr>
+</tbody></table>
+<div class="analysis-box"><h4>🎯 电商切入策略</h4><p>训练行为用品是<strong>解决真实痛苦</strong>的品类。购买动机=狗叫被投诉/狗爆冲拉不住/到处乱尿，<strong>痛苦=强付费意愿</strong>。建议策略：</p><ul><li><strong>训练尿垫=消耗品王者</strong>：幼犬期前3个月每天消耗2-4片，新手主人精准人群，复购周期清晰</li><li><strong>防爆冲胸背=高客单刚需</strong>：大型犬爆冲是真实安全隐患，用户搜索'狗拽不住怎么办'=高意图</li><li><strong>止吠器有争议需谨慎</strong>：电击式在欧美受抵制，建议主推超声波/震动款，符合动物福利趋势</li><li><strong>宠物安全门=蓝海</strong>：中国养宠家庭渗透率低但增长快，与婴儿安全门共享供应链=降本</li></ul></div>
+</div>
+<footer>
+  <p>🐾 宠物赛道产品线细分调研 v2.0</p>
+  <p style="margin-top:6px;"><a href="https://github.com/zxb20262026/pet-market-research" target="_blank">GitHub</a> · Made with ⚡️ by 小马哥</p>
+</footer>
+<button class="scroll-top" id="scrollTopBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+<script>
+window.addEventListener('scroll',()=>{document.getElementById('scrollTopBtn').classList.toggle('visible',window.scrollY>400)});
+(function(){
+  var page = location.pathname.split('/').pop() || 'index.html';
+  document.querySelectorAll('.nav a').forEach(function(a){
+    if(a.getAttribute('href')===page) a.classList.add('active');
+  });
+})();
+</script>
+</body>
+</html>
