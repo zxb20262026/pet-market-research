@@ -47,6 +47,11 @@ footer a { color: var(--accent); }
 .scroll-top { position: fixed; bottom: 24px; right: 24px; width: 40px; height: 40px; border-radius: 50%; background: var(--accent); color: #fff; border: none; cursor: pointer; font-size: 18px; display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s; z-index: 99; }
 .scroll-top.visible { opacity: 1; }
 @media (max-width: 768px) { .container { padding: 16px 12px; } table { display: block; overflow-x: auto; } }
+
+.opp-header td { padding: 4px 8px 4px 24px !important; font-size: 10px; color: var(--text-tertiary); border-bottom: 1px solid var(--border) !important; background: rgba(240,160,96,0.05); text-transform: uppercase; letter-spacing: 0.5px; }
+.opp-header td:first-child { color: var(--text-tertiary); }
+.opp-header td:first-child::before { content: ""; }
+
 </style>
 </head>
 <body>
