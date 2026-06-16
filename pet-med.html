@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🐾 宠物药品 | 宠物赛道调研</title>
+<style>
+:root {
+  --bg: #1a1410; --bg-card: #241e18; --bg-card-hover: #2e2720;
+  --border: #3d352d; --text: #e8d5c4; --text-secondary: #8b7d6e;
+  --text-tertiary: #6b5f52; --accent: #f0a060; --accent2: #5cb878;
+  --accent3: #e0b040; --accent4: #e05555; --accent5: #b892e0;
+  --accent6: #f0c080; --danger: #e05555;
+  --radius: 12px; --radius-sm: 8px;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; min-height: 100vh; }
+.nav { position: sticky; top: 0; z-index: 100; background: rgba(26,20,16,0.94); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 10px 20px; display: flex; align-items: center; gap: 6px; overflow-x: auto; }
+.nav-brand { font-weight: 700; font-size: 14px; white-space: nowrap; background: linear-gradient(135deg, var(--accent), var(--accent3)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.nav a { color: var(--text-secondary); text-decoration: none; font-size: 11px; white-space: nowrap; padding: 4px 7px; border-radius: 6px; transition: all 0.2s; }
+.nav a:hover { color: var(--text); background: var(--bg-card); }
+.nav a.active { color: var(--accent); background: rgba(240,160,96,0.1); }
+.nav .sep { color: var(--border); margin: 0 1px; font-size: 10px; }
+.container { max-width: 1100px; margin: 0 auto; padding: 24px 20px; }
+.page-title { font-size: 22px; font-weight: 700; margin-bottom: 24px; display: flex; align-items: center; gap: 10px; }
+.page-title .emoji { font-size: 28px; }
+.page-tag { font-size: 12px; padding: 2px 10px; border-radius: 12px; font-weight: 600; }
+.tag-hot { background: rgba(224,85,85,0.15); color: var(--danger); }
+.tag-rec { background: rgba(184,146,224,0.15); color: var(--accent5); }
+.tag-new { background: rgba(240,160,96,0.15); color: var(--accent); }
+.badge { display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 11px; font-weight: 600; white-space: nowrap; }
+.badge-green { background: rgba(92,184,120,0.15); color: var(--accent2); }
+.badge-yellow { background: rgba(224,176,64,0.15); color: var(--accent3); }
+.badge-red { background: rgba(224,85,85,0.15); color: var(--danger); }
+.price-range { font-family: 'SF Mono', 'Cascadia Code', monospace; font-size: 12px; color: var(--accent6); }
+.analysis-box { background: rgba(240,160,96,0.04); border: 1px solid rgba(240,160,96,0.15); border-radius: var(--radius-sm); padding: 16px 20px; margin-top: 20px; }
+.analysis-box h4 { color: var(--accent); font-size: 14px; margin-bottom: 8px; }
+.analysis-box p, .analysis-box ul { font-size: 13px; color: var(--text-secondary); margin: 4px 0; }
+.analysis-box ul { padding-left: 18px; }
+.analysis-box li { margin: 3px 0; }
+table { width: 100%; border-collapse: collapse; margin: 12px 0 20px; font-size: 13px; }
+th { text-align: left; padding: 10px 12px; background: rgba(255,255,255,0.04); border-bottom: 2px solid var(--border); color: var(--text-secondary); font-weight: 600; font-size: 12px; text-transform: uppercase; }
+td { padding: 10px 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
+tr:hover td { background: rgba(255,255,255,0.02); }
+footer { text-align: center; padding: 32px 20px; border-top: 1px solid var(--border); margin-top: 48px; color: var(--text-tertiary); font-size: 12px; }
+footer a { color: var(--accent); }
+.scroll-top { position: fixed; bottom: 24px; right: 24px; width: 40px; height: 40px; border-radius: 50%; background: var(--accent); color: #fff; border: none; cursor: pointer; font-size: 18px; display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s; z-index: 99; }
+.scroll-top.visible { opacity: 1; }
+@media (max-width: 768px) { .container { padding: 16px 12px; } table { display: block; overflow-x: auto; } }
+</style>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-brand">🐾 宠物赛道调研</a>
+  <span class="sep">|</span>
+  <a href="index.html">🏠</a>
+  <a href="food.html">🍖食品</a>
+  <a href="supplies.html">🏠用品</a>
+  <a href="toys.html">🎾玩具</a>
+  <a href="grooming.html">✂️洗护</a>
+  <a href="cleaning.html">🧴消杀</a>
+  <a href="travel.html">🚗出行</a>
+  <a href="apparel.html">👔服饰</a>
+  <a href="health.html">💊健康</a>
+  <a href="pet-med.html">🩺药品</a>
+  <a href="training.html">🎓训练</a>
+  <a href="smart.html">📱智能</a>
+  <a href="aqua-pet.html">🐠水族</a>
+  <a href="birds.html">🐦鸟类</a>
+  <a href="reptile.html">🦎爬宠</a>
+  <a href="gift.html">🎁礼盒</a>
+</nav>
+<div class="container">
+  <div class="page-title">
+    <span class="emoji">🩺</span>
+    宠物药品/医疗耗材
+    <span class="page-tag tag-hot">高壁垒刚需</span>
+  </div>
+  <p style="color:var(--text-secondary);font-size:15px;margin-bottom:24px;">驱虫药·皮肤病药·眼耳药·医疗耗材 — 需要兽药资质，高壁垒=强护城河</p>
+  <table>
+<thead><tr><th style="width:16%">细分品类</th><th style="width:37%">说明</th><th style="width:12%">价格区间</th><th style="width:15%">电商适配度</th><th style="width:20%">代表品牌</th></tr></thead>
+<tbody>
+<tr><td><strong>体外驱虫滴剂</strong></td><td>非泼罗尼/塞拉菌素，跳蚤/蜱虫/耳螨，春夏季爆发品类</td><td class="price-range">¥50-200/支</td><td><span class="badge badge-green">⭐5/5 极佳</span></td><td>福来恩、大宠爱、拜耳</td></tr>
+<tr><td><strong>体内驱虫片</strong></td><td>吡喹酮/阿苯达唑，蛔虫/绦虫/钩虫，牛肉味咀嚼片适口升级</td><td class="price-range">¥40-150/盒</td><td><span class="badge badge-green">⭐5/5 极佳</span></td><td>拜耳/犬心保/海乐妙</td></tr>
+<tr><td><strong>皮肤病喷剂/药膏</strong></td><td>真菌/细菌/螨虫皮肤感染，盐酸特比萘芬/酮康唑等</td><td class="price-range">¥30-120</td><td><span class="badge badge-green">⭐5/5 极佳</span></td><td>皮特芬、耳肤灵、维克</td></tr>
+<tr><td><strong>眼药水/眼膏</strong></td><td>结膜炎/角膜炎/泪痕，氯霉素/妥布霉素/人工泪液</td><td class="price-range">¥20-80</td><td><span class="badge badge-green">⭐5/5 极佳</span></td><td>维克、闪亮(宠物线)、Sentry</td></tr>
+<tr><td><strong>耳药/耳螨治疗</strong></td><td>伊维菌素/氟苯尼考滴耳液，耳螨/中耳炎，使用前后对比=爆款内容</td><td class="price-range">¥30-100</td><td><span class="badge badge-green">⭐5/5 极佳</span></td><td>耳肤灵、耳康、维克</td></tr>
+<tr><td><strong>伊丽莎白圈/手术衣</strong></td><td>术后防舔/防抓挠，软布/充气/塑料多种材质</td><td class="price-range">¥10-60</td><td><span class="badge badge-green">⭐5/5 极佳</span></td><td>多格漫、华元、Comfurt</td></tr>
+<tr><td><strong>宠物轮椅/护具</strong></td><td>后肢瘫痪/关节炎犬猫助行器，老年宠物+残疾=情感刚需</td><td class="price-range">¥100-500</td><td><span class="badge badge-green">⭐3/5 中等</span></td><td>Walkin' Wheels、K9 Carts</td></tr>
+</tbody></table>
+<div class="analysis-box"><h4>🎯 电商切入策略</h4><p>宠物药品是<strong>壁垒最高但利润最厚</strong>的品类。关键门槛：兽药经营许可证(GSP)。建议策略：</p><ul><li><strong>驱虫药=宠物药品第一大品类</strong>：全平台搜索量Top1，但需要农药/兽药双资质，新手建议从正规代理授权入手</li><li><strong>皮肤病药=内容爆款</strong>：前后对比图(脱毛→长毛)天然高转化内容，小红书/抖音最适合传播</li><li><strong>伊丽莎白圈/手术衣=入门级</strong>：无需兽药资质，但紧贴医疗场景，可作为拉新引流款</li><li><strong>耳螨药=强场景</strong>：猫咪耳螨发生率极高，'给猫洗耳朵'教程=天然内容池</li><li><strong>⚠️ 合规第一</strong>：兽药/农药必须走正规渠道备案，不可卖三无产品</li></ul></div>
+</div>
+<footer>
+  <p>🐾 宠物赛道产品线细分调研 v2.0</p>
+  <p style="margin-top:6px;"><a href="https://github.com/zxb20262026/pet-market-research" target="_blank">GitHub</a> · Made with ⚡️ by 小马哥</p>
+</footer>
+<button class="scroll-top" id="scrollTopBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+<script>
+window.addEventListener('scroll',()=>{document.getElementById('scrollTopBtn').classList.toggle('visible',window.scrollY>400)});
+(function(){
+  var page = location.pathname.split('/').pop() || 'index.html';
+  document.querySelectorAll('.nav a').forEach(function(a){
+    if(a.getAttribute('href')===page) a.classList.add('active');
+  });
+})();
+</script>
+</body>
+</html>
