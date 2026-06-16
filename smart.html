@@ -132,6 +132,30 @@ tr:hover + .opp-group .opp-row, .opp-group:hover .opp-row { background: rgba(240
 .opp-header td:first-child { color: var(--text-tertiary); }
 .opp-header td:first-child::before { content: ""; }
 
+
+.opp-row { background: rgba(240,160,96,0.03); }
+.opp-row td { padding: 5px 8px 5px 24px !important; font-size: 12px; border-bottom: 1px dashed var(--border) !important; }
+.opp-row td:first-child { color: var(--accent6); font-size: 11px; white-space: nowrap; min-width: 0; }
+.opp-row td:first-child::before { content: "└ "; color: var(--text-tertiary); }
+.opp-row .opp-name { color: var(--text); font-weight: 600; }
+.opp-row .opp-reason { color: var(--text-secondary); font-size: 11px; }
+.opp-row .opp-price { font-family: 'SF Mono','Cascadia Code',monospace; font-size: 11px; color: var(--accent6); }
+.opp-row .opp-rebuy { font-size: 11px; }
+.opp-row .opp-margin { font-size: 11px; font-weight: 600; }
+.opp-row .opp-margin-high { color: var(--accent2); }
+.opp-row .opp-margin-mid { color: var(--accent3); }
+.opp-row .opp-margin-low { color: var(--accent4); }
+.opp-row .diff-easy { color: var(--accent2); font-weight: 600; font-size: 11px; }
+.opp-row .diff-mid { color: var(--accent3); font-weight: 600; font-size: 11px; }
+.opp-row .diff-hard { color: var(--accent4); font-weight: 600; font-size: 11px; }
+.opp-header td { padding: 4px 8px 4px 24px !important; font-size: 10px; color: var(--text-tertiary); border-bottom: 1px solid var(--border) !important; background: rgba(240,160,96,0.05); text-transform: uppercase; letter-spacing: 0.5px; }
+.opp-header td:first-child { color: var(--text-tertiary); }
+.opp-header td:first-child::before { content: ""; }
+.opp-toggle { cursor: pointer; color: var(--accent); font-size: 11px; margin-left: 4px; user-select: none; }
+.opp-toggle:hover { color: var(--accent6); }
+.opp-group { display: table-row-group; }
+.opp-group.closed { display: none; }
+tr:hover + .opp-group .opp-row, .opp-group:hover .opp-row { background: rgba(240,160,96,0.08); }
 </style>
 </head>
 <body>
@@ -158,59 +182,157 @@ tr:hover + .opp-group .opp-row, .opp-group:hover .opp-row { background: rgba(240
 <div class="container">
   <div class="page-title">
     <span class="emoji">📱</span>
-    智能设备
+    宠物智能设备（深度细分版）
     <span class="page-tag tag-hot">高客单</span>
   </div>
-  <p style="color:var(--text-secondary);font-size:15px;margin-bottom:24px;">喂食器·饮水机·猫砂盆·GPS — 宠物消费升级最大红利</p>
-  <table>
-<thead><tr><th style="width:16%">细分品类</th><th style="width:37%">说明</th><th style="width:12%">价格区间</th><th style="width:15%">电商适配度</th><th style="width:20%">代表品牌</th></tr></thead>
+  <p style="color:var(--text-secondary);font-size:15px;margin-bottom:24px;">12大智能品类 × 44个三级机会点 — 宠物消费升级最大红利赛道，客单价最高品类群</p>
+
+  <table style="margin-bottom:32px;">
+<thead><tr><th style="width:18%">智能品类</th><th style="width:40%">品类定位</th><th style="width:12%">价格带</th><th style="width:12%">电商适配</th><th style="width:18%">代表品牌</th></tr></thead>
 <tbody>
-<tr><td><strong>智能喂食器</strong> <span class="opp-toggle" onclick="var g=this.parentElement.parentElement.nextElementSibling;g.classList.toggle('closed');this.textContent=this.textContent=='−3'?'+3':'−3'">−3</span></td><td>APP远程控粮/定时定量/称重/防卡粮/双仓（干湿分离）</td><td class="price-range">¥200-800</td><td><span class="badge badge-green">⭐5/5 极佳</span></td><td>小佩、霍曼、PETKIT</td></tr>
-<tbody class="opp-group opp-group-智能喂食器-sm">
+<tr><td><strong>智能喂食器</strong> <span class="opp-toggle" onclick="var g=this.parentElement.parentElement.nextElementSibling;g.classList.toggle('closed');this.textContent=this.textContent=='−6'?'+6':'−6'">−6</span></td><td>智能硬件升级品类</td><td class="price-range">¥100-2000+</td><td><span class="badge badge-green">⭐5/5 极佳</span></td><td>小佩/霍曼/CATLINK等</td></tr>
+<tbody class="opp-group opp-group-智能喂食-sm">
+
 <tr class="opp-header"><td>门槛</td><td>机会点产品</td><td>机会分析</td><td>客单价</td><td>复购率</td><td>利润率</td><td>门槛</td></tr>
-<tr class="opp-row"><td>🟡中</td><td><span class="opp-name">APP远程双仓喂食器</span></td><td class="opp-reason">干粮+湿粮(带冰袋)，解决出门喂湿粮</td><td class="opp-price">¥300-800</td><td class="opp-rebuy">3-6年</td><td><span class="opp-margin opp-margin-low">25-35%</span></td><td><span class="diff-mid">🟡中</span></td></tr>
-<tr class="opp-row"><td>🟡中</td><td><span class="opp-name">真空保鲜智能喂食器</span></td><td class="opp-reason">抽真空防潮防虫，南方潮湿地区刚需</td><td class="opp-price">¥350-800</td><td class="opp-rebuy">3-6年</td><td><span class="opp-margin opp-margin-low">28-38%</span></td><td><span class="diff-mid">🟡中</span></td></tr>
-<tr class="opp-row"><td>🔴高</td><td><span class="opp-name">AI识别多猫喂食器</span></td><td class="opp-reason">面部/项圈识别分猫出粮，多猫家庭</td><td class="opp-price">¥500-1200</td><td class="opp-rebuy">3-6年</td><td><span class="opp-margin opp-margin-low">25-35%</span></td><td><span class="diff-hard">🔴高</span></td></tr>
+<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">基础定时喂食器</span></td><td class="opp-reason">6餐格+LCD定时，操作简单=老年用户友好，入门级引流款</td><td class="opp-price">¥80-200</td><td class="opp-rebuy">2-4年</td><td><span class="opp-margin opp-margin-low">20-28%</span></td><td><span class="diff-easy">🟢低</span></td></tr>
+<tr class="opp-row"><td>🟡中</td><td><span class="opp-name">APP远程喂食器</span></td><td class="opp-reason">WiFi连接+手机出粮+余粮提醒，上班族核心需求</td><td class="opp-price">¥200-500</td><td class="opp-rebuy">2-4年</td><td><span class="opp-margin opp-margin-mid">25-35%</span></td><td><span class="diff-mid">🟡中</span></td></tr>
+<tr class="opp-row"><td>🟡中</td><td><span class="opp-name">双仓干湿分离喂食器</span></td><td class="opp-reason">干粮仓+湿粮仓(带冰袋)，解决'出门无法喂湿粮'痛点</td><td class="opp-price">¥300-800</td><td class="opp-rebuy">2-4年</td><td><span class="opp-margin opp-margin-low">28-38%</span></td><td><span class="diff-mid">🟡中</span></td></tr>
+<tr class="opp-row"><td>🟡中</td><td><span class="opp-name">真空保鲜喂食器</span></td><td class="opp-reason">抽真空防潮+防虫+防氧化，南方潮湿地区强需求</td><td class="opp-price">¥350-800</td><td class="opp-rebuy">2-4年</td><td><span class="opp-margin opp-margin-low">28-38%</span></td><td><span class="diff-mid">🟡中</span></td></tr>
+<tr class="opp-row"><td>🔴高</td><td><span class="opp-name">AI多猫识别喂食器</span></td><td class="opp-reason">面部识别/项圈RFID分猫出粮+记录每只猫进食量</td><td class="opp-price">¥500-1500</td><td class="opp-rebuy">2-4年</td><td><span class="opp-margin opp-margin-mid">25-35%</span></td><td><span class="diff-hard">🔴高</span></td></tr>
+<tr class="opp-row"><td>🟡中</td><td><span class="opp-name">户外/电池版喂食器</span></td><td class="opp-reason">内置锂电池+太阳能板，庭院/流浪猫喂养场景</td><td class="opp-price">¥200-600</td><td class="opp-rebuy">2-4年</td><td><span class="opp-margin opp-margin-low">25-32%</span></td><td><span class="diff-mid">🟡中</span></td></tr>
 </tbody>
-<tr><td><strong>智能饮水机</strong> <span class="opp-toggle" onclick="var g=this.parentElement.parentElement.nextElementSibling;g.classList.toggle('closed');this.textContent=this.textContent=='−3'?'+3':'−3'">−3</span></td><td>循环过滤/静音水泵/UV杀菌/水位提醒，猫咪偏好流动水</td><td class="price-range">¥100-400</td><td><span class="badge badge-green">⭐5/5 极佳</span></td><td>小佩、霍曼、Catit</td></tr>
-<tbody class="opp-group opp-group-智能饮水机-sm">
+<tr><td><strong>智能饮水机</strong> <span class="opp-toggle" onclick="var g=this.parentElement.parentElement.nextElementSibling;g.classList.toggle('closed');this.textContent=this.textContent=='−5'?'+5':'−5'">−5</span></td><td>智能硬件升级品类</td><td class="price-range">¥100-2000+</td><td><span class="badge badge-green">⭐5/5 极佳</span></td><td>小佩/霍曼/CATLINK等</td></tr>
+<tbody class="opp-group opp-group-智能饮水-sm">
+
 <tr class="opp-header"><td>门槛</td><td>机会点产品</td><td>机会分析</td><td>客单价</td><td>复购率</td><td>利润率</td><td>门槛</td></tr>
-<tr class="opp-row"><td>🟡中</td><td><span class="opp-name">无线充电式饮水机</span></td><td class="opp-reason">Type-C+无线水泵，摆脱插电限制</td><td class="opp-price">¥150-400</td><td class="opp-rebuy">2-4年</td><td><span class="opp-margin opp-margin-low">30-40%</span></td><td><span class="diff-mid">🟡中</span></td></tr>
-<tr class="opp-row"><td>🟡中</td><td><span class="opp-name">UV杀菌+矿物质滤芯饮水机</span></td><td class="opp-reason">UV杀菌+富锶矿化，健康升级</td><td class="opp-price">¥200-500</td><td class="opp-rebuy">2-4年</td><td><span class="opp-margin opp-margin-low">30-40%</span></td><td><span class="diff-mid">🟡中</span></td></tr>
-<tr class="opp-row"><td>🔴高</td><td><span class="opp-name">APP饮水监测饮水机</span></td><td class="opp-reason">记录喝水量+时长，肾病早发现</td><td class="opp-price">¥250-600</td><td class="opp-rebuy">2-4年</td><td><span class="opp-margin opp-margin-low">28-38%</span></td><td><span class="diff-hard">🔴高</span></td></tr>
+<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">基础循环饮水机</span></td><td class="opp-reason">活性炭滤芯+静音水泵，比静态水碗多喝水30-50%</td><td class="opp-price">¥80-200</td><td class="opp-rebuy">1-3年</td><td><span class="opp-margin opp-margin-mid">30-40%</span></td><td><span class="diff-easy">🟢低</span></td></tr>
+<tr class="opp-row"><td>🟡中</td><td><span class="opp-name">无线充电式饮水机</span></td><td class="opp-reason">Type-C内置电池，摆脱插电限制=任意摆放</td><td class="opp-price">¥150-400</td><td class="opp-rebuy">1-3年</td><td><span class="opp-margin opp-margin-mid">30-40%</span></td><td><span class="diff-mid">🟡中</span></td></tr>
+<tr class="opp-row"><td>🟡中</td><td><span class="opp-name">UV杀菌饮水机</span></td><td class="opp-reason">紫外线杀菌+多级过滤，减少黑下巴/泌尿道问题</td><td class="opp-price">¥200-500</td><td class="opp-rebuy">1-3年</td><td><span class="opp-margin opp-margin-mid">30-40%</span></td><td><span class="diff-mid">🟡中</span></td></tr>
+<tr class="opp-row"><td>🟡中</td><td><span class="opp-name">矿物质富锶饮水机</span></td><td class="opp-reason">UV杀菌+富锶矿化滤芯，健康升级=价格带提升</td><td class="opp-price">¥250-600</td><td class="opp-rebuy">1-3年</td><td><span class="opp-margin opp-margin-low">28-36%</span></td><td><span class="diff-mid">🟡中</span></td></tr>
+<tr class="opp-row"><td>🔴高</td><td><span class="opp-name">APP饮水监测饮水机</span></td><td class="opp-reason">记录每只猫饮水量+时长+预警，肾病早发现</td><td class="opp-price">¥300-700</td><td class="opp-rebuy">1-3年</td><td><span class="opp-margin opp-margin-mid">25-35%</span></td><td><span class="diff-hard">🔴高</span></td></tr>
 </tbody>
-<tr><td><strong>智能猫砂盆</strong> <span class="opp-toggle" onclick="var g=this.parentElement.parentElement.nextElementSibling;g.classList.toggle('closed');this.textContent=this.textContent=='−2'?'+2':'−2'">−2</span></td><td>自动铲屎/APP监控/除臭/多猫识别，宠物智能第一爆品</td><td class="price-range">¥800-3000</td><td><span class="badge badge-green">⭐5/5 极佳</span></td><td>小佩、CATLINK、Litter-Robot</td></tr>
-<tbody class="opp-group opp-group-智能猫砂盆-sm">
+<tr><td><strong>智能猫砂盆</strong> <span class="opp-toggle" onclick="var g=this.parentElement.parentElement.nextElementSibling;g.classList.toggle('closed');this.textContent=this.textContent=='−4'?'+4':'−4'">−4</span></td><td>智能硬件升级品类</td><td class="price-range">¥100-2000+</td><td><span class="badge badge-green">⭐5/5 极佳</span></td><td>小佩/霍曼/CATLINK等</td></tr>
+<tbody class="opp-group opp-group-智能猫砂-sm">
+
 <tr class="opp-header"><td>门槛</td><td>机会点产品</td><td>机会分析</td><td>客单价</td><td>复购率</td><td>利润率</td><td>门槛</td></tr>
-<tr class="opp-row"><td>🔴高</td><td><span class="opp-name">全自动滚筒式猫砂盆</span></td><td class="opp-reason">便后自动旋转筛出结团，一周清理一次</td><td class="opp-price">¥1000-3000</td><td class="opp-rebuy">3-6年</td><td><span class="opp-margin opp-margin-low">20-30%</span></td><td><span class="diff-hard">🔴高</span></td></tr>
-<tr class="opp-row"><td>🟡中</td><td><span class="opp-name">开放式自动铲屎机</span></td><td class="opp-reason">匹配现有猫砂盆改装件，降低换机成本</td><td class="opp-price">¥300-800</td><td class="opp-rebuy">3-6年</td><td><span class="opp-margin opp-margin-low">25-35%</span></td><td><span class="diff-mid">🟡中</span></td></tr>
+<tr class="opp-row"><td>🔴高</td><td><span class="opp-name">基础自动铲屎猫砂盆</span></td><td class="opp-reason">重力/红外感应，便后自动旋转筛出结团</td><td class="opp-price">¥600-1500</td><td class="opp-rebuy">3-5年</td><td><span class="opp-margin opp-margin-low">20-28%</span></td><td><span class="diff-hard">🔴高</span></td></tr>
+<tr class="opp-row"><td>🔴高</td><td><span class="opp-name">APP全自动猫砂盆</span></td><td class="opp-reason">手机监控如厕次数+时长+猫砂余量+多猫识别</td><td class="opp-price">¥1000-3000</td><td class="opp-rebuy">3-5年</td><td><span class="opp-margin opp-margin-low">20-30%</span></td><td><span class="diff-hard">🔴高</span></td></tr>
+<tr class="opp-row"><td>🟡中</td><td><span class="opp-name">开放式自动铲屎机</span></td><td class="opp-reason">匹配现有猫砂盆的改装件，降低换机成本=做大市场</td><td class="opp-price">¥300-800</td><td class="opp-rebuy">3-5年</td><td><span class="opp-margin opp-margin-mid">25-35%</span></td><td><span class="diff-mid">🟡中</span></td></tr>
+<tr class="opp-row"><td>🔴高</td><td><span class="opp-name">自清洁全自动猫砂盆</span></td><td class="opp-reason">便后自动清洗+烘干猫砂(搭配专用砂)，极致懒人</td><td class="opp-price">¥1500-4000</td><td class="opp-rebuy">3-5年</td><td><span class="opp-margin opp-margin-low">18-25%</span></td><td><span class="diff-hard">🔴高</span></td></tr>
 </tbody>
-<tr><td><strong>GPS定位器</strong> <span class="opp-toggle" onclick="var g=this.parentElement.parentElement.nextElementSibling;g.classList.toggle('closed');this.textContent=this.textContent=='−2'?'+2':'−2'">−2</span></td><td>实时定位/电子围栏/轨迹记录，防走失刚需=情感溢价高</td><td class="price-range">¥100-500</td><td><span class="badge badge-green">⭐4/5 好</span></td><td>Tractive、Whistle、陪彼</td></tr>
-<tbody class="opp-group opp-group-GPS定位器-sm">
+<tr><td><strong>GPS定位器</strong> <span class="opp-toggle" onclick="var g=this.parentElement.parentElement.nextElementSibling;g.classList.toggle('closed');this.textContent=this.textContent=='−4'?'+4':'−4'">−4</span></td><td>智能硬件升级品类</td><td class="price-range">¥100-2000+</td><td><span class="badge badge-green">⭐5/5 极佳</span></td><td>小佩/霍曼/CATLINK等</td></tr>
+<tbody class="opp-group opp-group-GPS定-sm">
+
 <tr class="opp-header"><td>门槛</td><td>机会点产品</td><td>机会分析</td><td>客单价</td><td>复购率</td><td>利润率</td><td>门槛</td></tr>
-<tr class="opp-row"><td>🟡中</td><td><span class="opp-name">猫咪项圈GPS定位器</span></td><td class="opp-reason"><20g超轻+防挣脱，散养猫精准</td><td class="opp-price">¥150-400</td><td class="opp-rebuy">18-36月</td><td><span class="opp-margin opp-margin-low">30-40%</span></td><td><span class="diff-mid">🟡中</span></td></tr>
-<tr class="opp-row"><td>🔴高</td><td><span class="opp-name">太阳能充电狗牌GPS</span></td><td class="opp-reason">永不需充电+防水IP68，户外狗伴侣</td><td class="opp-price">¥200-500</td><td class="opp-rebuy">18-36月</td><td><span class="opp-margin opp-margin-low">28-38%</span></td><td><span class="diff-hard">🔴高</span></td></tr>
+<tr class="opp-row"><td>🟡中</td><td><span class="opp-name">猫咪项圈GPS</span></td><td class="opp-reason"><15g超轻+防挣脱安全扣，散养猫/易走失猫</td><td class="opp-price">¥150-400</td><td class="opp-rebuy">18-36月</td><td><span class="opp-margin opp-margin-mid">30-40%</span></td><td><span class="diff-mid">🟡中</span></td></tr>
+<tr class="opp-row"><td>🔴高</td><td><span class="opp-name">太阳能狗牌GPS</span></td><td class="opp-reason">太阳能充电+防水IP68+LED寻回灯，户外狗伴侣</td><td class="opp-price">¥200-500</td><td class="opp-rebuy">18-36月</td><td><span class="opp-margin opp-margin-low">28-38%</span></td><td><span class="diff-hard">🔴高</span></td></tr>
+<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">蓝牙防丢器(近距离)</span></td><td class="opp-reason">Apple Find My网络，近距离寻宠，低功耗长续航</td><td class="opp-price">¥80-200</td><td class="opp-rebuy">12-24月</td><td><span class="opp-margin opp-margin-high">35-50%</span></td><td><span class="diff-easy">🟢低</span></td></tr>
+<tr class="opp-row"><td>🔴高</td><td><span class="opp-name">4G独立GPS追踪器</span></td><td class="opp-reason">不需手机在身边，独立SIM卡+实时轨迹，极限场景</td><td class="opp-price">¥200-600</td><td class="opp-rebuy">18-36月</td><td><span class="opp-margin opp-margin-mid">25-35%</span></td><td><span class="diff-hard">🔴高</span></td></tr>
 </tbody>
-<tr><td><strong>智能摄像头/互动</strong> <span class="opp-toggle" onclick="var g=this.parentElement.parentElement.nextElementSibling;g.classList.toggle('closed');this.textContent=this.textContent=='−2'?'+2':'−2'">−2</span></td><td>云台/双向语音/激光逗猫/零食弹射/夜视，办公族刚需</td><td class="price-range">¥150-500</td><td><span class="badge badge-green">⭐5/5 极佳</span></td><td>Furbo、小佩、Enabot</td></tr>
-<tbody class="opp-group opp-group-智能摄像头-互动-sm">
+<tr><td><strong>智能摄像头/互动</strong> <span class="opp-toggle" onclick="var g=this.parentElement.parentElement.nextElementSibling;g.classList.toggle('closed');this.textContent=this.textContent=='−4'?'+4':'−4'">−4</span></td><td>智能硬件升级品类</td><td class="price-range">¥100-2000+</td><td><span class="badge badge-green">⭐5/5 极佳</span></td><td>小佩/霍曼/CATLINK等</td></tr>
+<tbody class="opp-group opp-group-智能摄像-sm">
+
 <tr class="opp-header"><td>门槛</td><td>机会点产品</td><td>机会分析</td><td>客单价</td><td>复购率</td><td>利润率</td><td>门槛</td></tr>
-<tr class="opp-row"><td>🟡中</td><td><span class="opp-name">双向语音+激光逗猫摄像头</span></td><td class="opp-reason">云台+激光+远程喊话，上班族看猫神器</td><td class="opp-price">¥200-500</td><td class="opp-rebuy">2-4年</td><td><span class="opp-margin opp-margin-low">25-35%</span></td><td><span class="diff-mid">🟡中</span></td></tr>
-<tr class="opp-row"><td>🔴高</td><td><span class="opp-name">零食弹射摄像头</span></td><td class="opp-reason">APP一键弹射零食，训狗+互动</td><td class="opp-price">¥250-600</td><td class="opp-rebuy">2-4年</td><td><span class="opp-margin opp-margin-low">25-35%</span></td><td><span class="diff-hard">🔴高</span></td></tr>
+<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">基础云台摄像头</span></td><td class="opp-reason">360°旋转+双向语音+夜视，上班看猫基础款</td><td class="opp-price">¥150-400</td><td class="opp-rebuy">2-4年</td><td><span class="opp-margin opp-margin-mid">25-35%</span></td><td><span class="diff-easy">🟢低</span></td></tr>
+<tr class="opp-row"><td>🟡中</td><td><span class="opp-name">激光逗猫摄像头</span></td><td class="opp-reason">云台+激光点移动+APP操纵，上班远程逗猫</td><td class="opp-price">¥200-500</td><td class="opp-rebuy">2-4年</td><td><span class="opp-margin opp-margin-mid">25-35%</span></td><td><span class="diff-mid">🟡中</span></td></tr>
+<tr class="opp-row"><td>🔴高</td><td><span class="opp-name">零食弹射摄像头</span></td><td class="opp-reason">APP一键弹射零食+语音奖励，训狗+远程互动</td><td class="opp-price">¥250-600</td><td class="opp-rebuy">2-4年</td><td><span class="opp-margin opp-margin-mid">25-35%</span></td><td><span class="diff-hard">🔴高</span></td></tr>
+<tr class="opp-row"><td>🔴高</td><td><span class="opp-name">AI行为分析摄像头</span></td><td class="opp-reason">识别异常叫声/长时间不动/呕吐等，主动预警</td><td class="opp-price">¥300-800</td><td class="opp-rebuy">2-4年</td><td><span class="opp-margin opp-margin-low">28-36%</span></td><td><span class="diff-hard">🔴高</span></td></tr>
 </tbody>
-<tr><td><strong>智能烘干箱</strong> <span class="opp-toggle" onclick="var g=this.parentElement.parentElement.nextElementSibling;g.classList.toggle('closed');this.textContent=this.textContent=='−1'?'+1':'−1'">−1</span></td><td>宠物专用烘干箱，恒温/静音/负离子，替代吹风机+美容院</td><td class="price-range">¥500-2000</td><td><span class="badge badge-green">⭐4/5 好</span></td><td>鸟语花香、霍曼、pikapet</td></tr>
-<tbody class="opp-group opp-group-智能烘干箱-sm">
+<tr><td><strong>智能烘干箱</strong> <span class="opp-toggle" onclick="var g=this.parentElement.parentElement.nextElementSibling;g.classList.toggle('closed');this.textContent=this.textContent=='−3'?'+3':'−3'">−3</span></td><td>智能硬件升级品类</td><td class="price-range">¥100-2000+</td><td><span class="badge badge-green">⭐5/5 极佳</span></td><td>小佩/霍曼/CATLINK等</td></tr>
+<tbody class="opp-group opp-group-智能烘干-sm">
+
 <tr class="opp-header"><td>门槛</td><td>机会点产品</td><td>机会分析</td><td>客单价</td><td>复购率</td><td>利润率</td><td>门槛</td></tr>
-<tr class="opp-row"><td>🔴高</td><td><span class="opp-name">宠物负离子烘干箱</span></td><td class="opp-reason">60°C恒温+负离子护毛+静音<45dB</td><td class="opp-price">¥500-2000</td><td class="opp-rebuy">3-6年</td><td><span class="opp-margin opp-margin-low">20-30%</span></td><td><span class="diff-hard">🔴高</span></td></tr>
+<tr class="opp-row"><td>🔴高</td><td><span class="opp-name">基础宠物烘干箱</span></td><td class="opp-reason">60°C恒温+PTC加热+静音风扇，替代吹风机</td><td class="opp-price">¥400-1200</td><td class="opp-rebuy">3-5年</td><td><span class="opp-margin opp-margin-low">22-30%</span></td><td><span class="diff-hard">🔴高</span></td></tr>
+<tr class="opp-row"><td>🔴高</td><td><span class="opp-name">负离子护毛烘干箱</span></td><td class="opp-reason">负离子+红外理疗+臭氧杀菌，专业级护毛体验</td><td class="opp-price">¥800-2500</td><td class="opp-rebuy">3-5年</td><td><span class="opp-margin opp-margin-low">25-32%</span></td><td><span class="diff-hard">🔴高</span></td></tr>
+<tr class="opp-row"><td>🟡中</td><td><span class="opp-name">便携折叠烘干箱</span></td><td class="opp-reason">折叠收纳+车载电源，宠物店/宠物展/旅行场景</td><td class="opp-price">¥300-800</td><td class="opp-rebuy">3-5年</td><td><span class="opp-margin opp-margin-mid">25-35%</span></td><td><span class="diff-mid">🟡中</span></td></tr>
 </tbody>
-<tr><td><strong>智能项圈/健康监测</strong> <span class="opp-toggle" onclick="var g=this.parentElement.parentElement.nextElementSibling;g.classList.toggle('closed');this.textContent=this.textContent=='−1'?'+1':'−1'">−1</span></td><td>活动量/睡眠/心率/体温监测，数据驱动健康管理</td><td class="price-range">¥200-600</td><td><span class="badge badge-green">⭐3/5 中等</span></td><td>Whistle、FitBark、PetPace</td></tr>
-<tbody class="opp-group opp-group-智能项圈-健康监测-sm">
+<tr><td><strong>智能项圈/健康监测</strong> <span class="opp-toggle" onclick="var g=this.parentElement.parentElement.nextElementSibling;g.classList.toggle('closed');this.textContent=this.textContent=='−3'?'+3':'−3'">−3</span></td><td>智能硬件升级品类</td><td class="price-range">¥100-2000+</td><td><span class="badge badge-green">⭐5/5 极佳</span></td><td>小佩/霍曼/CATLINK等</td></tr>
+<tbody class="opp-group opp-group-智能项圈-sm">
+
 <tr class="opp-header"><td>门槛</td><td>机会点产品</td><td>机会分析</td><td>客单价</td><td>复购率</td><td>利润率</td><td>门槛</td></tr>
-<tr class="opp-row"><td>🟡中</td><td><span class="opp-name">狗狗运动手环(项圈式)</span></td><td class="opp-reason">计步+卡路里+睡眠监测=PitPat模式</td><td class="opp-price">¥200-500</td><td class="opp-rebuy">18-36月</td><td><span class="opp-margin opp-margin-low">25-35%</span></td><td><span class="diff-mid">🟡中</span></td></tr>
+<tr class="opp-row"><td>🟡中</td><td><span class="opp-name">运动监测项圈</span></td><td class="opp-reason">计步+卡路里+活跃度评级，科学养宠=PitPat模式</td><td class="opp-price">¥200-500</td><td class="opp-rebuy">18-36月</td><td><span class="opp-margin opp-margin-low">28-36%</span></td><td><span class="diff-mid">🟡中</span></td></tr>
+<tr class="opp-row"><td>🔴高</td><td><span class="opp-name">体温+心率监测项圈</span></td><td class="opp-reason">持续体温+静息心率，发烧/异常提前预警</td><td class="opp-price">¥300-800</td><td class="opp-rebuy">18-36月</td><td><span class="opp-margin opp-margin-low">25-32%</span></td><td><span class="diff-hard">🔴高</span></td></tr>
+<tr class="opp-row"><td>🔴高</td><td><span class="opp-name">GPS+健康一体项圈</span></td><td class="opp-reason">定位+运动+体温三合一，户外高端用户</td><td class="opp-price">¥400-1000</td><td class="opp-rebuy">18-36月</td><td><span class="opp-margin opp-margin-low">22-30%</span></td><td><span class="diff-hard">🔴高</span></td></tr>
 </tbody>
-<tr><td><strong>宠物智能门</strong></td><td>识别宠物项圈芯片/蓝牙自动开门，猫狗自由进出=高端刚需</td><td class="price-range">¥300-1000</td><td><span class="badge badge-yellow">⭐3/5 中等</span></td><td>SureFlap、PetSafe、Cat Mate</td></tr>
-<tr><td><strong>宠物陪伴机器人</strong></td><td>移动摄像头+零食弹射+激光逗猫，抖音新品，上班族远程陪宠</td><td class="price-range">¥300-800</td><td><span class="badge badge-green">⭐4/5 好</span></td><td>Enabot、Furbo、小佩</td></tr>
+<tr><td><strong>智能宠物门</strong> <span class="opp-toggle" onclick="var g=this.parentElement.parentElement.nextElementSibling;g.classList.toggle('closed');this.textContent=this.textContent=='−3'?'+3':'−3'">−3</span></td><td>智能硬件升级品类</td><td class="price-range">¥100-2000+</td><td><span class="badge badge-green">⭐5/5 极佳</span></td><td>小佩/霍曼/CATLINK等</td></tr>
+<tbody class="opp-group opp-group-智能宠物-sm">
+
+<tr class="opp-header"><td>门槛</td><td>机会点产品</td><td>机会分析</td><td>客单价</td><td>复购率</td><td>利润率</td><td>门槛</td></tr>
+<tr class="opp-row"><td>🟡中</td><td><span class="opp-name">RFID芯片识别宠物门</span></td><td class="opp-reason">识别项圈芯片控制开门，猫进出狗禁入=分区管理</td><td class="opp-price">¥300-800</td><td class="opp-rebuy">3-6年</td><td><span class="opp-margin opp-margin-mid">30-40%</span></td><td><span class="diff-mid">🟡中</span></td></tr>
+<tr class="opp-row"><td>🟡中</td><td><span class="opp-name">蓝牙/手机感应宠物门</span></td><td class="opp-reason">手机靠近开门，无需额外项圈配件</td><td class="opp-price">¥250-600</td><td class="opp-rebuy">3-6年</td><td><span class="opp-margin opp-margin-low">28-38%</span></td><td><span class="diff-mid">🟡中</span></td></tr>
+<tr class="opp-row"><td>🔴高</td><td><span class="opp-name">四向锁定智能宠物门</span></td><td class="opp-reason">手动设定进出/只进/只出/全锁四种模式</td><td class="opp-price">¥400-1000</td><td class="opp-rebuy">3-6年</td><td><span class="opp-margin opp-margin-mid">28-35%</span></td><td><span class="diff-hard">🔴高</span></td></tr>
+</tbody>
+<tr><td><strong>宠物陪伴机器人</strong> <span class="opp-toggle" onclick="var g=this.parentElement.parentElement.nextElementSibling;g.classList.toggle('closed');this.textContent=this.textContent=='−3'?'+3':'−3'">−3</span></td><td>智能硬件升级品类</td><td class="price-range">¥100-2000+</td><td><span class="badge badge-green">⭐5/5 极佳</span></td><td>小佩/霍曼/CATLINK等</td></tr>
+<tbody class="opp-group opp-group-宠物陪伴-sm">
+
+<tr class="opp-header"><td>门槛</td><td>机会点产品</td><td>机会分析</td><td>客单价</td><td>复购率</td><td>利润率</td><td>门槛</td></tr>
+<tr class="opp-row"><td>🟡中</td><td><span class="opp-name">移动互动机器人</span></td><td class="opp-reason">可自主移动+零食弹射+激光逗猫，远程陪宠</td><td class="opp-price">¥300-800</td><td class="opp-rebuy">2-4年</td><td><span class="opp-margin opp-margin-mid">25-35%</span></td><td><span class="diff-mid">🟡中</span></td></tr>
+<tr class="opp-row"><td>🟡中</td><td><span class="opp-name">桌面陪伴机器人</span></td><td class="opp-reason">固定式+AI语音+手势互动，适合猫/小型犬</td><td class="opp-price">¥200-500</td><td class="opp-rebuy">2-4年</td><td><span class="opp-margin opp-margin-mid">30-40%</span></td><td><span class="diff-mid">🟡中</span></td></tr>
+<tr class="opp-row"><td>🔴高</td><td><span class="opp-name">遛狗机器人</span></td><td class="opp-reason">室外自动遛狗+GPS定位+防挣脱，解放人力=未来</td><td class="opp-price">¥500-2000</td><td class="opp-rebuy">3-5年</td><td><span class="opp-margin opp-margin-low">20-28%</span></td><td><span class="diff-hard">🔴高</span></td></tr>
+</tbody>
+<tr><td><strong>智能称重碗/食盆</strong> <span class="opp-toggle" onclick="var g=this.parentElement.parentElement.nextElementSibling;g.classList.toggle('closed');this.textContent=this.textContent=='−3'?'+3':'−3'">−3</span></td><td>智能硬件升级品类</td><td class="price-range">¥100-2000+</td><td><span class="badge badge-green">⭐5/5 极佳</span></td><td>小佩/霍曼/CATLINK等</td></tr>
+<tbody class="opp-group opp-group-智能称重-sm">
+
+<tr class="opp-header"><td>门槛</td><td>机会点产品</td><td>机会分析</td><td>客单价</td><td>复购率</td><td>利润率</td><td>门槛</td></tr>
+<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">基础称重碗</span></td><td class="opp-reason">LED实时显示克数+去皮功能，科学喂养第一步</td><td class="opp-price">¥80-200</td><td class="opp-rebuy">2-4年</td><td><span class="opp-margin opp-margin-mid">30-40%</span></td><td><span class="diff-easy">🟢低</span></td></tr>
+<tr class="opp-row"><td>🟡中</td><td><span class="opp-name">APP智能称重碗</span></td><td class="opp-reason">每次进食克数+时间记录+手机同步，专业宠物主</td><td class="opp-price">¥200-500</td><td class="opp-rebuy">2-4年</td><td><span class="opp-margin opp-margin-mid">28-35%</span></td><td><span class="diff-mid">🟡中</span></td></tr>
+<tr class="opp-row"><td>🟡中</td><td><span class="opp-name">宠物识别称重碗</span></td><td class="opp-reason">RFID识别不同宠物分别记录，多宠家庭精准</td><td class="opp-price">¥300-800</td><td class="opp-rebuy">2-4年</td><td><span class="opp-margin opp-margin-low">25-32%</span></td><td><span class="diff-mid">🟡中</span></td></tr>
+</tbody>
+<tr><td><strong>智能环境监控</strong> <span class="opp-toggle" onclick="var g=this.parentElement.parentElement.nextElementSibling;g.classList.toggle('closed');this.textContent=this.textContent=='−3'?'+3':'−3'">−3</span></td><td>智能硬件升级品类</td><td class="price-range">¥100-2000+</td><td><span class="badge badge-green">⭐5/5 极佳</span></td><td>小佩/霍曼/CATLINK等</td></tr>
+<tbody class="opp-group opp-group-智能环境-sm">
+
+<tr class="opp-header"><td>门槛</td><td>机会点产品</td><td>机会分析</td><td>客单价</td><td>复购率</td><td>利润率</td><td>门槛</td></tr>
+<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">宠物温湿度监测器</span></td><td class="opp-reason">实时温湿度+手机预警，夏季中暑冬季低温危险</td><td class="opp-price">¥100-300</td><td class="opp-rebuy">2-4年</td><td><span class="opp-margin opp-margin-mid">30-40%</span></td><td><span class="diff-easy">🟢低</span></td></tr>
+<tr class="opp-row"><td>🟡中</td><td><span class="opp-name">宠物空气质量检测</span></td><td class="opp-reason">PM2.5+CO2+氨气(猫砂盆异味)，敏感宠物家庭</td><td class="opp-price">¥200-600</td><td class="opp-rebuy">2-4年</td><td><span class="opp-margin opp-margin-low">28-36%</span></td><td><span class="diff-mid">🟡中</span></td></tr>
+<tr class="opp-row"><td>🔴高</td><td><span class="opp-name">智能空调宠物窝</span></td><td class="opp-reason">温控+循环风+APP调温，冷暖两用宠物小屋</td><td class="opp-price">¥400-1200</td><td class="opp-rebuy">3-5年</td><td><span class="opp-margin opp-margin-mid">25-35%</span></td><td><span class="diff-hard">🔴高</span></td></tr>
+</tbody>
+<tr><td><strong>宠物智能马桶/冲洗</strong> <span class="opp-toggle" onclick="var g=this.parentElement.parentElement.nextElementSibling;g.classList.toggle('closed');this.textContent=this.textContent=='−3'?'+3':'−3'">−3</span></td><td>智能硬件升级品类</td><td class="price-range">¥100-2000+</td><td><span class="badge badge-green">⭐5/5 极佳</span></td><td>小佩/霍曼/CATLINK等</td></tr>
+<tbody class="opp-group opp-group-宠物智能-sm">
+
+<tr class="opp-header"><td>门槛</td><td>机会点产品</td><td>机会分析</td><td>客单价</td><td>复购率</td><td>利润率</td><td>门槛</td></tr>
+<tr class="opp-row"><td>🔴高</td><td><span class="opp-name">自动冲洗猫砂盆</span></td><td class="opp-reason">便后自动冲水+消毒+烘干，真正'不用铲'终极方案</td><td class="opp-price">¥2000-5000</td><td class="opp-rebuy">3-6年</td><td><span class="opp-margin opp-margin-low">20-25%</span></td><td><span class="diff-hard">🔴高</span></td></tr>
+<tr class="opp-row"><td>🟡中</td><td><span class="opp-name">宠物自动洗脚器</span></td><td class="opp-reason">感应式+软刷+烘干，遛狗回来不用弯腰洗脚</td><td class="opp-price">¥150-400</td><td class="opp-rebuy">2-4年</td><td><span class="opp-margin opp-margin-mid">30-40%</span></td><td><span class="diff-mid">🟡中</span></td></tr>
+<tr class="opp-row"><td>🟡中</td><td><span class="opp-name">宠物智能厕所垫</span></td><td class="opp-reason">感应式自动换垫+封口+除臭，半自动方案</td><td class="opp-price">¥300-800</td><td class="opp-rebuy">3-5年</td><td><span class="opp-margin opp-margin-mid">25-35%</span></td><td><span class="diff-mid">🟡中</span></td></tr>
+</tbody>
 </tbody></table>
-<div class="analysis-box"><h4>🎯 电商切入策略</h4><p>智能设备是<strong>客单价最高+技术壁垒最强</strong>的宠物品类。建议策略：</p><ul><li><strong>智能饮水机+喂食器=最佳入门</strong>：门槛适中（¥100-400），市场教育已成熟，但外观设计/APP体验还有差异化空间</li><li><strong>智能猫砂盆=高壁垒高回报</strong>：解决「每天铲屎」强痛点，客单价¥1000+利润空间大，但安全标准要求极高（卡猫事故=品牌毁灭）</li><li><strong>跨境电商机会</strong>：小佩/CATLINK已在海外验证中国品牌可行，Amazon宠物智能赛道年增50%+</li><li><strong>⚠️ 安全第一</strong>：智能设备涉及水电+动物生命安全，必须通过CE/FCC/UL等认证，品控不能有任何妥协</li></ul></div>
+
+<div class="analysis-box">
+<h4>🎯 宠物智能赛道 · 战略研判</h4>
+<p>宠物智能设备是<strong>消费升级的最高阶形态</strong>——从'给宠物买东西'升级到'给宠物打造智能生活'。</p>
+
+<h4 style="margin-top:16px;">📊 赛道特征</h4>
+<ul>
+<li><strong>客单价天花板最高</strong>：¥80(称重碗) ~ ¥5000(智能马桶)，利润空间远超传统宠物用品</li>
+<li><strong>复购配件=利润引擎</strong>：滤芯/除臭液/垃圾袋/感应垫=每1-3月复购，设备赚一次，配件赚一生</li>
+<li><strong>技术壁垒=竞争护城河</strong>：APP开发+硬件设计+安全认证(CE/FCC/3C)，小卖家难以跟进</li>
+<li><strong>海外市场已验证</strong>：Whistle($3亿被Mars收购)/Furbo(LovePal)/Litter-Robot($3亿+年营收)，中国品牌(CATLINK/小佩/霍曼)正全球扩张</li>
+</ul>
+
+<h4 style="margin-top:16px;">🗺️ 建议入场路径</h4>
+<table style="font-size:12px;">
+<tr><th style="width:20%">阶段</th><th style="width:25%">切入点</th><th style="width:30%">理由</th><th style="width:25%">目标SKU</th></tr>
+<tr><td><strong>🥇 第一波</strong></td><td>称重碗+饮水机+喂食器</td><td>入门级智能三件套，市场教育成熟，供应链已标准化</td><td>5-8个</td></tr>
+<tr><td><strong>🥈 第二波</strong></td><td>摄像头+GPS+智能项圈</td><td>安防+健康焦虑驱动，客单价可拉升到¥300-800</td><td>5-8个</td></tr>
+<tr><td><strong>🥉 第三波</strong></td><td>猫砂盆+烘干箱+宠物门</td><td>高壁垒大件，品牌溢价核心，P1-P2建供应链</td><td>4-6个</td></tr>
+<tr><td><strong>🏆 终极</strong></td><td>陪伴机器人+智能马桶</td><td>品类定义者，需自研技术+专利布局</td><td>2-4个</td></tr>
+</table>
+
+<h4 style="margin-top:16px;">⚠️ 核心风险提醒</h4>
+<ul>
+<li><strong>安全是生命线</strong>：智能设备涉及水电+动物生命，卡猫/电击/过热=品牌毁灭性打击，品控不能妥协</li>
+<li><strong>APP是体验核心</strong>：硬件只是载体，APP体验(连接稳定性/UI/推送)决定复购和口碑</li>
+<li><strong>售后成本高</strong>：智能硬件退货率15-25%，需要强大的售后团队和技术支持</li>
+<li><strong>专利壁垒需关注</strong>：Litter-Robot/Whistle/Furbo等欧美品牌有大量专利，出海需FTO分析</li>
+</ul>
+</div>
+
+<h3 style="margin-top:36px;font-size:18px;color:var(--accent);">🔗 关联赛道</h3>
+<p style="color:var(--text-secondary);font-size:13px;margin-top:8px;">
+智能设备的耗材配件 → <a href="supplies.html" style="color:var(--accent);">🏠 日常用品</a>（滤芯/垃圾袋/猫砂） | 
+智能猫砂盆专属猫砂 → <a href="supplies.html" style="color:var(--accent);">猫砂品类</a> | 
+宠物健康监测 → <a href="health.html" style="color:var(--accent);">💊 健康护理</a>
+</p>
+
 </div>
 <footer>
   <p>🐾 宠物赛道产品线细分调研 v1.0</p>
@@ -226,5 +348,7 @@ window.addEventListener('scroll',()=>{document.getElementById('scrollTopBtn').cl
   });
 })();
 </script>
+</body>
+</html>
 </body>
 </html>
