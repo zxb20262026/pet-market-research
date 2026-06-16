@@ -102,12 +102,21 @@ footer a { color: var(--accent); }
 .scroll-top.visible { opacity: 1; }
 @media (max-width: 768px) { .container { padding: 16px 12px; } table { display: block; overflow-x: auto; } .card-grid { grid-template-columns: repeat(2, 1fr); } }
 
-.opp-section { margin-top: 32px; }
-.opp-section h3 { font-size: 18px; color: var(--accent); margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
-.opp-section table { margin-top: 8px; }
-.opp-section .diff-easy { color: var(--accent2); font-weight: 600; }
-.opp-section .diff-mid { color: var(--accent3); font-weight: 600; }
-.opp-section .diff-hard { color: var(--accent4); font-weight: 600; }
+.opp-row { background: rgba(240,160,96,0.03); }
+.opp-row td { padding: 5px 12px 5px 28px !important; font-size: 12px; border-bottom: 1px dashed var(--border) !important; }
+.opp-row td:first-child { color: var(--accent6); font-size: 11px; white-space: nowrap; min-width: 0; }
+.opp-row td:first-child::before { content: "└ "; color: var(--text-tertiary); }
+.opp-row .opp-name { color: var(--text); font-weight: 600; }
+.opp-row .opp-reason { color: var(--text-secondary); font-size: 11px; }
+.opp-row .diff-easy { color: var(--accent2); font-weight: 600; font-size: 11px; }
+.opp-row .diff-mid { color: var(--accent3); font-weight: 600; font-size: 11px; }
+.opp-row .diff-hard { color: var(--accent4); font-weight: 600; font-size: 11px; }
+.opp-toggle { cursor: pointer; color: var(--accent); font-size: 11px; margin-left: 4px; user-select: none; }
+.opp-toggle:hover { color: var(--accent6); }
+.opp-group { display: none; }
+.opp-group.open { display: table-row-group; }
+tr:hover + .opp-group .opp-row, .opp-group:hover .opp-row { background: rgba(240,160,96,0.08); }
+
 </style>
 </head>
 <body>
@@ -136,38 +145,44 @@ footer a { color: var(--accent); }
   <table>
 <thead><tr><th style="width:16%">细分品类</th><th style="width:37%">说明</th><th style="width:12%">价格区间</th><th style="width:15%">电商适配度</th><th style="width:20%">代表品牌</th></tr></thead>
 <tbody>
-<tr><td><strong>智能喂食器</strong></td><td>APP远程控粮/定时定量/称重/防卡粮/双仓（干湿分离）</td><td class="price-range">¥200-800</td><td><span class="badge badge-green">⭐5/5 极佳</span></td><td>小佩、霍曼、PETKIT</td></tr>
-<tr><td><strong>智能饮水机</strong></td><td>循环过滤/静音水泵/UV杀菌/水位提醒，猫咪偏好流动水</td><td class="price-range">¥100-400</td><td><span class="badge badge-green">⭐5/5 极佳</span></td><td>小佩、霍曼、Catit</td></tr>
-<tr><td><strong>智能猫砂盆</strong></td><td>自动铲屎/APP监控/除臭/多猫识别，宠物智能第一爆品</td><td class="price-range">¥800-3000</td><td><span class="badge badge-green">⭐5/5 极佳</span></td><td>小佩、CATLINK、Litter-Robot</td></tr>
-<tr><td><strong>GPS定位器</strong></td><td>实时定位/电子围栏/轨迹记录，防走失刚需=情感溢价高</td><td class="price-range">¥100-500</td><td><span class="badge badge-green">⭐4/5 好</span></td><td>Tractive、Whistle、陪彼</td></tr>
-<tr><td><strong>智能摄像头/互动</strong></td><td>云台/双向语音/激光逗猫/零食弹射/夜视，办公族刚需</td><td class="price-range">¥150-500</td><td><span class="badge badge-green">⭐5/5 极佳</span></td><td>Furbo、小佩、Enabot</td></tr>
-<tr><td><strong>智能烘干箱</strong></td><td>宠物专用烘干箱，恒温/静音/负离子，替代吹风机+美容院</td><td class="price-range">¥500-2000</td><td><span class="badge badge-green">⭐4/5 好</span></td><td>鸟语花香、霍曼、pikapet</td></tr>
-<tr><td><strong>智能项圈/健康监测</strong></td><td>活动量/睡眠/心率/体温监测，数据驱动健康管理</td><td class="price-range">¥200-600</td><td><span class="badge badge-green">⭐3/5 中等</span></td><td>Whistle、FitBark、PetPace</td></tr>
+<tr><td><strong>智能喂食器</strong> <span class="opp-toggle" onclick="var g=this.closest('tr').nextElementSibling;g.classList.toggle('open');this.textContent=this.textContent=='+3'?'−3':'+3'">+3</span></td><td>APP远程控粮/定时定量/称重/防卡粮/双仓（干湿分离）</td><td class="price-range">¥200-800</td><td><span class="badge badge-green">⭐5/5 极佳</span></td><td>小佩、霍曼、PETKIT</td></tr>
+<tbody class="opp-group opp-group-智能喂食器-sm">
+<tr class="opp-row"><td>🟡中</td><td><span class="opp-name">APP远程双仓喂食器</span></td><td class="opp-reason">干粮+湿粮(带冰袋)，解决出门喂湿粮</td><td><span class="diff-mid">🟡中</span></td></tr>
+<tr class="opp-row"><td>🟡中</td><td><span class="opp-name">真空保鲜智能喂食器</span></td><td class="opp-reason">抽真空防潮防虫，南方潮湿地区刚需</td><td><span class="diff-mid">🟡中</span></td></tr>
+<tr class="opp-row"><td>🔴高</td><td><span class="opp-name">AI识别多猫喂食器</span></td><td class="opp-reason">面部/项圈识别分猫出粮，多猫家庭</td><td><span class="diff-hard">🔴高</span></td></tr>
+</tbody>
+<tr><td><strong>智能饮水机</strong> <span class="opp-toggle" onclick="var g=this.closest('tr').nextElementSibling;g.classList.toggle('open');this.textContent=this.textContent=='+3'?'−3':'+3'">+3</span></td><td>循环过滤/静音水泵/UV杀菌/水位提醒，猫咪偏好流动水</td><td class="price-range">¥100-400</td><td><span class="badge badge-green">⭐5/5 极佳</span></td><td>小佩、霍曼、Catit</td></tr>
+<tbody class="opp-group opp-group-智能饮水机-sm">
+<tr class="opp-row"><td>🟡中</td><td><span class="opp-name">无线充电式饮水机</span></td><td class="opp-reason">Type-C+无线水泵，摆脱插电限制</td><td><span class="diff-mid">🟡中</span></td></tr>
+<tr class="opp-row"><td>🟡中</td><td><span class="opp-name">UV杀菌+矿物质滤芯饮水机</span></td><td class="opp-reason">UV杀菌+富锶矿化，健康升级</td><td><span class="diff-mid">🟡中</span></td></tr>
+<tr class="opp-row"><td>🔴高</td><td><span class="opp-name">APP饮水监测饮水机</span></td><td class="opp-reason">记录喝水量+时长，肾病早发现</td><td><span class="diff-hard">🔴高</span></td></tr>
+</tbody>
+<tr><td><strong>智能猫砂盆</strong> <span class="opp-toggle" onclick="var g=this.closest('tr').nextElementSibling;g.classList.toggle('open');this.textContent=this.textContent=='+2'?'−2':'+2'">+2</span></td><td>自动铲屎/APP监控/除臭/多猫识别，宠物智能第一爆品</td><td class="price-range">¥800-3000</td><td><span class="badge badge-green">⭐5/5 极佳</span></td><td>小佩、CATLINK、Litter-Robot</td></tr>
+<tbody class="opp-group opp-group-智能猫砂盆-sm">
+<tr class="opp-row"><td>🔴高</td><td><span class="opp-name">全自动滚筒式猫砂盆</span></td><td class="opp-reason">便后自动旋转筛出结团，一周清理一次</td><td><span class="diff-hard">🔴高</span></td></tr>
+<tr class="opp-row"><td>🟡中</td><td><span class="opp-name">开放式自动铲屎机</span></td><td class="opp-reason">匹配现有猫砂盆改装件，降低换机成本</td><td><span class="diff-mid">🟡中</span></td></tr>
+</tbody>
+<tr><td><strong>GPS定位器</strong> <span class="opp-toggle" onclick="var g=this.closest('tr').nextElementSibling;g.classList.toggle('open');this.textContent=this.textContent=='+2'?'−2':'+2'">+2</span></td><td>实时定位/电子围栏/轨迹记录，防走失刚需=情感溢价高</td><td class="price-range">¥100-500</td><td><span class="badge badge-green">⭐4/5 好</span></td><td>Tractive、Whistle、陪彼</td></tr>
+<tbody class="opp-group opp-group-GPS定位器-sm">
+<tr class="opp-row"><td>🟡中</td><td><span class="opp-name">猫咪项圈GPS定位器</span></td><td class="opp-reason"><20g超轻+防挣脱，散养猫精准</td><td><span class="diff-mid">🟡中</span></td></tr>
+<tr class="opp-row"><td>🔴高</td><td><span class="opp-name">太阳能充电狗牌GPS</span></td><td class="opp-reason">永不需充电+防水IP68，户外狗伴侣</td><td><span class="diff-hard">🔴高</span></td></tr>
+</tbody>
+<tr><td><strong>智能摄像头/互动</strong> <span class="opp-toggle" onclick="var g=this.closest('tr').nextElementSibling;g.classList.toggle('open');this.textContent=this.textContent=='+2'?'−2':'+2'">+2</span></td><td>云台/双向语音/激光逗猫/零食弹射/夜视，办公族刚需</td><td class="price-range">¥150-500</td><td><span class="badge badge-green">⭐5/5 极佳</span></td><td>Furbo、小佩、Enabot</td></tr>
+<tbody class="opp-group opp-group-智能摄像头-互动-sm">
+<tr class="opp-row"><td>🟡中</td><td><span class="opp-name">双向语音+激光逗猫摄像头</span></td><td class="opp-reason">云台+激光+远程喊话，上班族看猫神器</td><td><span class="diff-mid">🟡中</span></td></tr>
+<tr class="opp-row"><td>🔴高</td><td><span class="opp-name">零食弹射摄像头</span></td><td class="opp-reason">APP一键弹射零食，训狗+互动</td><td><span class="diff-hard">🔴高</span></td></tr>
+</tbody>
+<tr><td><strong>智能烘干箱</strong> <span class="opp-toggle" onclick="var g=this.closest('tr').nextElementSibling;g.classList.toggle('open');this.textContent=this.textContent=='+1'?'−1':'+1'">+1</span></td><td>宠物专用烘干箱，恒温/静音/负离子，替代吹风机+美容院</td><td class="price-range">¥500-2000</td><td><span class="badge badge-green">⭐4/5 好</span></td><td>鸟语花香、霍曼、pikapet</td></tr>
+<tbody class="opp-group opp-group-智能烘干箱-sm">
+<tr class="opp-row"><td>🔴高</td><td><span class="opp-name">宠物负离子烘干箱</span></td><td class="opp-reason">60°C恒温+负离子护毛+静音<45dB</td><td><span class="diff-hard">🔴高</span></td></tr>
+</tbody>
+<tr><td><strong>智能项圈/健康监测</strong> <span class="opp-toggle" onclick="var g=this.closest('tr').nextElementSibling;g.classList.toggle('open');this.textContent=this.textContent=='+1'?'−1':'+1'">+1</span></td><td>活动量/睡眠/心率/体温监测，数据驱动健康管理</td><td class="price-range">¥200-600</td><td><span class="badge badge-green">⭐3/5 中等</span></td><td>Whistle、FitBark、PetPace</td></tr>
+<tbody class="opp-group opp-group-智能项圈-健康监测-sm">
+<tr class="opp-row"><td>🟡中</td><td><span class="opp-name">狗狗运动手环(项圈式)</span></td><td class="opp-reason">计步+卡路里+睡眠监测=PitPat模式</td><td><span class="diff-mid">🟡中</span></td></tr>
+</tbody>
 </tbody></table>
 <div class="analysis-box"><h4>🎯 电商切入策略</h4><p>智能设备是<strong>客单价最高+技术壁垒最强</strong>的宠物品类。建议策略：</p><ul><li><strong>智能饮水机+喂食器=最佳入门</strong>：门槛适中（¥100-400），市场教育已成熟，但外观设计/APP体验还有差异化空间</li><li><strong>智能猫砂盆=高壁垒高回报</strong>：解决「每天铲屎」强痛点，客单价¥1000+利润空间大，但安全标准要求极高（卡猫事故=品牌毁灭）</li><li><strong>跨境电商机会</strong>：小佩/CATLINK已在海外验证中国品牌可行，Amazon宠物智能赛道年增50%+</li><li><strong>⚠️ 安全第一</strong>：智能设备涉及水电+动物生命安全，必须通过CE/FCC/UL等认证，品控不能有任何妥协</li></ul></div>
 </div>
-<div class="opp-section">
-  <h3>🎯 三级机会点产品线（共14个机会点）</h3>
-  <table>
-<thead><tr><th style="width:16%">二级品类</th><th style="width:26%">机会点产品</th><th style="width:38%">机会分析</th><th style="width:10%">门槛</th></tr></thead>
-<tbody>
-<tr><td>智能喂食器</td><td><strong>APP远程双仓喂食器</strong></td><td>干粮仓+湿粮仓(带冰袋)，解决'出门无法喂湿粮'痛点</td><td><span class="diff-mid">🟡 中</span></td></tr>
-<tr><td>智能喂食器</td><td><strong>真空保鲜智能喂食器</strong></td><td>抽真空防潮+防虫，南方潮湿地区刚需，粮仓不浪费</td><td><span class="diff-mid">🟡 中</span></td></tr>
-<tr><td>智能喂食器</td><td><strong>AI识别多猫喂食器</strong></td><td>面部/项圈识别分猫出粮，多猫家庭精准控食</td><td><span class="diff-hard">🔴 高</span></td></tr>
-<tr><td>智能饮水机</td><td><strong>无线充电式饮水机</strong></td><td>Type-C充电+无线水泵，摆脱插电限制=摆放自由</td><td><span class="diff-mid">🟡 中</span></td></tr>
-<tr><td>智能饮水机</td><td><strong>UV杀菌+矿物质滤芯饮水机</strong></td><td>UV紫外线杀菌+富锶矿化滤芯，健康升级=价格带提升</td><td><span class="diff-mid">🟡 中</span></td></tr>
-<tr><td>智能饮水机</td><td><strong>APP饮水监测饮水机</strong></td><td>记录每只猫喝水量+时长，肾病早发现=健康焦虑营销</td><td><span class="diff-hard">🔴 高</span></td></tr>
-<tr><td>智能猫砂盆</td><td><strong>全自动滚筒式猫砂盆</strong></td><td>便后自动旋转筛出结团→落集便仓，一周清理一次</td><td><span class="diff-hard">🔴 高</span></td></tr>
-<tr><td>智能猫砂盆</td><td><strong>开放式自动铲屎机</strong></td><td>匹配任意现有猫砂盆的改装件，降低换机成本=做大市场</td><td><span class="diff-mid">🟡 中</span></td></tr>
-<tr><td>GPS定位器</td><td><strong>猫咪项圈GPS定位器</strong></td><td><20g超轻+防挣脱设计，散养猫/易走失猫精准场景</td><td><span class="diff-mid">🟡 中</span></td></tr>
-<tr><td>GPS定位器</td><td><strong>太阳能充电狗牌GPS</strong></td><td>永不需充电+防水IP68，户外狗忠实伴侣</td><td><span class="diff-hard">🔴 高</span></td></tr>
-<tr><td>智能摄像头/互动</td><td><strong>双向语音+激光逗猫摄像头</strong></td><td>云台旋转+激光点移动+远程喊话，上班族看猫神器</td><td><span class="diff-mid">🟡 中</span></td></tr>
-<tr><td>智能摄像头/互动</td><td><strong>零食弹射摄像头</strong></td><td>APP一键弹射零食，训狗+互动+防分离焦虑</td><td><span class="diff-hard">🔴 高</span></td></tr>
-<tr><td>智能烘干箱</td><td><strong>宠物负离子烘干箱</strong></td><td>60°C恒温+负离子护毛+静音<45dB，替代吹风机</td><td><span class="diff-hard">🔴 高</span></td></tr>
-<tr><td>智能项圈/健康监测</td><td><strong>狗狗运动手环(项圈式)</strong></td><td>计步+卡路里消耗+睡眠监测，科学养狗=PitPat模式</td><td><span class="diff-mid">🟡 中</span></td></tr>
-</tbody></table>
-</div>
-
 <footer>
   <p>🐾 宠物赛道产品线细分调研 v1.0</p>
   <p style="margin-top:6px;"><a href="https://github.com/zxb20262026/pet-market-research" target="_blank">GitHub</a> · Made with ⚡️ by 小马哥</p>
