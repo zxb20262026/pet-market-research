@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🐾 清洁消杀 | 宠物赛道调研</title>
+<style>
+:root {
+  --bg: #1a1410; --bg-card: #241e18; --bg-card-hover: #2e2720;
+  --border: #3d352d; --text: #e8d5c4; --text-secondary: #8b7d6e;
+  --text-tertiary: #6b5f52; --accent: #f0a060; --accent2: #5cb878;
+  --accent3: #e0b040; --accent4: #e05555; --accent5: #b892e0;
+  --accent6: #f0c080; --danger: #e05555;
+  --radius: 12px; --radius-sm: 8px;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; min-height: 100vh; }
+.nav { position: sticky; top: 0; z-index: 100; background: rgba(26,20,16,0.94); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 10px 20px; display: flex; align-items: center; gap: 6px; overflow-x: auto; }
+.nav-brand { font-weight: 700; font-size: 14px; white-space: nowrap; background: linear-gradient(135deg, var(--accent), var(--accent3)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.nav a { color: var(--text-secondary); text-decoration: none; font-size: 11px; white-space: nowrap; padding: 4px 7px; border-radius: 6px; transition: all 0.2s; }
+.nav a:hover { color: var(--text); background: var(--bg-card); }
+.nav a.active { color: var(--accent); background: rgba(240,160,96,0.1); }
+.nav .sep { color: var(--border); margin: 0 1px; font-size: 10px; }
+.container { max-width: 1100px; margin: 0 auto; padding: 24px 20px; }
+.page-title { font-size: 22px; font-weight: 700; margin-bottom: 24px; display: flex; align-items: center; gap: 10px; }
+.page-title .emoji { font-size: 28px; }
+.page-tag { font-size: 12px; padding: 2px 10px; border-radius: 12px; font-weight: 600; }
+.tag-hot { background: rgba(224,85,85,0.15); color: var(--danger); }
+.tag-rec { background: rgba(184,146,224,0.15); color: var(--accent5); }
+.tag-new { background: rgba(240,160,96,0.15); color: var(--accent); }
+.badge { display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 11px; font-weight: 600; white-space: nowrap; }
+.badge-green { background: rgba(92,184,120,0.15); color: var(--accent2); }
+.badge-yellow { background: rgba(224,176,64,0.15); color: var(--accent3); }
+.badge-red { background: rgba(224,85,85,0.15); color: var(--danger); }
+.price-range { font-family: 'SF Mono', 'Cascadia Code', monospace; font-size: 12px; color: var(--accent6); }
+.analysis-box { background: rgba(240,160,96,0.04); border: 1px solid rgba(240,160,96,0.15); border-radius: var(--radius-sm); padding: 16px 20px; margin-top: 20px; }
+.analysis-box h4 { color: var(--accent); font-size: 14px; margin-bottom: 8px; }
+.analysis-box p, .analysis-box ul { font-size: 13px; color: var(--text-secondary); margin: 4px 0; }
+.analysis-box ul { padding-left: 18px; }
+.analysis-box li { margin: 3px 0; }
+table { width: 100%; border-collapse: collapse; margin: 12px 0 20px; font-size: 13px; }
+th { text-align: left; padding: 10px 12px; background: rgba(255,255,255,0.04); border-bottom: 2px solid var(--border); color: var(--text-secondary); font-weight: 600; font-size: 12px; text-transform: uppercase; }
+td { padding: 10px 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
+tr:hover td { background: rgba(255,255,255,0.02); }
+footer { text-align: center; padding: 32px 20px; border-top: 1px solid var(--border); margin-top: 48px; color: var(--text-tertiary); font-size: 12px; }
+footer a { color: var(--accent); }
+.scroll-top { position: fixed; bottom: 24px; right: 24px; width: 40px; height: 40px; border-radius: 50%; background: var(--accent); color: #fff; border: none; cursor: pointer; font-size: 18px; display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s; z-index: 99; }
+.scroll-top.visible { opacity: 1; }
+@media (max-width: 768px) { .container { padding: 16px 12px; } table { display: block; overflow-x: auto; } }
+</style>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-brand">🐾 宠物赛道调研</a>
+  <span class="sep">|</span>
+  <a href="index.html">🏠</a>
+  <a href="food.html">🍖食品</a>
+  <a href="supplies.html">🏠用品</a>
+  <a href="toys.html">🎾玩具</a>
+  <a href="grooming.html">✂️洗护</a>
+  <a href="cleaning.html">🧴消杀</a>
+  <a href="travel.html">🚗出行</a>
+  <a href="apparel.html">👔服饰</a>
+  <a href="health.html">💊健康</a>
+  <a href="pet-med.html">🩺药品</a>
+  <a href="training.html">🎓训练</a>
+  <a href="smart.html">📱智能</a>
+  <a href="aqua-pet.html">🐠水族</a>
+  <a href="birds.html">🐦鸟类</a>
+  <a href="reptile.html">🦎爬宠</a>
+  <a href="gift.html">🎁礼盒</a>
+</nav>
+<div class="container">
+  <div class="page-title">
+    <span class="emoji">🧴</span>
+    宠物清洁消杀
+    <span class="page-tag tag-hot">全平台覆盖</span>
+  </div>
+  <p style="color:var(--text-secondary);font-size:15px;margin-bottom:24px;">除臭剂·消毒液·环境清洁 — 养宠家庭高频刚需，复购率最高品类之一</p>
+  <table>
+<thead><tr><th style="width:16%">细分品类</th><th style="width:37%">说明</th><th style="width:12%">价格区间</th><th style="width:15%">电商适配度</th><th style="width:20%">代表品牌</th></tr></thead>
+<tbody>
+<tr><td><strong>宠物除臭喷雾</strong></td><td>含生物酶/活性因子分解异味分子，沙发/猫砂盆/狗窝多场景</td><td class="price-range">¥25-80</td><td><span class="badge badge-green">⭐5/5 极佳</span></td><td>Febreze、自然共和国、小宠</td></tr>
+<tr><td><strong>宠物消毒液/杀菌</strong></td><td>次氯酸/季铵盐配方，宠物安全不刺激，拖地/擦笼/洗窝</td><td class="price-range">¥30-100</td><td><span class="badge badge-green">⭐5/5 极佳</span></td><td>杜邦卫可、欧洁达、F10</td></tr>
+<tr><td><strong>猫砂除臭珠/伴侣</strong></td><td>混合猫砂使用持续除臭7-15天，消耗品=持续复购</td><td class="price-range">¥15-40/瓶</td><td><span class="badge badge-green">⭐5/5 极佳</span></td><td>小壳、耐格乐、Arm & Hammer</td></tr>
+<tr><td><strong>猫砂盆清洁喷雾</strong></td><td>分解尿碱+除菌，深层清洁猫砂盆，铲屎官必备</td><td class="price-range">¥20-50</td><td><span class="badge badge-green">⭐4/5 好</span></td><td>Nature's Miracle、小壳</td></tr>
+<tr><td><strong>宠物便便袋/拾便器</strong></td><td>可降解/含香味的拾便袋+拾便器，遛狗文明刚需</td><td class="price-range">¥10-40/卷</td><td><span class="badge badge-green">⭐5/5 极佳</span></td><td>Earth Rated、AmazonBasics</td></tr>
+<tr><td><strong>环境净化器(宠物专用)</strong></td><td>HEPA+活性炭过滤宠物皮屑/毛发/异味，过敏家庭刚需</td><td class="price-range">¥300-1500</td><td><span class="badge badge-green">⭐3/5 中等</span></td><td>Winix、Levoit、霍尼韦尔</td></tr>
+<tr><td><strong>宠物尿渍清洁剂</strong></td><td>针对地毯/地板宠物尿液深度清洁，酶解技术去味去渍</td><td class="price-range">¥30-100</td><td><span class="badge badge-green">⭐5/5 极佳</span></td><td>Nature's Miracle、Rocco & Roxie</td></tr>
+</tbody></table>
+<div class="analysis-box"><h4>🎯 电商切入策略</h4><p>清洁消杀是全平台覆盖的独立品类，<strong>与洗护美容应分开运营</strong>。核心逻辑：洗护=宠物身上干净，消杀=宠物环境干净。建议策略：</p><ul><li><strong>除臭喷雾是第一爆品</strong>：养宠家庭100%有异味困扰，使用场景(猫砂盆/狗窝/沙发)明确=高搜索量+高转化</li><li><strong>猫砂除臭珠=超高复购</strong>：与猫砂搭配使用，100%猫主人月均消耗，超低客诉+超高复购率=理想电商品类</li><li><strong>消毒液差异化</strong>：宠物专用(不刺激爪垫/舔舐安全)与传统84消毒液拉开差距，内容教育=转化</li><li><strong>便便袋=走量引流款</strong>：超低客单+超高复购，适合作为新客首单引流+凑满减神器</li><li><strong>跨境机会</strong>：Nature's Miracle在美国是宠物清洁#1，中国品牌出海空间大</li></ul></div>
+</div>
+<footer>
+  <p>🐾 宠物赛道产品线细分调研 v2.0</p>
+  <p style="margin-top:6px;"><a href="https://github.com/zxb20262026/pet-market-research" target="_blank">GitHub</a> · Made with ⚡️ by 小马哥</p>
+</footer>
+<button class="scroll-top" id="scrollTopBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+<script>
+window.addEventListener('scroll',()=>{document.getElementById('scrollTopBtn').classList.toggle('visible',window.scrollY>400)});
+(function(){
+  var page = location.pathname.split('/').pop() || 'index.html';
+  document.querySelectorAll('.nav a').forEach(function(a){
+    if(a.getAttribute('href')===page) a.classList.add('active');
+  });
+})();
+</script>
+</body>
+</html>
