@@ -100,14 +100,23 @@ footer { text-align: center; padding: 32px 20px; border-top: 1px solid var(--bor
 footer a { color: var(--accent); }
 .scroll-top { position: fixed; bottom: 24px; right: 24px; width: 40px; height: 40px; border-radius: 50%; background: var(--accent); color: #fff; border: none; cursor: pointer; font-size: 18px; display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s; z-index: 99; }
 .scroll-top.visible { opacity: 1; }
-@media (max-width: 768px) { .container { padding: 16px 12px; } table { display: block; overflow-x: auto; } .card-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 768px) { .container { padding: 16px 12px; } table { display: block; overflow-x: auto; } .card-grid { grid-template-columns: repeat(2, 1fr); } }.opp-row td:first-child::before { content: "└ "; color: var(--text-tertiary); }.opp-row .opp-reason { color: var(--text-secondary); font-size: 11px; }.opp-row .diff-mid { color: var(--accent3); font-weight: 600; font-size: 11px; }.opp-toggle { cursor: pointer; color: var(--accent); font-size: 11px; margin-left: 4px; user-select: none; }.opp-group { display: none; }tr:hover + .opp-group .opp-row, .opp-group:hover .opp-row { background: rgba(240,160,96,0.08); }
+
+.opp-row td { padding: 5px 8px 5px 24px !important; font-size: 12px; border-bottom: 1px dashed var(--border) !important; }.opp-row td:first-child::before { content: "└ "; color: var(--text-tertiary); }.opp-row .opp-reason { color: var(--text-secondary); font-size: 11px; }.opp-row .opp-rebuy { font-size: 11px; }.opp-row .opp-margin-high { color: var(--accent2); }.opp-row .opp-margin-low { color: var(--accent4); }.opp-row .diff-mid { color: var(--accent3); font-weight: 600; font-size: 11px; }.opp-toggle { cursor: pointer; color: var(--accent); font-size: 11px; margin-left: 4px; user-select: none; }.opp-group { display: none; }tr:hover + .opp-group .opp-row, .opp-group:hover .opp-row { background: rgba(240,160,96,0.08); }
+
 
 .opp-row { background: rgba(240,160,96,0.03); }
-.opp-row td { padding: 5px 12px 5px 28px !important; font-size: 12px; border-bottom: 1px dashed var(--border) !important; }
+.opp-row td { padding: 5px 8px 5px 24px !important; font-size: 12px; border-bottom: 1px dashed var(--border) !important; }
 .opp-row td:first-child { color: var(--accent6); font-size: 11px; white-space: nowrap; min-width: 0; }
 .opp-row td:first-child::before { content: "└ "; color: var(--text-tertiary); }
 .opp-row .opp-name { color: var(--text); font-weight: 600; }
 .opp-row .opp-reason { color: var(--text-secondary); font-size: 11px; }
+.opp-row .opp-price { font-family: 'SF Mono','Cascadia Code',monospace; font-size: 11px; color: var(--accent6); }
+.opp-row .opp-rebuy { font-size: 11px; }
+.opp-row .opp-margin { font-size: 11px; font-weight: 600; }
+.opp-row .opp-margin-high { color: var(--accent2); }
+.opp-row .opp-margin-mid { color: var(--accent3); }
+.opp-row .opp-margin-low { color: var(--accent4); }
 .opp-row .diff-easy { color: var(--accent2); font-weight: 600; font-size: 11px; }
 .opp-row .diff-mid { color: var(--accent3); font-weight: 600; font-size: 11px; }
 .opp-row .diff-hard { color: var(--accent4); font-weight: 600; font-size: 11px; }
@@ -147,42 +156,42 @@ tr:hover + .opp-group .opp-row, .opp-group:hover .opp-row { background: rgba(240
 <tbody>
 <tr><td><strong>猫干粮</strong> <span class="opp-toggle" onclick="var g=this.closest('tr').nextElementSibling;g.classList.toggle('open');this.textContent=this.textContent=='+3'?'−3':'+3'">+3</span></td><td>膨化粮/烘焙粮/冻干双拼，蛋白质35-45%，国产粮崛起替代进口</td><td class="price-range">¥15-50/斤</td><td><span class="badge badge-green">⭐5/5 极佳</span></td><td>蓝氏、诚实一口、网易严选</td></tr>
 <tbody class="opp-group opp-group-猫干粮-fo">
-<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">冻干双拼全价猫粮</span></td><td class="opp-reason">双拼概念=高客单+视觉差异化</td><td><span class="diff-easy">🟢低</span></td></tr>
-<tr class="opp-row"><td>🟡中</td><td><span class="opp-name">低温烘焙猫粮</span></td><td class="opp-reason">90°C慢烘保留营养，不喷油不黑下巴</td><td><span class="diff-mid">🟡中</span></td></tr>
-<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">幼猫专用配方粮</span></td><td class="opp-reason">高蛋白+小颗粒+牛初乳，精准高粘性</td><td><span class="diff-easy">🟢低</span></td></tr>
+<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">冻干双拼全价猫粮</span></td><td class="opp-reason">双拼概念=高客单+视觉差异化</td><td class="opp-price">¥80-150/袋</td><td class="opp-rebuy">30-45天</td><td><span class="opp-margin opp-margin-low">30-40%</span></td><td><span class="diff-easy">🟢低</span></td></tr>
+<tr class="opp-row"><td>🟡中</td><td><span class="opp-name">低温烘焙猫粮</span></td><td class="opp-reason">90°C慢烘保留营养，不喷油不黑下巴</td><td class="opp-price">¥60-120/袋</td><td class="opp-rebuy">30-45天</td><td><span class="opp-margin opp-margin-low">25-35%</span></td><td><span class="diff-mid">🟡中</span></td></tr>
+<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">幼猫专用配方粮</span></td><td class="opp-reason">高蛋白+小颗粒+牛初乳，精准高粘性</td><td class="opp-price">¥50-100/袋</td><td class="opp-rebuy">25-40天</td><td><span class="opp-margin opp-margin-low">28-35%</span></td><td><span class="diff-easy">🟢低</span></td></tr>
 </tbody>
 <tr><td><strong>猫湿粮/罐头</strong> <span class="opp-toggle" onclick="var g=this.closest('tr').nextElementSibling;g.classList.toggle('open');this.textContent=this.textContent=='+3'?'−3':'+3'">+3</span></td><td>主食罐/零食罐/汤包/餐盒，主食化趋势明显</td><td class="price-range">¥5-15/罐</td><td><span class="badge badge-green">⭐5/5 极佳</span></td><td>K9、巅峰、阿飞和巴弟</td></tr>
 <tbody class="opp-group opp-group-猫湿粮-罐头-fo">
-<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">主食级补水汤包</span></td><td class="opp-reason">纯肉汤+主食级营养，替代鸡肋零食罐</td><td><span class="diff-easy">🟢低</span></td></tr>
-<tr class="opp-row"><td>🟡中</td><td><span class="opp-name">功能性主食罐</span></td><td class="opp-reason">美毛(鱼油)/肠胃(益生菌)/泌尿(低镁)</td><td><span class="diff-mid">🟡中</span></td></tr>
-<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">慕斯质地幼猫罐</span></td><td class="opp-reason">细腻慕斯质地，幼猫/术后易舔食</td><td><span class="diff-easy">🟢低</span></td></tr>
+<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">主食级补水汤包</span></td><td class="opp-reason">纯肉汤+主食级营养，替代鸡肋零食罐</td><td class="opp-price">¥5-12/包</td><td class="opp-rebuy">7-15天</td><td><span class="opp-margin opp-margin-low">35-45%</span></td><td><span class="diff-easy">🟢低</span></td></tr>
+<tr class="opp-row"><td>🟡中</td><td><span class="opp-name">功能性主食罐</span></td><td class="opp-reason">美毛/肠胃/泌尿场景精准=高转化</td><td class="opp-price">¥8-18/罐</td><td class="opp-rebuy">7-15天</td><td><span class="opp-margin opp-margin-low">30-40%</span></td><td><span class="diff-mid">🟡中</span></td></tr>
+<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">慕斯质地幼猫罐</span></td><td class="opp-reason">细腻慕斯质地，幼猫/术后易舔食</td><td class="opp-price">¥8-15/罐</td><td class="opp-rebuy">7-15天</td><td><span class="opp-margin opp-margin-low">30-38%</span></td><td><span class="diff-easy">🟢低</span></td></tr>
 </tbody>
 <tr><td><strong>猫零食</strong> <span class="opp-toggle" onclick="var g=this.closest('tr').nextElementSibling;g.classList.toggle('open');this.textContent=this.textContent=='+4'?'−4':'+4'">+4</span></td><td>冻干(鸡肉/蛋黄/多春鱼)、猫条(流质零食)、猫草/木天蓼</td><td class="price-range">¥10-80</td><td><span class="badge badge-green">⭐5/5 极佳</span></td><td>万物一口、麦富迪、顽皮</td></tr>
 <tbody class="opp-group opp-group-猫零食-fo">
-<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">单一肉源纯冻干</span></td><td class="opp-reason">纯鸡/纯兔/纯鹿肉，无添加成分党首选</td><td><span class="diff-easy">🟢低</span></td></tr>
-<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">功能性猫条</span></td><td class="opp-reason">化毛款/美毛款/益生菌款，零食→功能升级</td><td><span class="diff-easy">🟢低</span></td></tr>
-<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">冻干混合桶装</span></td><td class="opp-reason">鸡肉+蛋黄+多春鱼混装，开箱视频属性</td><td><span class="diff-easy">🟢低</span></td></tr>
-<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">木天蓼+虫瘿果棒</span></td><td class="opp-reason">猫咪天然兴奋剂，使用前后对比=自然爆款</td><td><span class="diff-easy">🟢低</span></td></tr>
+<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">单一肉源纯冻干</span></td><td class="opp-reason">纯鸡/纯兔/纯鹿肉，无添加成分党首选</td><td class="opp-price">¥25-60/包</td><td class="opp-rebuy">10-20天</td><td><span class="opp-margin opp-margin-mid">40-55%</span></td><td><span class="diff-easy">🟢低</span></td></tr>
+<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">功能性猫条</span></td><td class="opp-reason">化毛款/美毛款/益生菌，零食→功能升级</td><td class="opp-price">¥15-35/盒</td><td class="opp-rebuy">7-14天</td><td><span class="opp-margin opp-margin-high">45-60%</span></td><td><span class="diff-easy">🟢低</span></td></tr>
+<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">冻干混合桶装</span></td><td class="opp-reason">鸡肉+蛋黄+多春鱼混装，开箱视频属性</td><td class="opp-price">¥50-120/桶</td><td class="opp-rebuy">15-30天</td><td><span class="opp-margin opp-margin-low">35-50%</span></td><td><span class="diff-easy">🟢低</span></td></tr>
+<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">木天蓼+虫瘿果棒</span></td><td class="opp-reason">猫咪天然兴奋剂，前后对比=自然爆款</td><td class="opp-price">¥15-30/套</td><td class="opp-rebuy">15-30天</td><td><span class="opp-margin opp-margin-high">50-65%</span></td><td><span class="diff-easy">🟢低</span></td></tr>
 </tbody>
 <tr><td><strong>狗干粮</strong> <span class="opp-toggle" onclick="var g=this.closest('tr').nextElementSibling;g.classList.toggle('open');this.textContent=this.textContent=='+2'?'−2':'+2'">+2</span></td><td>全价粮/无谷粮/冻干粮，国产替代加速，烘焙粮高增</td><td class="price-range">¥10-40/斤</td><td><span class="badge badge-green">⭐4/5 好</span></td><td>伯纳天纯、比瑞吉、疯狂小狗</td></tr>
 <tbody class="opp-group opp-group-狗干粮-fo">
-<tr class="opp-row"><td>🟡中</td><td><span class="opp-name">小型犬专用颗粒粮</span></td><td class="opp-reason">比熊/泰迪适配颗粒+低油去泪痕配方</td><td><span class="diff-mid">🟡中</span></td></tr>
-<tr class="opp-row"><td>🟡中</td><td><span class="opp-name">冻干生骨肉狗粮</span></td><td class="opp-reason">肉含量≥80%+冻干颗粒，还原狼性溢价</td><td><span class="diff-mid">🟡中</span></td></tr>
+<tr class="opp-row"><td>🟡中</td><td><span class="opp-name">小型犬专用颗粒粮</span></td><td class="opp-reason">比熊/泰迪适配颗粒+低油去泪痕配方</td><td class="opp-price">¥40-100/袋</td><td class="opp-rebuy">20-35天</td><td><span class="opp-margin opp-margin-low">20-30%</span></td><td><span class="diff-mid">🟡中</span></td></tr>
+<tr class="opp-row"><td>🟡中</td><td><span class="opp-name">冻干生骨肉狗粮</span></td><td class="opp-reason">肉含量≥80%+冻干颗粒，还原狼性溢价</td><td class="opp-price">¥80-180/袋</td><td class="opp-rebuy">20-35天</td><td><span class="opp-margin opp-margin-low">25-35%</span></td><td><span class="diff-mid">🟡中</span></td></tr>
 </tbody>
 <tr><td><strong>狗零食</strong> <span class="opp-toggle" onclick="var g=this.closest('tr').nextElementSibling;g.classList.toggle('open');this.textContent=this.textContent=='+2'?'−2':'+2'">+2</span></td><td>肉干/磨牙棒/洁齿骨/冻干，训练奖励+口腔护理双功能</td><td class="price-range">¥15-60</td><td><span class="badge badge-green">⭐4/5 好</span></td><td>麦富迪、顽皮、SmartBones</td></tr>
 <tbody class="opp-group opp-group-狗零食-fo">
-<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">洁齿磨牙棒套装</span></td><td class="opp-reason">不同硬度适配犬种，功能性+零食二合一</td><td><span class="diff-easy">🟢低</span></td></tr>
-<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">冻干大块鸡胸肉</span></td><td class="opp-reason">整块大肉视觉冲击，训练奖励+社交分享</td><td><span class="diff-easy">🟢低</span></td></tr>
+<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">洁齿磨牙棒套装</span></td><td class="opp-reason">不同硬度适配犬种，功能性+零食二合一</td><td class="opp-price">¥25-60/包</td><td class="opp-rebuy">10-20天</td><td><span class="opp-margin opp-margin-low">35-50%</span></td><td><span class="diff-easy">🟢低</span></td></tr>
+<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">冻干大块鸡胸肉</span></td><td class="opp-reason">整块大肉视觉冲击，训练奖励+社交分享</td><td class="opp-price">¥30-70/包</td><td class="opp-rebuy">10-20天</td><td><span class="opp-margin opp-margin-mid">40-55%</span></td><td><span class="diff-easy">🟢低</span></td></tr>
 </tbody>
 <tr><td><strong>宠物营养品</strong> <span class="opp-toggle" onclick="var g=this.closest('tr').nextElementSibling;g.classList.toggle('open');this.textContent=this.textContent=='+3'?'−3':'+3'">+3</span></td><td>维生素/益生菌/关节保健(软骨素)/化毛膏/鱼油</td><td class="price-range">¥30-150</td><td><span class="badge badge-green">⭐4/5 好</span></td><td>卫仕、麦德氏、红狗</td></tr>
 <tbody class="opp-group opp-group-宠物营养品-fo">
-<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">猫用化毛膏</span></td><td class="opp-reason">麦芽糖+鱼油+纤维素，比传统更健康</td><td><span class="diff-easy">🟢低</span></td></tr>
-<tr class="opp-row"><td>🟡中</td><td><span class="opp-name">关节软骨素咀嚼片</span></td><td class="opp-reason">犬猫通用，老年宠物刚需，预防>治疗</td><td><span class="diff-mid">🟡中</span></td></tr>
-<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">宠物益生菌粉</span></td><td class="opp-reason">软便/换粮/应激专用，场景清晰高复购</td><td><span class="diff-easy">🟢低</span></td></tr>
+<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">猫用化毛膏</span></td><td class="opp-reason">麦芽糖+鱼油+纤维素，比传统更健康</td><td class="opp-price">¥30-80/支</td><td class="opp-rebuy">30-60天</td><td><span class="opp-margin opp-margin-high">45-60%</span></td><td><span class="diff-easy">🟢低</span></td></tr>
+<tr class="opp-row"><td>🟡中</td><td><span class="opp-name">关节软骨素咀嚼片</span></td><td class="opp-reason">犬猫通用，老年宠物刚需，预防>治疗</td><td class="opp-price">¥60-150/瓶</td><td class="opp-rebuy">45-60天</td><td><span class="opp-margin opp-margin-mid">40-55%</span></td><td><span class="diff-mid">🟡中</span></td></tr>
+<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">宠物益生菌粉</span></td><td class="opp-reason">软便/换粮/应激专用，场景清晰高复购</td><td class="opp-price">¥40-100/盒</td><td class="opp-rebuy">15-30天</td><td><span class="opp-margin opp-margin-high">45-60%</span></td><td><span class="diff-easy">🟢低</span></td></tr>
 </tbody>
 <tr><td><strong>处方粮</strong> <span class="opp-toggle" onclick="var g=this.closest('tr').nextElementSibling;g.classList.toggle('open');this.textContent=this.textContent=='+1'?'−1':'+1'">+1</span></td><td>肾脏/泌尿/肠道/低敏处方粮，线下宠物医院为主渠道</td><td class="price-range">¥50-120/斤</td><td><span class="badge badge-green">⭐3/5 中等</span></td><td>皇家、Hill's、冠能</td></tr>
 <tbody class="opp-group opp-group-处方粮-fo">
-<tr class="opp-row"><td>🔴高</td><td><span class="opp-name">猫咪泌尿道呵护粮</span></td><td class="opp-reason">低镁+酸化尿液，1/3公猫一生中会泌尿问题</td><td><span class="diff-hard">🔴高</span></td></tr>
+<tr class="opp-row"><td>🔴高</td><td><span class="opp-name">猫咪泌尿道呵护粮</span></td><td class="opp-reason">低镁+酸化尿液，1/3公猫有泌尿问题</td><td class="opp-price">¥80-200/袋</td><td class="opp-rebuy">30-45天</td><td><span class="opp-margin opp-margin-low">20-30%</span></td><td><span class="diff-hard">🔴高</span></td></tr>
 </tbody>
 </tbody></table>
 <div class="analysis-box"><h4>🎯 电商切入策略</h4><p>宠物食品是<strong>绝对第一大品类</strong>，也是竞争最激烈的赛道。建议策略：</p><ul><li><strong>避开猫狗主粮正面战场</strong>：玛氏/雀巢+国产头部品牌壁垒高，新品牌需巨大营销投入</li><li><strong>优先切入冻干零食/猫条</strong>：SKU轻、决策成本低、复购率高、内容属性强，抖音/TikTok天然适配</li><li><strong>差异化：功能性零食</strong>（美毛/护肠/洁齿）= 溢价空间，宠物营养品是食品升级的自然延伸</li><li><strong>供应链关键</strong>：冻干需要-36°C真空冷冻干燥设备，可找山东/河北代工厂OEM</li></ul></div>
