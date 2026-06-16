@@ -100,13 +100,21 @@ footer { text-align: center; padding: 32px 20px; border-top: 1px solid var(--bor
 footer a { color: var(--accent); }
 .scroll-top { position: fixed; bottom: 24px; right: 24px; width: 40px; height: 40px; border-radius: 50%; background: var(--accent); color: #fff; border: none; cursor: pointer; font-size: 18px; display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s; z-index: 99; }
 .scroll-top.visible { opacity: 1; }
-@media (max-width: 768px) { .container { padding: 16px 12px; } table { display: block; overflow-x: auto; } .card-grid { grid-template-columns: repeat(2, 1fr); } }.opp-section table { margin-top: 8px; }.opp-section .diff-mid { color: var(--accent3); font-weight: 600; }
+@media (max-width: 768px) { .container { padding: 16px 12px; } table { display: block; overflow-x: auto; } .card-grid { grid-template-columns: repeat(2, 1fr); } }.opp-section table { margin-top: 8px; }.opp-section .diff-mid { color: var(--accent3); font-weight: 600; }.opp-row td { padding: 5px 12px 5px 28px !important; font-size: 12px; border-bottom: 1px dashed var(--border) !important; }.opp-row td:first-child::before { content: "└ "; color: var(--text-tertiary); }.opp-row .opp-reason { color: var(--text-secondary); font-size: 11px; }.opp-row .diff-mid { color: var(--accent3); font-weight: 600; font-size: 11px; }.opp-toggle { cursor: pointer; color: var(--accent); font-size: 11px; margin-left: 4px; user-select: none; }.opp-group { display: none; }tr:hover + .opp-group .opp-row, .opp-group:hover .opp-row { background: rgba(240,160,96,0.08); }
+
+
 .opp-row { background: rgba(240,160,96,0.03); }
-.opp-row td { padding: 5px 12px 5px 28px !important; font-size: 12px; border-bottom: 1px dashed var(--border) !important; }
+.opp-row td { padding: 5px 8px 5px 24px !important; font-size: 12px; border-bottom: 1px dashed var(--border) !important; }
 .opp-row td:first-child { color: var(--accent6); font-size: 11px; white-space: nowrap; min-width: 0; }
 .opp-row td:first-child::before { content: "└ "; color: var(--text-tertiary); }
 .opp-row .opp-name { color: var(--text); font-weight: 600; }
 .opp-row .opp-reason { color: var(--text-secondary); font-size: 11px; }
+.opp-row .opp-price { font-family: 'SF Mono','Cascadia Code',monospace; font-size: 11px; color: var(--accent6); }
+.opp-row .opp-rebuy { font-size: 11px; }
+.opp-row .opp-margin { font-size: 11px; font-weight: 600; }
+.opp-row .opp-margin-high { color: var(--accent2); }
+.opp-row .opp-margin-mid { color: var(--accent3); }
+.opp-row .opp-margin-low { color: var(--accent4); }
 .opp-row .diff-easy { color: var(--accent2); font-weight: 600; font-size: 11px; }
 .opp-row .diff-mid { color: var(--accent3); font-weight: 600; font-size: 11px; }
 .opp-row .diff-hard { color: var(--accent4); font-weight: 600; font-size: 11px; }
@@ -146,42 +154,42 @@ tr:hover + .opp-group .opp-row, .opp-group:hover .opp-row { background: rgba(240
 <tbody>
 <tr><td><strong>猫砂(膨润土)</strong> <span class="opp-toggle" onclick="var g=this.closest('tr').nextElementSibling;g.classList.toggle('open');this.textContent=this.textContent=='+2'?'−2':'+2'">+2</span></td><td>结团快/除臭强/价格低，传统主力，但粉尘问题持续被诟病</td><td class="price-range">¥15-30/袋</td><td><span class="badge badge-green">⭐4/5 好</span></td><td>蓝钻、埃尔西博士、pidan</td></tr>
 <tbody class="opp-group opp-group-猫砂-膨润土-">
-<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">活性炭纳米除臭砂</span></td><td class="opp-reason">活性炭+纳米矿晶双重除臭，一周不铲也不臭</td><td><span class="diff-easy">🟢低</span></td></tr>
-<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">超细颗粒脚感砂</span></td><td class="opp-reason">0.5-1mm模拟沙漠脚感，猫咪本能高接受</td><td><span class="diff-easy">🟢低</span></td></tr>
+<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">活性炭纳米除臭砂</span></td><td class="opp-reason">活性炭+纳米矿晶双重除臭，一周不铲也不臭</td><td class="opp-price">¥25-45/袋</td><td class="opp-rebuy">15-25天</td><td><span class="opp-margin opp-margin-low">20-30%</span></td><td><span class="diff-easy">🟢低</span></td></tr>
+<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">超细颗粒脚感砂</span></td><td class="opp-reason">0.5-1mm模拟沙漠脚感，猫咪本能高接受</td><td class="opp-price">¥20-35/袋</td><td class="opp-rebuy">15-25天</td><td><span class="opp-margin opp-margin-low">18-25%</span></td><td><span class="diff-easy">🟢低</span></td></tr>
 </tbody>
 <tr><td><strong>猫砂(豆腐砂)</strong> <span class="opp-toggle" onclick="var g=this.closest('tr').nextElementSibling;g.classList.toggle('open');this.textContent=this.textContent=='+3'?'−3':'+3'">+3</span></td><td>环保/可冲厕所/低粉尘，增速最快品类，小红书种草主力</td><td class="price-range">¥20-50/袋</td><td><span class="badge badge-green">⭐5/5 极佳</span></td><td>N1、里兜、福丸</td></tr>
 <tbody class="opp-group opp-group-猫砂-豆腐砂-">
-<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">活性炭豆腐砂</span></td><td class="opp-reason">白砂+活性炭黑颗粒，除臭可视化+溢价30%</td><td><span class="diff-easy">🟢低</span></td></tr>
-<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">风味豆腐砂</span></td><td class="opp-reason">绿茶/水蜜桃/樱花味，香味差异化</td><td><span class="diff-easy">🟢低</span></td></tr>
-<tr class="opp-row"><td>🟡中</td><td><span class="opp-name">超细长条豆腐砂</span></td><td class="opp-reason">1.5mm超细条，结团快粉尘趋零</td><td><span class="diff-mid">🟡中</span></td></tr>
+<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">活性炭豆腐砂</span></td><td class="opp-reason">白砂+活性炭黑颗粒，除臭可视化+溢价30%</td><td class="opp-price">¥30-55/袋</td><td class="opp-rebuy">15-25天</td><td><span class="opp-margin opp-margin-low">25-35%</span></td><td><span class="diff-easy">🟢低</span></td></tr>
+<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">风味豆腐砂</span></td><td class="opp-reason">绿茶/水蜜桃/樱花味，香味差异化</td><td class="opp-price">¥25-50/袋</td><td class="opp-rebuy">15-25天</td><td><span class="opp-margin opp-margin-low">25-35%</span></td><td><span class="diff-easy">🟢低</span></td></tr>
+<tr class="opp-row"><td>🟡中</td><td><span class="opp-name">超细长条豆腐砂</span></td><td class="opp-reason">1.5mm超细条，结团快粉尘趋零</td><td class="opp-price">¥35-60/袋</td><td class="opp-rebuy">15-25天</td><td><span class="opp-margin opp-margin-low">28-38%</span></td><td><span class="diff-mid">🟡中</span></td></tr>
 </tbody>
 <tr><td><strong>猫砂(混合砂)</strong> <span class="opp-toggle" onclick="var g=this.closest('tr').nextElementSibling;g.classList.toggle('open');this.textContent=this.textContent=='+2'?'−2':'+2'">+2</span></td><td>膨润土+豆腐砂混合，兼顾结团与环保，2023-2025增长最快</td><td class="price-range">¥20-45/袋</td><td><span class="badge badge-green">⭐5/5 极佳</span></td><td>pidan、铁锤、洁客</td></tr>
 <tbody class="opp-group opp-group-猫砂-混合砂-">
-<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">7:3酵素混合砂</span></td><td class="opp-reason">豆腐砂+膨润土+酵素除臭，黄金比例</td><td><span class="diff-easy">🟢低</span></td></tr>
-<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">活性炭黑金混合砂</span></td><td class="opp-reason">全黑色砂体=视觉差异化，小红书自带流量</td><td><span class="diff-easy">🟢低</span></td></tr>
+<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">7:3酵素混合砂</span></td><td class="opp-reason">豆腐砂+膨润土+酵素除臭，黄金比例</td><td class="opp-price">¥25-50/袋</td><td class="opp-rebuy">15-25天</td><td><span class="opp-margin opp-margin-low">25-35%</span></td><td><span class="diff-easy">🟢低</span></td></tr>
+<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">活性炭黑金混合砂</span></td><td class="opp-reason">全黑色砂体=视觉差异化，小红书自带流量</td><td class="opp-price">¥30-55/袋</td><td class="opp-rebuy">15-25天</td><td><span class="opp-margin opp-margin-low">28-38%</span></td><td><span class="diff-easy">🟢低</span></td></tr>
 </tbody>
 <tr><td><strong>猫爬架/抓板</strong> <span class="opp-toggle" onclick="var g=this.closest('tr').nextElementSibling;g.classList.toggle('open');this.textContent=this.textContent=='+3'?'−3':'+3'">+3</span></td><td>剑麻柱/猫抓板/猫树/墙上家具，猫咪行为刚需</td><td class="price-range">¥60-500</td><td><span class="badge badge-green">⭐4/5 好</span></td><td>Catry、凯瑞、蜜罐猫</td></tr>
 <tbody class="opp-group opp-group-猫爬架-抓板">
-<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">仙人掌造型猫抓柱</span></td><td class="opp-reason">ins风颜值，猫抓板+家居装饰=小红书爆款</td><td><span class="diff-easy">🟢低</span></td></tr>
-<tr class="opp-row"><td>🟡中</td><td><span class="opp-name">墙上猫跳板系统</span></td><td class="opp-reason">不占地+模块化，小户型/租房党精准</td><td><span class="diff-mid">🟡中</span></td></tr>
-<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">猫抓板沙发贴</span></td><td class="opp-reason">贴在沙发扶手，解决猫抓沙发千古难题</td><td><span class="diff-easy">🟢低</span></td></tr>
+<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">仙人掌造型猫抓柱</span></td><td class="opp-reason">ins风颜值，猫抓板+家居装饰=小红书爆款</td><td class="opp-price">¥60-180</td><td class="opp-rebuy">6-12月</td><td><span class="opp-margin opp-margin-mid">35-50%</span></td><td><span class="diff-easy">🟢低</span></td></tr>
+<tr class="opp-row"><td>🟡中</td><td><span class="opp-name">墙上猫跳板系统</span></td><td class="opp-reason">不占地+模块化，小户型/租房党精准</td><td class="opp-price">¥50-200/块</td><td class="opp-rebuy">12-24月</td><td><span class="opp-margin opp-margin-mid">35-45%</span></td><td><span class="diff-mid">🟡中</span></td></tr>
+<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">猫抓板沙发贴</span></td><td class="opp-reason">贴在沙发扶手，解决猫抓沙发千古难题</td><td class="opp-price">¥15-40</td><td class="opp-rebuy">2-4月</td><td><span class="opp-margin opp-margin-high">45-60%</span></td><td><span class="diff-easy">🟢低</span></td></tr>
 </tbody>
 <tr><td><strong>宠物窝垫</strong> <span class="opp-toggle" onclick="var g=this.closest('tr').nextElementSibling;g.classList.toggle('open');this.textContent=this.textContent=='+3'?'−3':'+3'">+3</span></td><td>狗窝/猫窝/凉席/加热垫/沙发垫，季节性强</td><td class="price-range">¥50-300</td><td><span class="badge badge-green">⭐4/5 好</span></td><td>小佩、华元、PETKIT</td></tr>
 <tbody class="opp-group opp-group-宠物窝垫">
-<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">可拆洗牛津布狗窝</span></td><td class="opp-reason">拉链拆卸+机洗，解决异味痛点</td><td><span class="diff-easy">🟢低</span></td></tr>
-<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">凉感凝胶冰垫</span></td><td class="opp-reason">夏季降温刚需，不需插电=场景广</td><td><span class="diff-easy">🟢低</span></td></tr>
-<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">自发热猫窝(不用电)</span></td><td class="opp-reason">PET铝箔反射体温，冬天主动进窝</td><td><span class="diff-easy">🟢低</span></td></tr>
+<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">可拆洗牛津布狗窝</span></td><td class="opp-reason">拉链拆卸+机洗，解决异味痛点</td><td class="opp-price">¥60-200</td><td class="opp-rebuy">6-12月</td><td><span class="opp-margin opp-margin-mid">30-40%</span></td><td><span class="diff-easy">🟢低</span></td></tr>
+<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">凉感凝胶冰垫</span></td><td class="opp-reason">夏季降温刚需，不需插电=场景广</td><td class="opp-price">¥30-80</td><td class="opp-rebuy">1-2年(季节性)</td><td><span class="opp-margin opp-margin-mid">35-50%</span></td><td><span class="diff-easy">🟢低</span></td></tr>
+<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">自发热猫窝(不用电)</span></td><td class="opp-reason">PET铝箔反射体温，冬天主动进窝</td><td class="opp-price">¥40-120</td><td class="opp-rebuy">1-2年(季节性)</td><td><span class="opp-margin opp-margin-mid">35-50%</span></td><td><span class="diff-easy">🟢低</span></td></tr>
 </tbody>
 <tr><td><strong>食具/饮水器</strong> <span class="opp-toggle" onclick="var g=this.closest('tr').nextElementSibling;g.classList.toggle('open');this.textContent=this.textContent=='+3'?'−3':'+3'">+3</span></td><td>不锈钢碗/陶瓷碗/自动饮水机/慢食碗/称重碗</td><td class="price-range">¥20-300</td><td><span class="badge badge-green">⭐5/5 极佳</span></td><td>小佩、霍曼、Catit</td></tr>
 <tbody class="opp-group opp-group-食具-饮水器">
-<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">陶瓷高脚斜口碗</span></td><td class="opp-reason">15°倾斜+15cm高脚护颈椎，短鼻犬精准</td><td><span class="diff-easy">🟢低</span></td></tr>
-<tr class="opp-row"><td>🟡中</td><td><span class="opp-name">不锈钢智能称重碗</span></td><td class="opp-reason">LED显示克数+APP记录，科学喂养溢价</td><td><span class="diff-mid">🟡中</span></td></tr>
-<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">缓食慢食碗</span></td><td class="opp-reason">迷宫设计减缓进食速度，防呕吐/防肥胖</td><td><span class="diff-easy">🟢低</span></td></tr>
+<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">陶瓷高脚斜口碗</span></td><td class="opp-reason">15°倾斜+15cm高脚护颈椎，短鼻犬精准</td><td class="opp-price">¥40-120</td><td class="opp-rebuy">12-24月</td><td><span class="opp-margin opp-margin-mid">35-50%</span></td><td><span class="diff-easy">🟢低</span></td></tr>
+<tr class="opp-row"><td>🟡中</td><td><span class="opp-name">不锈钢智能称重碗</span></td><td class="opp-reason">LED显示克数+APP记录，科学喂养溢价</td><td class="opp-price">¥100-300</td><td class="opp-rebuy">18-36月</td><td><span class="opp-margin opp-margin-mid">30-40%</span></td><td><span class="diff-mid">🟡中</span></td></tr>
+<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">缓食慢食碗</span></td><td class="opp-reason">迷宫设计减缓进食速度，防呕吐/防肥胖</td><td class="opp-price">¥25-60</td><td class="opp-rebuy">12-24月</td><td><span class="opp-margin opp-margin-mid">40-55%</span></td><td><span class="diff-easy">🟢低</span></td></tr>
 </tbody>
 <tr><td><strong>笼具/围栏</strong> <span class="opp-toggle" onclick="var g=this.closest('tr').nextElementSibling;g.classList.toggle('open');this.textContent=this.textContent=='+2'?'−2':'+2'">+2</span></td><td>航空箱/铁笼/猫别墅/狗围栏/猫砂盆(开放式/封闭式)</td><td class="price-range">¥80-600</td><td><span class="badge badge-green">⭐3/5 中等</span></td><td>爱丽丝、Ferplast、大炮</td></tr>
 <tbody class="opp-group opp-group-笼具-围栏">
-<tr class="opp-row"><td>🟡中</td><td><span class="opp-name">可折叠三层猫别墅</span></td><td class="opp-reason">带滚轮+跳板+吊床，搬家友好</td><td><span class="diff-mid">🟡中</span></td></tr>
-<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">全封闭防外溅猫砂盆</span></td><td class="opp-reason">走廊式入口+顶部出口，砂不外溅</td><td><span class="diff-easy">🟢低</span></td></tr>
+<tr class="opp-row"><td>🟡中</td><td><span class="opp-name">可折叠三层猫别墅</span></td><td class="opp-reason">带滚轮+跳板+吊床，搬家友好</td><td class="opp-price">¥200-600</td><td class="opp-rebuy">2-5年</td><td><span class="opp-margin opp-margin-low">25-35%</span></td><td><span class="diff-mid">🟡中</span></td></tr>
+<tr class="opp-row"><td>🟢低</td><td><span class="opp-name">全封闭防外溅猫砂盆</span></td><td class="opp-reason">走廊式入口+顶部出口，砂不外溅</td><td class="opp-price">¥60-180</td><td class="opp-rebuy">2-4年</td><td><span class="opp-margin opp-margin-mid">30-40%</span></td><td><span class="diff-easy">🟢低</span></td></tr>
 </tbody>
 </tbody></table>
 <div class="analysis-box"><h4>🎯 电商切入策略</h4><p>日用品是<strong>复购率最高的宠物品类</strong>，猫砂更是消耗品之王。建议策略：</p><ul><li><strong>猫砂是第一切入点</strong>：月均消耗1-2袋×5000万只猫=巨大复购市场。混合砂差异化空间大（香型/颗粒/添加活性炭等）</li><li><strong>食具饮水器升级红利</strong>：宠物碗从塑料→不锈钢→陶瓷→智能称重，价格带从¥20→¥300，升级空间巨大</li><li><strong>大件物流门槛是护城河</strong>：猫爬架/猫别墅客单价高但退货率高，适合有供应链优势的卖家</li><li><strong>内容营销</strong>：开箱/Cleaning Restock/room tour 都是宠物用品内容爆款模板</li></ul></div>
